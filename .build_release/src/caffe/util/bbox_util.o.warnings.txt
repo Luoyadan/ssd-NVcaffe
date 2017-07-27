@@ -1,0 +1,2758 @@
+In file included from src/caffe/util/bbox_util.cpp:13:0:
+./include/caffe/util/bbox_util.hpp:23:9: error: ‘EmitConstraint_EmitType’ does not name a type
+ typedef EmitConstraint_EmitType EmitType;
+         ^
+./include/caffe/util/bbox_util.hpp:25:9: error: ‘MultiBoxLossParameter_MatchType’ does not name a type
+ typedef MultiBoxLossParameter_MatchType MatchType;
+         ^
+./include/caffe/util/bbox_util.hpp:26:9: error: ‘MultiBoxLossParameter_LocLossType’ does not name a type
+ typedef MultiBoxLossParameter_LocLossType LocLossType;
+         ^
+./include/caffe/util/bbox_util.hpp:27:9: error: ‘MultiBoxLossParameter_ConfLossType’ does not name a type
+ typedef MultiBoxLossParameter_ConfLossType ConfLossType;
+         ^
+./include/caffe/util/bbox_util.hpp:28:9: error: ‘MultiBoxLossParameter_MiningType’ does not name a type
+ typedef MultiBoxLossParameter_MiningType MiningType;
+         ^
+./include/caffe/util/bbox_util.hpp:30:25: error: ‘NormalizedBBox’ was not declared in this scope
+ typedef map<int, vector<NormalizedBBox> > LabelBBox;
+                         ^
+./include/caffe/util/bbox_util.hpp:30:39: error: template argument 1 is invalid
+ typedef map<int, vector<NormalizedBBox> > LabelBBox;
+                                       ^
+./include/caffe/util/bbox_util.hpp:30:39: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:30:41: error: template argument 2 is invalid
+ typedef map<int, vector<NormalizedBBox> > LabelBBox;
+                                         ^
+./include/caffe/util/bbox_util.hpp:30:41: error: template argument 4 is invalid
+./include/caffe/util/bbox_util.hpp:34:27: error: ‘NormalizedBBox’ does not name a type
+ bool SortBBoxAscend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2);
+                           ^
+./include/caffe/util/bbox_util.hpp:34:56: error: ‘NormalizedBBox’ does not name a type
+ bool SortBBoxAscend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2);
+                                                        ^
+./include/caffe/util/bbox_util.hpp:38:28: error: ‘NormalizedBBox’ does not name a type
+ bool SortBBoxDescend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2);
+                            ^
+./include/caffe/util/bbox_util.hpp:38:57: error: ‘NormalizedBBox’ does not name a type
+ bool SortBBoxDescend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2);
+                                                         ^
+./include/caffe/util/bbox_util.hpp:53:1: error: ‘NormalizedBBox’ does not name a type
+ NormalizedBBox UnitBBox();
+ ^
+./include/caffe/util/bbox_util.hpp:56:32: error: ‘NormalizedBBox’ does not name a type
+ bool IsCrossBoundaryBBox(const NormalizedBBox& bbox);
+                                ^
+./include/caffe/util/bbox_util.hpp:59:26: error: ‘NormalizedBBox’ does not name a type
+ void IntersectBBox(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2,
+                          ^
+./include/caffe/util/bbox_util.hpp:59:55: error: ‘NormalizedBBox’ does not name a type
+ void IntersectBBox(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2,
+                                                       ^
+./include/caffe/util/bbox_util.hpp:60:20: error: ‘NormalizedBBox’ has not been declared
+                    NormalizedBBox* intersect_bbox);
+                    ^
+./include/caffe/util/bbox_util.hpp:63:22: error: ‘NormalizedBBox’ does not name a type
+ float BBoxSize(const NormalizedBBox& bbox, const bool normalized = true);
+                      ^
+./include/caffe/util/bbox_util.hpp:69:21: error: ‘NormalizedBBox’ does not name a type
+ void ClipBBox(const NormalizedBBox& bbox, NormalizedBBox* clip_bbox);
+                     ^
+./include/caffe/util/bbox_util.hpp:69:43: error: ‘NormalizedBBox’ has not been declared
+ void ClipBBox(const NormalizedBBox& bbox, NormalizedBBox* clip_bbox);
+                                           ^
+./include/caffe/util/bbox_util.hpp:72:21: error: ‘NormalizedBBox’ does not name a type
+ void ClipBBox(const NormalizedBBox& bbox, const float height, const float width,
+                     ^
+./include/caffe/util/bbox_util.hpp:73:15: error: ‘NormalizedBBox’ has not been declared
+               NormalizedBBox* clip_bbox);
+               ^
+./include/caffe/util/bbox_util.hpp:76:22: error: ‘NormalizedBBox’ does not name a type
+ void ScaleBBox(const NormalizedBBox& bbox, const int height, const int width,
+                      ^
+./include/caffe/util/bbox_util.hpp:77:16: error: ‘NormalizedBBox’ has not been declared
+                NormalizedBBox* scale_bbox);
+                ^
+./include/caffe/util/bbox_util.hpp:80:23: error: ‘NormalizedBBox’ does not name a type
+ void OutputBBox(const NormalizedBBox& bbox, const pair<int, int>& img_size,
+                       ^
+./include/caffe/util/bbox_util.hpp:81:46: error: ‘ResizeParameter’ does not name a type
+                 const bool has_resize, const ResizeParameter& resize_param,
+                                              ^
+./include/caffe/util/bbox_util.hpp:82:17: error: ‘NormalizedBBox’ has not been declared
+                 NormalizedBBox* out_bbox);
+                 ^
+./include/caffe/util/bbox_util.hpp:85:23: error: ‘NormalizedBBox’ does not name a type
+ void LocateBBox(const NormalizedBBox& src_bbox, const NormalizedBBox& bbox,
+                       ^
+./include/caffe/util/bbox_util.hpp:85:55: error: ‘NormalizedBBox’ does not name a type
+ void LocateBBox(const NormalizedBBox& src_bbox, const NormalizedBBox& bbox,
+                                                       ^
+./include/caffe/util/bbox_util.hpp:86:17: error: ‘NormalizedBBox’ has not been declared
+                 NormalizedBBox* loc_bbox);
+                 ^
+./include/caffe/util/bbox_util.hpp:89:24: error: ‘NormalizedBBox’ does not name a type
+ bool ProjectBBox(const NormalizedBBox& src_bbox, const NormalizedBBox& bbox,
+                        ^
+./include/caffe/util/bbox_util.hpp:89:56: error: ‘NormalizedBBox’ does not name a type
+ bool ProjectBBox(const NormalizedBBox& src_bbox, const NormalizedBBox& bbox,
+                                                        ^
+./include/caffe/util/bbox_util.hpp:90:18: error: ‘NormalizedBBox’ has not been declared
+                  NormalizedBBox* proj_bbox);
+                  ^
+./include/caffe/util/bbox_util.hpp:94:28: error: ‘ResizeParameter’ does not name a type
+ void ExtrapolateBBox(const ResizeParameter& param, const int height,
+                            ^
+./include/caffe/util/bbox_util.hpp:95:28: error: ‘NormalizedBBox’ does not name a type
+     const int width, const NormalizedBBox& crop_bbox, NormalizedBBox* bbox);
+                            ^
+./include/caffe/util/bbox_util.hpp:95:55: error: ‘NormalizedBBox’ has not been declared
+     const int width, const NormalizedBBox& crop_bbox, NormalizedBBox* bbox);
+                                                       ^
+./include/caffe/util/bbox_util.hpp:98:28: error: ‘NormalizedBBox’ does not name a type
+ float JaccardOverlap(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2,
+                            ^
+./include/caffe/util/bbox_util.hpp:98:57: error: ‘NormalizedBBox’ does not name a type
+ float JaccardOverlap(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2,
+                                                         ^
+./include/caffe/util/bbox_util.hpp:105:26: error: ‘NormalizedBBox’ does not name a type
+ float BBoxCoverage(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2);
+                          ^
+./include/caffe/util/bbox_util.hpp:105:55: error: ‘NormalizedBBox’ does not name a type
+ float BBoxCoverage(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2);
+                                                       ^
+./include/caffe/util/bbox_util.hpp:108:23: error: ‘NormalizedBBox’ does not name a type
+ void EncodeBBox(const NormalizedBBox& prior_bbox,
+                       ^
+./include/caffe/util/bbox_util.hpp:110:49: error: ‘NormalizedBBox’ does not name a type
+     const bool encode_variance_in_target, const NormalizedBBox& bbox,
+                                                 ^
+./include/caffe/util/bbox_util.hpp:111:5: error: ‘NormalizedBBox’ has not been declared
+     NormalizedBBox* encode_bbox);
+     ^
+./include/caffe/util/bbox_util.hpp:114:31: error: ‘NormalizedBBox’ does not name a type
+ bool MeetEmitConstraint(const NormalizedBBox& src_bbox,
+                               ^
+./include/caffe/util/bbox_util.hpp:115:11: error: ‘NormalizedBBox’ does not name a type
+     const NormalizedBBox& bbox, const EmitConstraint& emit_constraint);
+           ^
+./include/caffe/util/bbox_util.hpp:115:39: error: ‘EmitConstraint’ does not name a type
+     const NormalizedBBox& bbox, const EmitConstraint& emit_constraint);
+                                       ^
+./include/caffe/util/bbox_util.hpp:118:23: error: ‘NormalizedBBox’ does not name a type
+ void DecodeBBox(const NormalizedBBox& prior_bbox,
+                       ^
+./include/caffe/util/bbox_util.hpp:121:11: error: ‘NormalizedBBox’ does not name a type
+     const NormalizedBBox& bbox, NormalizedBBox* decode_bbox);
+           ^
+./include/caffe/util/bbox_util.hpp:121:33: error: ‘NormalizedBBox’ has not been declared
+     const NormalizedBBox& bbox, NormalizedBBox* decode_bbox);
+                                 ^
+./include/caffe/util/bbox_util.hpp:124:32: error: ‘NormalizedBBox’ was not declared in this scope
+ void DecodeBBoxes(const vector<NormalizedBBox>& prior_bboxes,
+                                ^
+./include/caffe/util/bbox_util.hpp:124:46: error: template argument 1 is invalid
+ void DecodeBBoxes(const vector<NormalizedBBox>& prior_bboxes,
+                                              ^
+./include/caffe/util/bbox_util.hpp:124:46: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:127:40: error: ‘NormalizedBBox’ was not declared in this scope
+     const bool clip_bbox, const vector<NormalizedBBox>& bboxes,
+                                        ^
+./include/caffe/util/bbox_util.hpp:127:54: error: template argument 1 is invalid
+     const bool clip_bbox, const vector<NormalizedBBox>& bboxes,
+                                                      ^
+./include/caffe/util/bbox_util.hpp:127:54: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:128:12: error: ‘NormalizedBBox’ was not declared in this scope
+     vector<NormalizedBBox>* decode_bboxes);
+            ^
+./include/caffe/util/bbox_util.hpp:128:26: error: template argument 1 is invalid
+     vector<NormalizedBBox>* decode_bboxes);
+                          ^
+./include/caffe/util/bbox_util.hpp:128:26: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:132:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& prior_bboxes,
+                  ^
+./include/caffe/util/bbox_util.hpp:132:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& prior_bboxes,
+                                ^
+./include/caffe/util/bbox_util.hpp:132:32: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:140:29: error: ‘NormalizedBBox’ was not declared in this scope
+ void MatchBBox(const vector<NormalizedBBox>& gt,
+                             ^
+./include/caffe/util/bbox_util.hpp:140:43: error: template argument 1 is invalid
+ void MatchBBox(const vector<NormalizedBBox>& gt,
+                                           ^
+./include/caffe/util/bbox_util.hpp:140:43: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:141:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& pred_bboxes, const int label,
+                  ^
+./include/caffe/util/bbox_util.hpp:141:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& pred_bboxes, const int label,
+                                ^
+./include/caffe/util/bbox_util.hpp:141:32: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:142:11: error: ‘MatchType’ does not name a type
+     const MatchType match_type, const float overlap_threshold,
+           ^
+./include/caffe/util/bbox_util.hpp:156:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+./include/caffe/util/bbox_util.hpp:156:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+./include/caffe/util/bbox_util.hpp:156:43: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:156:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+./include/caffe/util/bbox_util.hpp:156:45: error: template argument 4 is invalid
+./include/caffe/util/bbox_util.hpp:157:20: error: ‘NormalizedBBox’ was not declared in this scope
+       const vector<NormalizedBBox>& prior_bboxes,
+                    ^
+./include/caffe/util/bbox_util.hpp:157:34: error: template argument 1 is invalid
+       const vector<NormalizedBBox>& prior_bboxes,
+                                  ^
+./include/caffe/util/bbox_util.hpp:157:34: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:159:13: error: ‘MultiBoxLossParameter’ does not name a type
+       const MultiBoxLossParameter& multibox_loss_param,
+             ^
+./include/caffe/util/bbox_util.hpp:179:29: error: ‘caffe::Blob’ is not a template
+ void MineHardExamples(const Blob<Dtype>& conf_blob,
+                             ^
+./include/caffe/util/bbox_util.hpp:181:27: error: ‘NormalizedBBox’ was not declared in this scope
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                           ^
+./include/caffe/util/bbox_util.hpp:181:41: error: template argument 1 is invalid
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                         ^
+./include/caffe/util/bbox_util.hpp:181:41: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:181:43: error: template argument 2 is invalid
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+./include/caffe/util/bbox_util.hpp:181:43: error: template argument 4 is invalid
+./include/caffe/util/bbox_util.hpp:182:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& prior_bboxes,
+                  ^
+./include/caffe/util/bbox_util.hpp:182:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& prior_bboxes,
+                                ^
+./include/caffe/util/bbox_util.hpp:182:32: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:185:11: error: ‘MultiBoxLossParameter’ does not name a type
+     const MultiBoxLossParameter& multibox_loss_param,
+           ^
+./include/caffe/util/bbox_util.hpp:200:23: error: ‘NormalizedBBox’ was not declared in this scope
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
+                       ^
+./include/caffe/util/bbox_util.hpp:200:37: error: template argument 1 is invalid
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
+                                     ^
+./include/caffe/util/bbox_util.hpp:200:37: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:200:39: error: template argument 2 is invalid
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
+                                       ^
+./include/caffe/util/bbox_util.hpp:200:39: error: template argument 4 is invalid
+./include/caffe/util/bbox_util.hpp:233:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+./include/caffe/util/bbox_util.hpp:233:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+./include/caffe/util/bbox_util.hpp:233:43: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:233:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+./include/caffe/util/bbox_util.hpp:233:45: error: template argument 4 is invalid
+./include/caffe/util/bbox_util.hpp:235:20: error: ‘NormalizedBBox’ was not declared in this scope
+       const vector<NormalizedBBox>& prior_bboxes,
+                    ^
+./include/caffe/util/bbox_util.hpp:235:34: error: template argument 1 is invalid
+       const vector<NormalizedBBox>& prior_bboxes,
+                                  ^
+./include/caffe/util/bbox_util.hpp:235:34: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:237:13: error: ‘MultiBoxLossParameter’ does not name a type
+       const MultiBoxLossParameter& multibox_loss_param,
+             ^
+./include/caffe/util/bbox_util.hpp:249:27: error: ‘caffe::Blob’ is not a template
+ void ComputeLocLoss(const Blob<Dtype>& loc_pred, const Blob<Dtype>& loc_gt,
+                           ^
+./include/caffe/util/bbox_util.hpp:249:56: error: ‘caffe::Blob’ is not a template
+ void ComputeLocLoss(const Blob<Dtype>& loc_pred, const Blob<Dtype>& loc_gt,
+                                                        ^
+./include/caffe/util/bbox_util.hpp:251:50: error: ‘LocLossType’ does not name a type
+       const int num, const int num_priors, const LocLossType loc_loss_type,
+                                                  ^
+./include/caffe/util/bbox_util.hpp:295:44: error: ‘ConfLossType’ does not name a type
+       const int background_label_id, const ConfLossType loss_type,
+                                            ^
+./include/caffe/util/bbox_util.hpp:297:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+./include/caffe/util/bbox_util.hpp:297:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+./include/caffe/util/bbox_util.hpp:297:43: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:297:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+./include/caffe/util/bbox_util.hpp:297:45: error: template argument 4 is invalid
+./include/caffe/util/bbox_util.hpp:312:44: error: ‘ConfLossType’ does not name a type
+       const int background_label_id, const ConfLossType loss_type,
+                                            ^
+./include/caffe/util/bbox_util.hpp:327:35: error: ‘MultiBoxLossParameter’ does not name a type
+       const int num_priors, const MultiBoxLossParameter& multibox_loss_param,
+                                   ^
+./include/caffe/util/bbox_util.hpp:330:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+./include/caffe/util/bbox_util.hpp:330:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+./include/caffe/util/bbox_util.hpp:330:43: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:330:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+./include/caffe/util/bbox_util.hpp:330:45: error: template argument 4 is invalid
+./include/caffe/util/bbox_util.hpp:340:14: error: ‘NormalizedBBox’ was not declared in this scope
+       vector<NormalizedBBox>* prior_bboxes,
+              ^
+./include/caffe/util/bbox_util.hpp:340:28: error: template argument 1 is invalid
+       vector<NormalizedBBox>* prior_bboxes,
+                            ^
+./include/caffe/util/bbox_util.hpp:340:28: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:398:28: error: ‘NormalizedBBox’ was not declared in this scope
+ void ApplyNMS(const vector<NormalizedBBox>& bboxes, const vector<float>& scores,
+                            ^
+./include/caffe/util/bbox_util.hpp:398:42: error: template argument 1 is invalid
+ void ApplyNMS(const vector<NormalizedBBox>& bboxes, const vector<float>& scores,
+                                          ^
+./include/caffe/util/bbox_util.hpp:398:42: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:402:28: error: ‘NormalizedBBox’ was not declared in this scope
+ void ApplyNMS(const vector<NormalizedBBox>& bboxes, const vector<float>& scores,
+                            ^
+./include/caffe/util/bbox_util.hpp:402:42: error: template argument 1 is invalid
+ void ApplyNMS(const vector<NormalizedBBox>& bboxes, const vector<float>& scores,
+                                          ^
+./include/caffe/util/bbox_util.hpp:402:42: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:417:32: error: ‘NormalizedBBox’ was not declared in this scope
+ void ApplyNMSFast(const vector<NormalizedBBox>& bboxes,
+                                ^
+./include/caffe/util/bbox_util.hpp:417:46: error: template argument 1 is invalid
+ void ApplyNMSFast(const vector<NormalizedBBox>& bboxes,
+                                              ^
+./include/caffe/util/bbox_util.hpp:417:46: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:501:33: error: ‘caffe::Blob’ is not a template
+           const bool clip_bbox, Blob<Dtype>* detection_blob);
+                                 ^
+./include/caffe/util/bbox_util.hpp:504:33: error: ‘caffe::Blob’ is not a template
+   void ComputeConfLossGPU(const Blob<Dtype>& conf_blob, const int num,
+                                 ^
+./include/caffe/util/bbox_util.hpp:506:44: error: ‘ConfLossType’ does not name a type
+       const int background_label_id, const ConfLossType loss_type,
+                                            ^
+./include/caffe/util/bbox_util.hpp:508:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+./include/caffe/util/bbox_util.hpp:508:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+./include/caffe/util/bbox_util.hpp:508:43: error: template argument 2 is invalid
+./include/caffe/util/bbox_util.hpp:508:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+./include/caffe/util/bbox_util.hpp:508:45: error: template argument 4 is invalid
+./include/caffe/util/bbox_util.hpp:516:57: error: ‘caffe::Blob’ is not a template
+ void VisualizeBBox(const vector<cv::Mat>& images, const Blob<Dtype>* detections,
+                                                         ^
+src/caffe/util/bbox_util.cpp:17:27: error: ‘NormalizedBBox’ does not name a type
+ bool SortBBoxAscend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2) {
+                           ^
+src/caffe/util/bbox_util.cpp:17:56: error: ‘NormalizedBBox’ does not name a type
+ bool SortBBoxAscend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2) {
+                                                        ^
+src/caffe/util/bbox_util.cpp: In function ‘bool caffe::SortBBoxAscend(const int&, const int&)’:
+src/caffe/util/bbox_util.cpp:18:16: error: request for member ‘score’ in ‘bbox1’, which is of non-class type ‘const int’
+   return bbox1.score() < bbox2.score();
+                ^
+src/caffe/util/bbox_util.cpp:18:32: error: request for member ‘score’ in ‘bbox2’, which is of non-class type ‘const int’
+   return bbox1.score() < bbox2.score();
+                                ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:21:28: error: ‘NormalizedBBox’ does not name a type
+ bool SortBBoxDescend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2) {
+                            ^
+src/caffe/util/bbox_util.cpp:21:57: error: ‘NormalizedBBox’ does not name a type
+ bool SortBBoxDescend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2) {
+                                                         ^
+src/caffe/util/bbox_util.cpp: In function ‘bool caffe::SortBBoxDescend(const int&, const int&)’:
+src/caffe/util/bbox_util.cpp:22:16: error: request for member ‘score’ in ‘bbox1’, which is of non-class type ‘const int’
+   return bbox1.score() > bbox2.score();
+                ^
+src/caffe/util/bbox_util.cpp:22:32: error: request for member ‘score’ in ‘bbox2’, which is of non-class type ‘const int’
+   return bbox1.score() > bbox2.score();
+                                ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:49:1: error: ‘NormalizedBBox’ does not name a type
+ NormalizedBBox UnitBBox() {
+ ^
+src/caffe/util/bbox_util.cpp:58:32: error: ‘NormalizedBBox’ does not name a type
+ bool IsCrossBoundaryBBox(const NormalizedBBox& bbox) {
+                                ^
+src/caffe/util/bbox_util.cpp: In function ‘bool caffe::IsCrossBoundaryBBox(const int&)’:
+src/caffe/util/bbox_util.cpp:59:15: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+   return bbox.xmin() < 0 || bbox.xmin() > 1 ||
+               ^
+src/caffe/util/bbox_util.cpp:59:34: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+   return bbox.xmin() < 0 || bbox.xmin() > 1 ||
+                                  ^
+src/caffe/util/bbox_util.cpp:60:12: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+       bbox.ymin() < 0 || bbox.ymin() > 1 ||
+            ^
+src/caffe/util/bbox_util.cpp:60:31: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+       bbox.ymin() < 0 || bbox.ymin() > 1 ||
+                               ^
+src/caffe/util/bbox_util.cpp:61:12: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+       bbox.xmax() < 0 || bbox.xmax() > 1 ||
+            ^
+src/caffe/util/bbox_util.cpp:61:31: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+       bbox.xmax() < 0 || bbox.xmax() > 1 ||
+                               ^
+src/caffe/util/bbox_util.cpp:62:12: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+       bbox.ymax() < 0 || bbox.ymax() > 1;
+            ^
+src/caffe/util/bbox_util.cpp:62:31: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+       bbox.ymax() < 0 || bbox.ymax() > 1;
+                               ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:65:26: error: ‘NormalizedBBox’ does not name a type
+ void IntersectBBox(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2,
+                          ^
+src/caffe/util/bbox_util.cpp:65:55: error: ‘NormalizedBBox’ does not name a type
+ void IntersectBBox(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2,
+                                                       ^
+src/caffe/util/bbox_util.cpp:66:20: error: ‘NormalizedBBox’ has not been declared
+                    NormalizedBBox* intersect_bbox) {
+                    ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::IntersectBBox(const int&, const int&, int*)’:
+src/caffe/util/bbox_util.cpp:67:13: error: request for member ‘xmin’ in ‘bbox2’, which is of non-class type ‘const int’
+   if (bbox2.xmin() > bbox1.xmax() || bbox2.xmax() < bbox1.xmin() ||
+             ^
+src/caffe/util/bbox_util.cpp:67:28: error: request for member ‘xmax’ in ‘bbox1’, which is of non-class type ‘const int’
+   if (bbox2.xmin() > bbox1.xmax() || bbox2.xmax() < bbox1.xmin() ||
+                            ^
+src/caffe/util/bbox_util.cpp:67:44: error: request for member ‘xmax’ in ‘bbox2’, which is of non-class type ‘const int’
+   if (bbox2.xmin() > bbox1.xmax() || bbox2.xmax() < bbox1.xmin() ||
+                                            ^
+src/caffe/util/bbox_util.cpp:67:59: error: request for member ‘xmin’ in ‘bbox1’, which is of non-class type ‘const int’
+   if (bbox2.xmin() > bbox1.xmax() || bbox2.xmax() < bbox1.xmin() ||
+                                                           ^
+src/caffe/util/bbox_util.cpp:68:13: error: request for member ‘ymin’ in ‘bbox2’, which is of non-class type ‘const int’
+       bbox2.ymin() > bbox1.ymax() || bbox2.ymax() < bbox1.ymin()) {
+             ^
+src/caffe/util/bbox_util.cpp:68:28: error: request for member ‘ymax’ in ‘bbox1’, which is of non-class type ‘const int’
+       bbox2.ymin() > bbox1.ymax() || bbox2.ymax() < bbox1.ymin()) {
+                            ^
+src/caffe/util/bbox_util.cpp:68:44: error: request for member ‘ymax’ in ‘bbox2’, which is of non-class type ‘const int’
+       bbox2.ymin() > bbox1.ymax() || bbox2.ymax() < bbox1.ymin()) {
+                                            ^
+src/caffe/util/bbox_util.cpp:68:59: error: request for member ‘ymin’ in ‘bbox1’, which is of non-class type ‘const int’
+       bbox2.ymin() > bbox1.ymax() || bbox2.ymax() < bbox1.ymin()) {
+                                                           ^
+src/caffe/util/bbox_util.cpp:70:21: error: request for member ‘set_xmin’ in ‘* intersect_bbox’, which is of non-class type ‘int’
+     intersect_bbox->set_xmin(0);
+                     ^
+src/caffe/util/bbox_util.cpp:71:21: error: request for member ‘set_ymin’ in ‘* intersect_bbox’, which is of non-class type ‘int’
+     intersect_bbox->set_ymin(0);
+                     ^
+src/caffe/util/bbox_util.cpp:72:21: error: request for member ‘set_xmax’ in ‘* intersect_bbox’, which is of non-class type ‘int’
+     intersect_bbox->set_xmax(0);
+                     ^
+src/caffe/util/bbox_util.cpp:73:21: error: request for member ‘set_ymax’ in ‘* intersect_bbox’, which is of non-class type ‘int’
+     intersect_bbox->set_ymax(0);
+                     ^
+src/caffe/util/bbox_util.cpp:75:21: error: request for member ‘set_xmin’ in ‘* intersect_bbox’, which is of non-class type ‘int’
+     intersect_bbox->set_xmin(std::max(bbox1.xmin(), bbox2.xmin()));
+                     ^
+src/caffe/util/bbox_util.cpp:75:45: error: request for member ‘xmin’ in ‘bbox1’, which is of non-class type ‘const int’
+     intersect_bbox->set_xmin(std::max(bbox1.xmin(), bbox2.xmin()));
+                                             ^
+src/caffe/util/bbox_util.cpp:75:59: error: request for member ‘xmin’ in ‘bbox2’, which is of non-class type ‘const int’
+     intersect_bbox->set_xmin(std::max(bbox1.xmin(), bbox2.xmin()));
+                                                           ^
+src/caffe/util/bbox_util.cpp:76:21: error: request for member ‘set_ymin’ in ‘* intersect_bbox’, which is of non-class type ‘int’
+     intersect_bbox->set_ymin(std::max(bbox1.ymin(), bbox2.ymin()));
+                     ^
+src/caffe/util/bbox_util.cpp:76:45: error: request for member ‘ymin’ in ‘bbox1’, which is of non-class type ‘const int’
+     intersect_bbox->set_ymin(std::max(bbox1.ymin(), bbox2.ymin()));
+                                             ^
+src/caffe/util/bbox_util.cpp:76:59: error: request for member ‘ymin’ in ‘bbox2’, which is of non-class type ‘const int’
+     intersect_bbox->set_ymin(std::max(bbox1.ymin(), bbox2.ymin()));
+                                                           ^
+src/caffe/util/bbox_util.cpp:77:21: error: request for member ‘set_xmax’ in ‘* intersect_bbox’, which is of non-class type ‘int’
+     intersect_bbox->set_xmax(std::min(bbox1.xmax(), bbox2.xmax()));
+                     ^
+src/caffe/util/bbox_util.cpp:77:45: error: request for member ‘xmax’ in ‘bbox1’, which is of non-class type ‘const int’
+     intersect_bbox->set_xmax(std::min(bbox1.xmax(), bbox2.xmax()));
+                                             ^
+src/caffe/util/bbox_util.cpp:77:59: error: request for member ‘xmax’ in ‘bbox2’, which is of non-class type ‘const int’
+     intersect_bbox->set_xmax(std::min(bbox1.xmax(), bbox2.xmax()));
+                                                           ^
+src/caffe/util/bbox_util.cpp:78:21: error: request for member ‘set_ymax’ in ‘* intersect_bbox’, which is of non-class type ‘int’
+     intersect_bbox->set_ymax(std::min(bbox1.ymax(), bbox2.ymax()));
+                     ^
+src/caffe/util/bbox_util.cpp:78:45: error: request for member ‘ymax’ in ‘bbox1’, which is of non-class type ‘const int’
+     intersect_bbox->set_ymax(std::min(bbox1.ymax(), bbox2.ymax()));
+                                             ^
+src/caffe/util/bbox_util.cpp:78:59: error: request for member ‘ymax’ in ‘bbox2’, which is of non-class type ‘const int’
+     intersect_bbox->set_ymax(std::min(bbox1.ymax(), bbox2.ymax()));
+                                                           ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:82:22: error: ‘NormalizedBBox’ does not name a type
+ float BBoxSize(const NormalizedBBox& bbox, const bool normalized) {
+                      ^
+src/caffe/util/bbox_util.cpp: In function ‘float caffe::BBoxSize(const int&, bool)’:
+src/caffe/util/bbox_util.cpp:83:12: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+   if (bbox.xmax() < bbox.xmin() || bbox.ymax() < bbox.ymin()) {
+            ^
+src/caffe/util/bbox_util.cpp:83:26: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+   if (bbox.xmax() < bbox.xmin() || bbox.ymax() < bbox.ymin()) {
+                          ^
+src/caffe/util/bbox_util.cpp:83:41: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+   if (bbox.xmax() < bbox.xmin() || bbox.ymax() < bbox.ymin()) {
+                                         ^
+src/caffe/util/bbox_util.cpp:83:55: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+   if (bbox.xmax() < bbox.xmin() || bbox.ymax() < bbox.ymin()) {
+                                                       ^
+src/caffe/util/bbox_util.cpp:87:14: error: request for member ‘has_size’ in ‘bbox’, which is of non-class type ‘const int’
+     if (bbox.has_size()) {
+              ^
+src/caffe/util/bbox_util.cpp:88:19: error: request for member ‘size’ in ‘bbox’, which is of non-class type ‘const int’
+       return bbox.size();
+                   ^
+src/caffe/util/bbox_util.cpp:90:26: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+       float width = bbox.xmax() - bbox.xmin();
+                          ^
+src/caffe/util/bbox_util.cpp:90:40: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+       float width = bbox.xmax() - bbox.xmin();
+                                        ^
+src/caffe/util/bbox_util.cpp:91:27: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+       float height = bbox.ymax() - bbox.ymin();
+                           ^
+src/caffe/util/bbox_util.cpp:91:41: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+       float height = bbox.ymax() - bbox.ymin();
+                                         ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:122:21: error: ‘NormalizedBBox’ does not name a type
+ void ClipBBox(const NormalizedBBox& bbox, NormalizedBBox* clip_bbox) {
+                     ^
+src/caffe/util/bbox_util.cpp:122:43: error: ‘NormalizedBBox’ has not been declared
+ void ClipBBox(const NormalizedBBox& bbox, NormalizedBBox* clip_bbox) {
+                                           ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::ClipBBox(const int&, int*)’:
+src/caffe/util/bbox_util.cpp:123:14: error: request for member ‘set_xmin’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_xmin(std::max(std::min(bbox.xmin(), 1.f), 0.f));
+              ^
+src/caffe/util/bbox_util.cpp:123:46: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_xmin(std::max(std::min(bbox.xmin(), 1.f), 0.f));
+                                              ^
+src/caffe/util/bbox_util.cpp:124:14: error: request for member ‘set_ymin’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_ymin(std::max(std::min(bbox.ymin(), 1.f), 0.f));
+              ^
+src/caffe/util/bbox_util.cpp:124:46: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_ymin(std::max(std::min(bbox.ymin(), 1.f), 0.f));
+                                              ^
+src/caffe/util/bbox_util.cpp:125:14: error: request for member ‘set_xmax’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_xmax(std::max(std::min(bbox.xmax(), 1.f), 0.f));
+              ^
+src/caffe/util/bbox_util.cpp:125:46: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_xmax(std::max(std::min(bbox.xmax(), 1.f), 0.f));
+                                              ^
+src/caffe/util/bbox_util.cpp:126:14: error: request for member ‘set_ymax’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_ymax(std::max(std::min(bbox.ymax(), 1.f), 0.f));
+              ^
+src/caffe/util/bbox_util.cpp:126:46: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_ymax(std::max(std::min(bbox.ymax(), 1.f), 0.f));
+                                              ^
+src/caffe/util/bbox_util.cpp:127:14: error: request for member ‘clear_size’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->clear_size();
+              ^
+src/caffe/util/bbox_util.cpp:128:14: error: request for member ‘set_size’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_size(BBoxSize(*clip_bbox));
+              ^
+src/caffe/util/bbox_util.cpp:129:14: error: request for member ‘set_difficult’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_difficult(bbox.difficult());
+              ^
+src/caffe/util/bbox_util.cpp:129:33: error: request for member ‘difficult’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_difficult(bbox.difficult());
+                                 ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:132:21: error: ‘NormalizedBBox’ does not name a type
+ void ClipBBox(const NormalizedBBox& bbox, const float height, const float width,
+                     ^
+src/caffe/util/bbox_util.cpp:133:15: error: ‘NormalizedBBox’ has not been declared
+               NormalizedBBox* clip_bbox) {
+               ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::ClipBBox(const int&, float, float, int*)’:
+src/caffe/util/bbox_util.cpp:134:14: error: request for member ‘set_xmin’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_xmin(std::max(std::min(bbox.xmin(), width), 0.f));
+              ^
+src/caffe/util/bbox_util.cpp:134:46: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_xmin(std::max(std::min(bbox.xmin(), width), 0.f));
+                                              ^
+src/caffe/util/bbox_util.cpp:135:14: error: request for member ‘set_ymin’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_ymin(std::max(std::min(bbox.ymin(), height), 0.f));
+              ^
+src/caffe/util/bbox_util.cpp:135:46: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_ymin(std::max(std::min(bbox.ymin(), height), 0.f));
+                                              ^
+src/caffe/util/bbox_util.cpp:136:14: error: request for member ‘set_xmax’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_xmax(std::max(std::min(bbox.xmax(), width), 0.f));
+              ^
+src/caffe/util/bbox_util.cpp:136:46: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_xmax(std::max(std::min(bbox.xmax(), width), 0.f));
+                                              ^
+src/caffe/util/bbox_util.cpp:137:14: error: request for member ‘set_ymax’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_ymax(std::max(std::min(bbox.ymax(), height), 0.f));
+              ^
+src/caffe/util/bbox_util.cpp:137:46: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_ymax(std::max(std::min(bbox.ymax(), height), 0.f));
+                                              ^
+src/caffe/util/bbox_util.cpp:138:14: error: request for member ‘clear_size’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->clear_size();
+              ^
+src/caffe/util/bbox_util.cpp:139:14: error: request for member ‘set_size’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_size(BBoxSize(*clip_bbox));
+              ^
+src/caffe/util/bbox_util.cpp:140:14: error: request for member ‘set_difficult’ in ‘* clip_bbox’, which is of non-class type ‘int’
+   clip_bbox->set_difficult(bbox.difficult());
+              ^
+src/caffe/util/bbox_util.cpp:140:33: error: request for member ‘difficult’ in ‘bbox’, which is of non-class type ‘const int’
+   clip_bbox->set_difficult(bbox.difficult());
+                                 ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:143:22: error: ‘NormalizedBBox’ does not name a type
+ void ScaleBBox(const NormalizedBBox& bbox, const int height, const int width,
+                      ^
+src/caffe/util/bbox_util.cpp:144:16: error: ‘NormalizedBBox’ has not been declared
+                NormalizedBBox* scale_bbox) {
+                ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::ScaleBBox(const int&, int, int, int*)’:
+src/caffe/util/bbox_util.cpp:145:15: error: request for member ‘set_xmin’ in ‘* scale_bbox’, which is of non-class type ‘int’
+   scale_bbox->set_xmin(bbox.xmin() * width);
+               ^
+src/caffe/util/bbox_util.cpp:145:29: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+   scale_bbox->set_xmin(bbox.xmin() * width);
+                             ^
+src/caffe/util/bbox_util.cpp:146:15: error: request for member ‘set_ymin’ in ‘* scale_bbox’, which is of non-class type ‘int’
+   scale_bbox->set_ymin(bbox.ymin() * height);
+               ^
+src/caffe/util/bbox_util.cpp:146:29: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+   scale_bbox->set_ymin(bbox.ymin() * height);
+                             ^
+src/caffe/util/bbox_util.cpp:147:15: error: request for member ‘set_xmax’ in ‘* scale_bbox’, which is of non-class type ‘int’
+   scale_bbox->set_xmax(bbox.xmax() * width);
+               ^
+src/caffe/util/bbox_util.cpp:147:29: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+   scale_bbox->set_xmax(bbox.xmax() * width);
+                             ^
+src/caffe/util/bbox_util.cpp:148:15: error: request for member ‘set_ymax’ in ‘* scale_bbox’, which is of non-class type ‘int’
+   scale_bbox->set_ymax(bbox.ymax() * height);
+               ^
+src/caffe/util/bbox_util.cpp:148:29: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+   scale_bbox->set_ymax(bbox.ymax() * height);
+                             ^
+src/caffe/util/bbox_util.cpp:149:15: error: request for member ‘clear_size’ in ‘* scale_bbox’, which is of non-class type ‘int’
+   scale_bbox->clear_size();
+               ^
+src/caffe/util/bbox_util.cpp:151:15: error: request for member ‘set_size’ in ‘* scale_bbox’, which is of non-class type ‘int’
+   scale_bbox->set_size(BBoxSize(*scale_bbox, normalized));
+               ^
+src/caffe/util/bbox_util.cpp:152:15: error: request for member ‘set_difficult’ in ‘* scale_bbox’, which is of non-class type ‘int’
+   scale_bbox->set_difficult(bbox.difficult());
+               ^
+src/caffe/util/bbox_util.cpp:152:34: error: request for member ‘difficult’ in ‘bbox’, which is of non-class type ‘const int’
+   scale_bbox->set_difficult(bbox.difficult());
+                                  ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:155:23: error: ‘NormalizedBBox’ does not name a type
+ void OutputBBox(const NormalizedBBox& bbox, const pair<int, int>& img_size,
+                       ^
+src/caffe/util/bbox_util.cpp:156:46: error: ‘ResizeParameter’ does not name a type
+                 const bool has_resize, const ResizeParameter& resize_param,
+                                              ^
+src/caffe/util/bbox_util.cpp:157:17: error: ‘NormalizedBBox’ has not been declared
+                 NormalizedBBox* out_bbox) {
+                 ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::OutputBBox(const int&, const std::pair<int, int>&, bool, const int&, int*)’:
+src/caffe/util/bbox_util.cpp:160:3: error: ‘NormalizedBBox’ was not declared in this scope
+   NormalizedBBox temp_bbox = bbox;
+   ^
+src/caffe/util/bbox_util.cpp:161:34: error: request for member ‘resize_mode’ in ‘resize_param’, which is of non-class type ‘const int’
+   if (has_resize && resize_param.resize_mode()) {
+                                  ^
+src/caffe/util/bbox_util.cpp:162:40: error: request for member ‘height’ in ‘resize_param’, which is of non-class type ‘const int’
+     float resize_height = resize_param.height();
+                                        ^
+src/caffe/util/bbox_util.cpp:164:39: error: request for member ‘width’ in ‘resize_param’, which is of non-class type ‘const int’
+     float resize_width = resize_param.width();
+                                       ^
+src/caffe/util/bbox_util.cpp:167:37: error: request for member ‘height_scale’ in ‘resize_param’, which is of non-class type ‘const int’
+     int height_scale = resize_param.height_scale();
+                                     ^
+src/caffe/util/bbox_util.cpp:168:36: error: request for member ‘width_scale’ in ‘resize_param’, which is of non-class type ‘const int’
+     int width_scale = resize_param.width_scale();
+                                    ^
+src/caffe/util/bbox_util.cpp:172:20: error: expected ‘;’ before ‘source_bbox’
+     NormalizedBBox source_bbox;
+                    ^
+src/caffe/util/bbox_util.cpp:173:26: error: request for member ‘resize_mode’ in ‘resize_param’, which is of non-class type ‘const int’
+     switch (resize_param.resize_mode()) {
+                          ^
+src/caffe/util/bbox_util.cpp:174:12: error: ‘ResizeParameter_Resize_mode_WARP’ was not declared in this scope
+       case ResizeParameter_Resize_mode_WARP:
+            ^
+src/caffe/util/bbox_util.cpp:175:18: error: ‘temp_bbox’ was not declared in this scope
+         ClipBBox(temp_bbox, &temp_bbox);
+                  ^
+src/caffe/util/bbox_util.cpp:178:12: error: ‘ResizeParameter_Resize_mode_FIT_LARGE_SIZE_AND_PAD’ was not declared in this scope
+       case ResizeParameter_Resize_mode_FIT_LARGE_SIZE_AND_PAD:
+            ^
+src/caffe/util/bbox_util.cpp:181:11: error: ‘source_bbox’ was not declared in this scope
+           source_bbox.set_xmin(0.);
+           ^
+src/caffe/util/bbox_util.cpp:187:11: error: ‘source_bbox’ was not declared in this scope
+           source_bbox.set_xmin(padding / resize_width);
+           ^
+src/caffe/util/bbox_util.cpp:192:21: error: ‘source_bbox’ was not declared in this scope
+         ProjectBBox(source_bbox, bbox, &temp_bbox);
+                     ^
+src/caffe/util/bbox_util.cpp:196:12: error: ‘ResizeParameter_Resize_mode_FIT_SMALL_SIZE’ was not declared in this scope
+       case ResizeParameter_Resize_mode_FIT_SMALL_SIZE:
+            ^
+src/caffe/util/bbox_util.cpp:210:14: error: ‘temp_bbox’ was not declared in this scope
+     ClipBBox(temp_bbox, &temp_bbox);
+              ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:216:23: error: ‘NormalizedBBox’ does not name a type
+ void LocateBBox(const NormalizedBBox& src_bbox, const NormalizedBBox& bbox,
+                       ^
+src/caffe/util/bbox_util.cpp:216:55: error: ‘NormalizedBBox’ does not name a type
+ void LocateBBox(const NormalizedBBox& src_bbox, const NormalizedBBox& bbox,
+                                                       ^
+src/caffe/util/bbox_util.cpp:217:17: error: ‘NormalizedBBox’ has not been declared
+                 NormalizedBBox* loc_bbox) {
+                 ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::LocateBBox(const int&, const int&, int*)’:
+src/caffe/util/bbox_util.cpp:218:30: error: request for member ‘xmax’ in ‘src_bbox’, which is of non-class type ‘const int’
+   float src_width = src_bbox.xmax() - src_bbox.xmin();
+                              ^
+src/caffe/util/bbox_util.cpp:218:48: error: request for member ‘xmin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   float src_width = src_bbox.xmax() - src_bbox.xmin();
+                                                ^
+src/caffe/util/bbox_util.cpp:219:31: error: request for member ‘ymax’ in ‘src_bbox’, which is of non-class type ‘const int’
+   float src_height = src_bbox.ymax() - src_bbox.ymin();
+                               ^
+src/caffe/util/bbox_util.cpp:219:49: error: request for member ‘ymin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   float src_height = src_bbox.ymax() - src_bbox.ymin();
+                                                 ^
+src/caffe/util/bbox_util.cpp:220:13: error: request for member ‘set_xmin’ in ‘* loc_bbox’, which is of non-class type ‘int’
+   loc_bbox->set_xmin(src_bbox.xmin() + bbox.xmin() * src_width);
+             ^
+src/caffe/util/bbox_util.cpp:220:31: error: request for member ‘xmin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   loc_bbox->set_xmin(src_bbox.xmin() + bbox.xmin() * src_width);
+                               ^
+src/caffe/util/bbox_util.cpp:220:45: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+   loc_bbox->set_xmin(src_bbox.xmin() + bbox.xmin() * src_width);
+                                             ^
+src/caffe/util/bbox_util.cpp:221:13: error: request for member ‘set_ymin’ in ‘* loc_bbox’, which is of non-class type ‘int’
+   loc_bbox->set_ymin(src_bbox.ymin() + bbox.ymin() * src_height);
+             ^
+src/caffe/util/bbox_util.cpp:221:31: error: request for member ‘ymin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   loc_bbox->set_ymin(src_bbox.ymin() + bbox.ymin() * src_height);
+                               ^
+src/caffe/util/bbox_util.cpp:221:45: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+   loc_bbox->set_ymin(src_bbox.ymin() + bbox.ymin() * src_height);
+                                             ^
+src/caffe/util/bbox_util.cpp:222:13: error: request for member ‘set_xmax’ in ‘* loc_bbox’, which is of non-class type ‘int’
+   loc_bbox->set_xmax(src_bbox.xmin() + bbox.xmax() * src_width);
+             ^
+src/caffe/util/bbox_util.cpp:222:31: error: request for member ‘xmin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   loc_bbox->set_xmax(src_bbox.xmin() + bbox.xmax() * src_width);
+                               ^
+src/caffe/util/bbox_util.cpp:222:45: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+   loc_bbox->set_xmax(src_bbox.xmin() + bbox.xmax() * src_width);
+                                             ^
+src/caffe/util/bbox_util.cpp:223:13: error: request for member ‘set_ymax’ in ‘* loc_bbox’, which is of non-class type ‘int’
+   loc_bbox->set_ymax(src_bbox.ymin() + bbox.ymax() * src_height);
+             ^
+src/caffe/util/bbox_util.cpp:223:31: error: request for member ‘ymin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   loc_bbox->set_ymax(src_bbox.ymin() + bbox.ymax() * src_height);
+                               ^
+src/caffe/util/bbox_util.cpp:223:45: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+   loc_bbox->set_ymax(src_bbox.ymin() + bbox.ymax() * src_height);
+                                             ^
+src/caffe/util/bbox_util.cpp:224:13: error: request for member ‘set_difficult’ in ‘* loc_bbox’, which is of non-class type ‘int’
+   loc_bbox->set_difficult(bbox.difficult());
+             ^
+src/caffe/util/bbox_util.cpp:224:32: error: request for member ‘difficult’ in ‘bbox’, which is of non-class type ‘const int’
+   loc_bbox->set_difficult(bbox.difficult());
+                                ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:227:24: error: ‘NormalizedBBox’ does not name a type
+ bool ProjectBBox(const NormalizedBBox& src_bbox, const NormalizedBBox& bbox,
+                        ^
+src/caffe/util/bbox_util.cpp:227:56: error: ‘NormalizedBBox’ does not name a type
+ bool ProjectBBox(const NormalizedBBox& src_bbox, const NormalizedBBox& bbox,
+                                                        ^
+src/caffe/util/bbox_util.cpp:228:18: error: ‘NormalizedBBox’ has not been declared
+                  NormalizedBBox* proj_bbox) {
+                  ^
+src/caffe/util/bbox_util.cpp: In function ‘bool caffe::ProjectBBox(const int&, const int&, int*)’:
+src/caffe/util/bbox_util.cpp:229:12: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+   if (bbox.xmin() >= src_bbox.xmax() || bbox.xmax() <= src_bbox.xmin() ||
+            ^
+src/caffe/util/bbox_util.cpp:229:31: error: request for member ‘xmax’ in ‘src_bbox’, which is of non-class type ‘const int’
+   if (bbox.xmin() >= src_bbox.xmax() || bbox.xmax() <= src_bbox.xmin() ||
+                               ^
+src/caffe/util/bbox_util.cpp:229:46: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+   if (bbox.xmin() >= src_bbox.xmax() || bbox.xmax() <= src_bbox.xmin() ||
+                                              ^
+src/caffe/util/bbox_util.cpp:229:65: error: request for member ‘xmin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   if (bbox.xmin() >= src_bbox.xmax() || bbox.xmax() <= src_bbox.xmin() ||
+                                                                 ^
+src/caffe/util/bbox_util.cpp:230:12: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+       bbox.ymin() >= src_bbox.ymax() || bbox.ymax() <= src_bbox.ymin()) {
+            ^
+src/caffe/util/bbox_util.cpp:230:31: error: request for member ‘ymax’ in ‘src_bbox’, which is of non-class type ‘const int’
+       bbox.ymin() >= src_bbox.ymax() || bbox.ymax() <= src_bbox.ymin()) {
+                               ^
+src/caffe/util/bbox_util.cpp:230:46: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+       bbox.ymin() >= src_bbox.ymax() || bbox.ymax() <= src_bbox.ymin()) {
+                                              ^
+src/caffe/util/bbox_util.cpp:230:65: error: request for member ‘ymin’ in ‘src_bbox’, which is of non-class type ‘const int’
+       bbox.ymin() >= src_bbox.ymax() || bbox.ymax() <= src_bbox.ymin()) {
+                                                                 ^
+src/caffe/util/bbox_util.cpp:233:30: error: request for member ‘xmax’ in ‘src_bbox’, which is of non-class type ‘const int’
+   float src_width = src_bbox.xmax() - src_bbox.xmin();
+                              ^
+src/caffe/util/bbox_util.cpp:233:48: error: request for member ‘xmin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   float src_width = src_bbox.xmax() - src_bbox.xmin();
+                                                ^
+src/caffe/util/bbox_util.cpp:234:31: error: request for member ‘ymax’ in ‘src_bbox’, which is of non-class type ‘const int’
+   float src_height = src_bbox.ymax() - src_bbox.ymin();
+                               ^
+src/caffe/util/bbox_util.cpp:234:49: error: request for member ‘ymin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   float src_height = src_bbox.ymax() - src_bbox.ymin();
+                                                 ^
+src/caffe/util/bbox_util.cpp:235:14: error: request for member ‘set_xmin’ in ‘* proj_bbox’, which is of non-class type ‘int’
+   proj_bbox->set_xmin((bbox.xmin() - src_bbox.xmin()) / src_width);
+              ^
+src/caffe/util/bbox_util.cpp:235:29: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+   proj_bbox->set_xmin((bbox.xmin() - src_bbox.xmin()) / src_width);
+                             ^
+src/caffe/util/bbox_util.cpp:235:47: error: request for member ‘xmin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   proj_bbox->set_xmin((bbox.xmin() - src_bbox.xmin()) / src_width);
+                                               ^
+src/caffe/util/bbox_util.cpp:236:14: error: request for member ‘set_ymin’ in ‘* proj_bbox’, which is of non-class type ‘int’
+   proj_bbox->set_ymin((bbox.ymin() - src_bbox.ymin()) / src_height);
+              ^
+src/caffe/util/bbox_util.cpp:236:29: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+   proj_bbox->set_ymin((bbox.ymin() - src_bbox.ymin()) / src_height);
+                             ^
+src/caffe/util/bbox_util.cpp:236:47: error: request for member ‘ymin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   proj_bbox->set_ymin((bbox.ymin() - src_bbox.ymin()) / src_height);
+                                               ^
+src/caffe/util/bbox_util.cpp:237:14: error: request for member ‘set_xmax’ in ‘* proj_bbox’, which is of non-class type ‘int’
+   proj_bbox->set_xmax((bbox.xmax() - src_bbox.xmin()) / src_width);
+              ^
+src/caffe/util/bbox_util.cpp:237:29: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+   proj_bbox->set_xmax((bbox.xmax() - src_bbox.xmin()) / src_width);
+                             ^
+src/caffe/util/bbox_util.cpp:237:47: error: request for member ‘xmin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   proj_bbox->set_xmax((bbox.xmax() - src_bbox.xmin()) / src_width);
+                                               ^
+src/caffe/util/bbox_util.cpp:238:14: error: request for member ‘set_ymax’ in ‘* proj_bbox’, which is of non-class type ‘int’
+   proj_bbox->set_ymax((bbox.ymax() - src_bbox.ymin()) / src_height);
+              ^
+src/caffe/util/bbox_util.cpp:238:29: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+   proj_bbox->set_ymax((bbox.ymax() - src_bbox.ymin()) / src_height);
+                             ^
+src/caffe/util/bbox_util.cpp:238:47: error: request for member ‘ymin’ in ‘src_bbox’, which is of non-class type ‘const int’
+   proj_bbox->set_ymax((bbox.ymax() - src_bbox.ymin()) / src_height);
+                                               ^
+src/caffe/util/bbox_util.cpp:239:14: error: request for member ‘set_difficult’ in ‘* proj_bbox’, which is of non-class type ‘int’
+   proj_bbox->set_difficult(bbox.difficult());
+              ^
+src/caffe/util/bbox_util.cpp:239:33: error: request for member ‘difficult’ in ‘bbox’, which is of non-class type ‘const int’
+   proj_bbox->set_difficult(bbox.difficult());
+                                 ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:248:28: error: ‘ResizeParameter’ does not name a type
+ void ExtrapolateBBox(const ResizeParameter& param, const int height,
+                            ^
+src/caffe/util/bbox_util.cpp:249:28: error: ‘NormalizedBBox’ does not name a type
+     const int width, const NormalizedBBox& crop_bbox, NormalizedBBox* bbox) {
+                            ^
+src/caffe/util/bbox_util.cpp:249:55: error: ‘NormalizedBBox’ has not been declared
+     const int width, const NormalizedBBox& crop_bbox, NormalizedBBox* bbox) {
+                                                       ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::ExtrapolateBBox(const int&, int, int, const int&, int*)’:
+src/caffe/util/bbox_util.cpp:250:30: error: request for member ‘height_scale’ in ‘param’, which is of non-class type ‘const int’
+   float height_scale = param.height_scale();
+                              ^
+src/caffe/util/bbox_util.cpp:251:29: error: request for member ‘width_scale’ in ‘param’, which is of non-class type ‘const int’
+   float width_scale = param.width_scale();
+                             ^
+src/caffe/util/bbox_util.cpp:253:13: error: request for member ‘resize_mode’ in ‘param’, which is of non-class type ‘const int’
+       param.resize_mode() == ResizeParameter_Resize_mode_FIT_SMALL_SIZE) {
+             ^
+src/caffe/util/bbox_util.cpp:253:30: error: ‘ResizeParameter_Resize_mode_FIT_SMALL_SIZE’ was not declared in this scope
+       param.resize_mode() == ResizeParameter_Resize_mode_FIT_SMALL_SIZE) {
+                              ^
+src/caffe/util/bbox_util.cpp:255:33: error: request for member ‘height’ in ‘param’, which is of non-class type ‘const int’
+     float resize_height = param.height();
+                                 ^
+src/caffe/util/bbox_util.cpp:256:32: error: request for member ‘width’ in ‘param’, which is of non-class type ‘const int’
+     float resize_width = param.width();
+                                ^
+src/caffe/util/bbox_util.cpp:263:52: error: request for member ‘ymax’ in ‘crop_bbox’, which is of non-class type ‘const int’
+     float crop_height = resize_height * (crop_bbox.ymax() - crop_bbox.ymin());
+                                                    ^
+src/caffe/util/bbox_util.cpp:263:71: error: request for member ‘ymin’ in ‘crop_bbox’, which is of non-class type ‘const int’
+     float crop_height = resize_height * (crop_bbox.ymax() - crop_bbox.ymin());
+                                                                       ^
+src/caffe/util/bbox_util.cpp:264:50: error: request for member ‘xmax’ in ‘crop_bbox’, which is of non-class type ‘const int’
+     float crop_width = resize_width * (crop_bbox.xmax() - crop_bbox.xmin());
+                                                  ^
+src/caffe/util/bbox_util.cpp:264:69: error: request for member ‘xmin’ in ‘crop_bbox’, which is of non-class type ‘const int’
+     float crop_width = resize_width * (crop_bbox.xmax() - crop_bbox.xmin());
+                                                                     ^
+src/caffe/util/bbox_util.cpp:267:11: error: request for member ‘set_xmin’ in ‘* bbox’, which is of non-class type ‘int’
+     bbox->set_xmin(bbox->xmin() * crop_width / width_scale);
+           ^
+src/caffe/util/bbox_util.cpp:267:26: error: request for member ‘xmin’ in ‘* bbox’, which is of non-class type ‘int’
+     bbox->set_xmin(bbox->xmin() * crop_width / width_scale);
+                          ^
+src/caffe/util/bbox_util.cpp:268:11: error: request for member ‘set_xmax’ in ‘* bbox’, which is of non-class type ‘int’
+     bbox->set_xmax(bbox->xmax() * crop_width / width_scale);
+           ^
+src/caffe/util/bbox_util.cpp:268:26: error: request for member ‘xmax’ in ‘* bbox’, which is of non-class type ‘int’
+     bbox->set_xmax(bbox->xmax() * crop_width / width_scale);
+                          ^
+src/caffe/util/bbox_util.cpp:269:11: error: request for member ‘set_ymin’ in ‘* bbox’, which is of non-class type ‘int’
+     bbox->set_ymin(bbox->ymin() * crop_height / height_scale);
+           ^
+src/caffe/util/bbox_util.cpp:269:26: error: request for member ‘ymin’ in ‘* bbox’, which is of non-class type ‘int’
+     bbox->set_ymin(bbox->ymin() * crop_height / height_scale);
+                          ^
+src/caffe/util/bbox_util.cpp:270:11: error: request for member ‘set_ymax’ in ‘* bbox’, which is of non-class type ‘int’
+     bbox->set_ymax(bbox->ymax() * crop_height / height_scale);
+           ^
+src/caffe/util/bbox_util.cpp:270:26: error: request for member ‘ymax’ in ‘* bbox’, which is of non-class type ‘int’
+     bbox->set_ymax(bbox->ymax() * crop_height / height_scale);
+                          ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:274:28: error: ‘NormalizedBBox’ does not name a type
+ float JaccardOverlap(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2,
+                            ^
+src/caffe/util/bbox_util.cpp:274:57: error: ‘NormalizedBBox’ does not name a type
+ float JaccardOverlap(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2,
+                                                         ^
+src/caffe/util/bbox_util.cpp: In function ‘float caffe::JaccardOverlap(const int&, const int&, bool)’:
+src/caffe/util/bbox_util.cpp:276:3: error: ‘NormalizedBBox’ was not declared in this scope
+   NormalizedBBox intersect_bbox;
+   ^
+src/caffe/util/bbox_util.cpp:277:32: error: ‘intersect_bbox’ was not declared in this scope
+   IntersectBBox(bbox1, bbox2, &intersect_bbox);
+                                ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:321:26: error: ‘NormalizedBBox’ does not name a type
+ float BBoxCoverage(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2) {
+                          ^
+src/caffe/util/bbox_util.cpp:321:55: error: ‘NormalizedBBox’ does not name a type
+ float BBoxCoverage(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2) {
+                                                       ^
+src/caffe/util/bbox_util.cpp: In function ‘float caffe::BBoxCoverage(const int&, const int&)’:
+src/caffe/util/bbox_util.cpp:322:3: error: ‘NormalizedBBox’ was not declared in this scope
+   NormalizedBBox intersect_bbox;
+   ^
+src/caffe/util/bbox_util.cpp:323:32: error: ‘intersect_bbox’ was not declared in this scope
+   IntersectBBox(bbox1, bbox2, &intersect_bbox);
+                                ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:333:31: error: ‘NormalizedBBox’ does not name a type
+ bool MeetEmitConstraint(const NormalizedBBox& src_bbox,
+                               ^
+src/caffe/util/bbox_util.cpp:334:31: error: ‘NormalizedBBox’ does not name a type
+                         const NormalizedBBox& bbox,
+                               ^
+src/caffe/util/bbox_util.cpp:335:31: error: ‘EmitConstraint’ does not name a type
+                         const EmitConstraint& emit_constraint) {
+                               ^
+src/caffe/util/bbox_util.cpp: In function ‘bool caffe::MeetEmitConstraint(const int&, const int&, const int&)’:
+src/caffe/util/bbox_util.cpp:336:3: error: ‘EmitType’ was not declared in this scope
+   EmitType emit_type = emit_constraint.emit_type();
+   ^
+src/caffe/util/bbox_util.cpp:337:7: error: ‘emit_type’ was not declared in this scope
+   if (emit_type == EmitConstraint_EmitType_CENTER) {
+       ^
+src/caffe/util/bbox_util.cpp:337:20: error: ‘EmitConstraint_EmitType_CENTER’ was not declared in this scope
+   if (emit_type == EmitConstraint_EmitType_CENTER) {
+                    ^
+src/caffe/util/bbox_util.cpp:338:28: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+     float x_center = (bbox.xmin() + bbox.xmax()) / 2;
+                            ^
+src/caffe/util/bbox_util.cpp:338:42: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+     float x_center = (bbox.xmin() + bbox.xmax()) / 2;
+                                          ^
+src/caffe/util/bbox_util.cpp:339:28: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+     float y_center = (bbox.ymin() + bbox.ymax()) / 2;
+                            ^
+src/caffe/util/bbox_util.cpp:339:42: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+     float y_center = (bbox.ymin() + bbox.ymax()) / 2;
+                                          ^
+src/caffe/util/bbox_util.cpp:340:30: error: request for member ‘xmin’ in ‘src_bbox’, which is of non-class type ‘const int’
+     if (x_center >= src_bbox.xmin() && x_center <= src_bbox.xmax() &&
+                              ^
+src/caffe/util/bbox_util.cpp:340:61: error: request for member ‘xmax’ in ‘src_bbox’, which is of non-class type ‘const int’
+     if (x_center >= src_bbox.xmin() && x_center <= src_bbox.xmax() &&
+                                                             ^
+src/caffe/util/bbox_util.cpp:341:30: error: request for member ‘ymin’ in ‘src_bbox’, which is of non-class type ‘const int’
+         y_center >= src_bbox.ymin() && y_center <= src_bbox.ymax()) {
+                              ^
+src/caffe/util/bbox_util.cpp:341:61: error: request for member ‘ymax’ in ‘src_bbox’, which is of non-class type ‘const int’
+         y_center >= src_bbox.ymin() && y_center <= src_bbox.ymax()) {
+                                                             ^
+src/caffe/util/bbox_util.cpp:346:27: error: ‘EmitConstraint_EmitType_MIN_OVERLAP’ was not declared in this scope
+   } else if (emit_type == EmitConstraint_EmitType_MIN_OVERLAP) {
+                           ^
+src/caffe/util/bbox_util.cpp:348:44: error: request for member ‘emit_overlap’ in ‘emit_constraint’, which is of non-class type ‘const int’
+     return bbox_coverage > emit_constraint.emit_overlap();
+                                            ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:356:11: error: ‘NormalizedBBox’ does not name a type
+     const NormalizedBBox& prior_bbox, const vector<float>& prior_variance,
+           ^
+src/caffe/util/bbox_util.cpp:358:11: error: ‘NormalizedBBox’ does not name a type
+     const NormalizedBBox& bbox, NormalizedBBox* encode_bbox) {
+           ^
+src/caffe/util/bbox_util.cpp:358:33: error: ‘NormalizedBBox’ has not been declared
+     const NormalizedBBox& bbox, NormalizedBBox* encode_bbox) {
+                                 ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::EncodeBBox(const int&, const std::vector<float>&, caffe::CodeType, bool, const int&, int*)’:
+src/caffe/util/bbox_util.cpp:361:20: error: request for member ‘set_xmin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmin(bbox.xmin() - prior_bbox.xmin());
+                    ^
+src/caffe/util/bbox_util.cpp:361:34: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_xmin(bbox.xmin() - prior_bbox.xmin());
+                                  ^
+src/caffe/util/bbox_util.cpp:361:54: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_xmin(bbox.xmin() - prior_bbox.xmin());
+                                                      ^
+src/caffe/util/bbox_util.cpp:362:20: error: request for member ‘set_ymin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymin(bbox.ymin() - prior_bbox.ymin());
+                    ^
+src/caffe/util/bbox_util.cpp:362:34: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_ymin(bbox.ymin() - prior_bbox.ymin());
+                                  ^
+src/caffe/util/bbox_util.cpp:362:54: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_ymin(bbox.ymin() - prior_bbox.ymin());
+                                                      ^
+src/caffe/util/bbox_util.cpp:363:20: error: request for member ‘set_xmax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmax(bbox.xmax() - prior_bbox.xmax());
+                    ^
+src/caffe/util/bbox_util.cpp:363:34: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_xmax(bbox.xmax() - prior_bbox.xmax());
+                                  ^
+src/caffe/util/bbox_util.cpp:363:54: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_xmax(bbox.xmax() - prior_bbox.xmax());
+                                                      ^
+src/caffe/util/bbox_util.cpp:364:20: error: request for member ‘set_ymax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymax(bbox.ymax() - prior_bbox.ymax());
+                    ^
+src/caffe/util/bbox_util.cpp:364:34: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_ymax(bbox.ymax() - prior_bbox.ymax());
+                                  ^
+src/caffe/util/bbox_util.cpp:364:54: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_ymax(bbox.ymax() - prior_bbox.ymax());
+                                                      ^
+src/caffe/util/bbox_util.cpp:371:20: error: request for member ‘set_xmin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmin(
+                    ^
+src/caffe/util/bbox_util.cpp:372:17: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+           (bbox.xmin() - prior_bbox.xmin()) / prior_variance[0]);
+                 ^
+src/caffe/util/bbox_util.cpp:372:37: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           (bbox.xmin() - prior_bbox.xmin()) / prior_variance[0]);
+                                     ^
+src/caffe/util/bbox_util.cpp:373:20: error: request for member ‘set_ymin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymin(
+                    ^
+src/caffe/util/bbox_util.cpp:374:17: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+           (bbox.ymin() - prior_bbox.ymin()) / prior_variance[1]);
+                 ^
+src/caffe/util/bbox_util.cpp:374:37: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           (bbox.ymin() - prior_bbox.ymin()) / prior_variance[1]);
+                                     ^
+src/caffe/util/bbox_util.cpp:375:20: error: request for member ‘set_xmax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmax(
+                    ^
+src/caffe/util/bbox_util.cpp:376:17: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+           (bbox.xmax() - prior_bbox.xmax()) / prior_variance[2]);
+                 ^
+src/caffe/util/bbox_util.cpp:376:37: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           (bbox.xmax() - prior_bbox.xmax()) / prior_variance[2]);
+                                     ^
+src/caffe/util/bbox_util.cpp:377:20: error: request for member ‘set_ymax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymax(
+                    ^
+src/caffe/util/bbox_util.cpp:378:17: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+           (bbox.ymax() - prior_bbox.ymax()) / prior_variance[3]);
+                 ^
+src/caffe/util/bbox_util.cpp:378:37: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           (bbox.ymax() - prior_bbox.ymax()) / prior_variance[3]);
+                                     ^
+src/caffe/util/bbox_util.cpp:381:36: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_width = prior_bbox.xmax() - prior_bbox.xmin();
+                                    ^
+src/caffe/util/bbox_util.cpp:381:56: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_width = prior_bbox.xmax() - prior_bbox.xmin();
+                                                        ^
+src/caffe/util/bbox_util.cpp:383:37: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_height = prior_bbox.ymax() - prior_bbox.ymin();
+                                     ^
+src/caffe/util/bbox_util.cpp:383:57: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_height = prior_bbox.ymax() - prior_bbox.ymin();
+                                                         ^
+src/caffe/util/bbox_util.cpp:385:40: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_center_x = (prior_bbox.xmin() + prior_bbox.xmax()) / 2.;
+                                        ^
+src/caffe/util/bbox_util.cpp:385:60: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_center_x = (prior_bbox.xmin() + prior_bbox.xmax()) / 2.;
+                                                            ^
+src/caffe/util/bbox_util.cpp:386:40: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_center_y = (prior_bbox.ymin() + prior_bbox.ymax()) / 2.;
+                                        ^
+src/caffe/util/bbox_util.cpp:386:60: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_center_y = (prior_bbox.ymin() + prior_bbox.ymax()) / 2.;
+                                                            ^
+src/caffe/util/bbox_util.cpp:388:29: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+     float bbox_width = bbox.xmax() - bbox.xmin();
+                             ^
+src/caffe/util/bbox_util.cpp:388:43: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+     float bbox_width = bbox.xmax() - bbox.xmin();
+                                           ^
+src/caffe/util/bbox_util.cpp:390:30: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+     float bbox_height = bbox.ymax() - bbox.ymin();
+                              ^
+src/caffe/util/bbox_util.cpp:390:44: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+     float bbox_height = bbox.ymax() - bbox.ymin();
+                                            ^
+src/caffe/util/bbox_util.cpp:392:33: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+     float bbox_center_x = (bbox.xmin() + bbox.xmax()) / 2.;
+                                 ^
+src/caffe/util/bbox_util.cpp:392:47: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+     float bbox_center_x = (bbox.xmin() + bbox.xmax()) / 2.;
+                                               ^
+src/caffe/util/bbox_util.cpp:393:33: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+     float bbox_center_y = (bbox.ymin() + bbox.ymax()) / 2.;
+                                 ^
+src/caffe/util/bbox_util.cpp:393:47: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+     float bbox_center_y = (bbox.ymin() + bbox.ymax()) / 2.;
+                                               ^
+src/caffe/util/bbox_util.cpp:396:20: error: request for member ‘set_xmin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmin((bbox_center_x - prior_center_x) / prior_width);
+                    ^
+src/caffe/util/bbox_util.cpp:397:20: error: request for member ‘set_ymin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymin((bbox_center_y - prior_center_y) / prior_height);
+                    ^
+src/caffe/util/bbox_util.cpp:398:20: error: request for member ‘set_xmax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmax(log(bbox_width / prior_width));
+                    ^
+src/caffe/util/bbox_util.cpp:399:20: error: request for member ‘set_ymax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymax(log(bbox_height / prior_height));
+                    ^
+src/caffe/util/bbox_util.cpp:402:20: error: request for member ‘set_xmin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmin(
+                    ^
+src/caffe/util/bbox_util.cpp:404:20: error: request for member ‘set_ymin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymin(
+                    ^
+src/caffe/util/bbox_util.cpp:406:20: error: request for member ‘set_xmax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmax(
+                    ^
+src/caffe/util/bbox_util.cpp:408:20: error: request for member ‘set_ymax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymax(
+                    ^
+src/caffe/util/bbox_util.cpp:412:36: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_width = prior_bbox.xmax() - prior_bbox.xmin();
+                                    ^
+src/caffe/util/bbox_util.cpp:412:56: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_width = prior_bbox.xmax() - prior_bbox.xmin();
+                                                        ^
+src/caffe/util/bbox_util.cpp:414:37: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_height = prior_bbox.ymax() - prior_bbox.ymin();
+                                     ^
+src/caffe/util/bbox_util.cpp:414:57: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_height = prior_bbox.ymax() - prior_bbox.ymin();
+                                                         ^
+src/caffe/util/bbox_util.cpp:417:20: error: request for member ‘set_xmin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmin((bbox.xmin() - prior_bbox.xmin()) / prior_width);
+                    ^
+src/caffe/util/bbox_util.cpp:417:35: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_xmin((bbox.xmin() - prior_bbox.xmin()) / prior_width);
+                                   ^
+src/caffe/util/bbox_util.cpp:417:55: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_xmin((bbox.xmin() - prior_bbox.xmin()) / prior_width);
+                                                       ^
+src/caffe/util/bbox_util.cpp:418:20: error: request for member ‘set_ymin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymin((bbox.ymin() - prior_bbox.ymin()) / prior_height);
+                    ^
+src/caffe/util/bbox_util.cpp:418:35: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_ymin((bbox.ymin() - prior_bbox.ymin()) / prior_height);
+                                   ^
+src/caffe/util/bbox_util.cpp:418:55: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_ymin((bbox.ymin() - prior_bbox.ymin()) / prior_height);
+                                                       ^
+src/caffe/util/bbox_util.cpp:419:20: error: request for member ‘set_xmax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmax((bbox.xmax() - prior_bbox.xmax()) / prior_width);
+                    ^
+src/caffe/util/bbox_util.cpp:419:35: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_xmax((bbox.xmax() - prior_bbox.xmax()) / prior_width);
+                                   ^
+src/caffe/util/bbox_util.cpp:419:55: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_xmax((bbox.xmax() - prior_bbox.xmax()) / prior_width);
+                                                       ^
+src/caffe/util/bbox_util.cpp:420:20: error: request for member ‘set_ymax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymax((bbox.ymax() - prior_bbox.ymax()) / prior_height);
+                    ^
+src/caffe/util/bbox_util.cpp:420:35: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_ymax((bbox.ymax() - prior_bbox.ymax()) / prior_height);
+                                   ^
+src/caffe/util/bbox_util.cpp:420:55: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       encode_bbox->set_ymax((bbox.ymax() - prior_bbox.ymax()) / prior_height);
+                                                       ^
+src/caffe/util/bbox_util.cpp:427:20: error: request for member ‘set_xmin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmin(
+                    ^
+src/caffe/util/bbox_util.cpp:428:17: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+           (bbox.xmin() - prior_bbox.xmin()) / prior_width / prior_variance[0]);
+                 ^
+src/caffe/util/bbox_util.cpp:428:37: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           (bbox.xmin() - prior_bbox.xmin()) / prior_width / prior_variance[0]);
+                                     ^
+src/caffe/util/bbox_util.cpp:429:20: error: request for member ‘set_ymin’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymin(
+                    ^
+src/caffe/util/bbox_util.cpp:430:17: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+           (bbox.ymin() - prior_bbox.ymin()) / prior_height / prior_variance[1]);
+                 ^
+src/caffe/util/bbox_util.cpp:430:37: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           (bbox.ymin() - prior_bbox.ymin()) / prior_height / prior_variance[1]);
+                                     ^
+src/caffe/util/bbox_util.cpp:431:20: error: request for member ‘set_xmax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_xmax(
+                    ^
+src/caffe/util/bbox_util.cpp:432:17: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+           (bbox.xmax() - prior_bbox.xmax()) / prior_width / prior_variance[2]);
+                 ^
+src/caffe/util/bbox_util.cpp:432:37: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           (bbox.xmax() - prior_bbox.xmax()) / prior_width / prior_variance[2]);
+                                     ^
+src/caffe/util/bbox_util.cpp:433:20: error: request for member ‘set_ymax’ in ‘* encode_bbox’, which is of non-class type ‘int’
+       encode_bbox->set_ymax(
+                    ^
+src/caffe/util/bbox_util.cpp:434:17: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+           (bbox.ymax() - prior_bbox.ymax()) / prior_height / prior_variance[3]);
+                 ^
+src/caffe/util/bbox_util.cpp:434:37: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           (bbox.ymax() - prior_bbox.ymax()) / prior_height / prior_variance[3]);
+                                     ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:442:11: error: ‘NormalizedBBox’ does not name a type
+     const NormalizedBBox& prior_bbox, const vector<float>& prior_variance,
+           ^
+src/caffe/util/bbox_util.cpp:444:33: error: ‘NormalizedBBox’ does not name a type
+     const bool clip_bbox, const NormalizedBBox& bbox,
+                                 ^
+src/caffe/util/bbox_util.cpp:445:5: error: ‘NormalizedBBox’ has not been declared
+     NormalizedBBox* decode_bbox) {
+     ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::DecodeBBox(const int&, const std::vector<float>&, caffe::CodeType, bool, bool, const int&, int*)’:
+src/caffe/util/bbox_util.cpp:450:20: error: request for member ‘set_xmin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_xmin(prior_bbox.xmin() + bbox.xmin());
+                    ^
+src/caffe/util/bbox_util.cpp:450:40: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_xmin(prior_bbox.xmin() + bbox.xmin());
+                                        ^
+src/caffe/util/bbox_util.cpp:450:54: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_xmin(prior_bbox.xmin() + bbox.xmin());
+                                                      ^
+src/caffe/util/bbox_util.cpp:451:20: error: request for member ‘set_ymin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_ymin(prior_bbox.ymin() + bbox.ymin());
+                    ^
+src/caffe/util/bbox_util.cpp:451:40: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_ymin(prior_bbox.ymin() + bbox.ymin());
+                                        ^
+src/caffe/util/bbox_util.cpp:451:54: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_ymin(prior_bbox.ymin() + bbox.ymin());
+                                                      ^
+src/caffe/util/bbox_util.cpp:452:20: error: request for member ‘set_xmax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_xmax(prior_bbox.xmax() + bbox.xmax());
+                    ^
+src/caffe/util/bbox_util.cpp:452:40: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_xmax(prior_bbox.xmax() + bbox.xmax());
+                                        ^
+src/caffe/util/bbox_util.cpp:452:54: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_xmax(prior_bbox.xmax() + bbox.xmax());
+                                                      ^
+src/caffe/util/bbox_util.cpp:453:20: error: request for member ‘set_ymax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_ymax(prior_bbox.ymax() + bbox.ymax());
+                    ^
+src/caffe/util/bbox_util.cpp:453:40: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_ymax(prior_bbox.ymax() + bbox.ymax());
+                                        ^
+src/caffe/util/bbox_util.cpp:453:54: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_ymax(prior_bbox.ymax() + bbox.ymax());
+                                                      ^
+src/caffe/util/bbox_util.cpp:456:20: error: request for member ‘set_xmin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_xmin(
+                    ^
+src/caffe/util/bbox_util.cpp:457:22: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           prior_bbox.xmin() + prior_variance[0] * bbox.xmin());
+                      ^
+src/caffe/util/bbox_util.cpp:457:56: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_bbox.xmin() + prior_variance[0] * bbox.xmin());
+                                                        ^
+src/caffe/util/bbox_util.cpp:458:20: error: request for member ‘set_ymin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_ymin(
+                    ^
+src/caffe/util/bbox_util.cpp:459:22: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           prior_bbox.ymin() + prior_variance[1] * bbox.ymin());
+                      ^
+src/caffe/util/bbox_util.cpp:459:56: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_bbox.ymin() + prior_variance[1] * bbox.ymin());
+                                                        ^
+src/caffe/util/bbox_util.cpp:460:20: error: request for member ‘set_xmax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_xmax(
+                    ^
+src/caffe/util/bbox_util.cpp:461:22: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           prior_bbox.xmax() + prior_variance[2] * bbox.xmax());
+                      ^
+src/caffe/util/bbox_util.cpp:461:56: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_bbox.xmax() + prior_variance[2] * bbox.xmax());
+                                                        ^
+src/caffe/util/bbox_util.cpp:462:20: error: request for member ‘set_ymax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_ymax(
+                    ^
+src/caffe/util/bbox_util.cpp:463:22: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           prior_bbox.ymax() + prior_variance[3] * bbox.ymax());
+                      ^
+src/caffe/util/bbox_util.cpp:463:56: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_bbox.ymax() + prior_variance[3] * bbox.ymax());
+                                                        ^
+src/caffe/util/bbox_util.cpp:466:36: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_width = prior_bbox.xmax() - prior_bbox.xmin();
+                                    ^
+src/caffe/util/bbox_util.cpp:466:56: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_width = prior_bbox.xmax() - prior_bbox.xmin();
+                                                        ^
+src/caffe/util/bbox_util.cpp:468:37: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_height = prior_bbox.ymax() - prior_bbox.ymin();
+                                     ^
+src/caffe/util/bbox_util.cpp:468:57: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_height = prior_bbox.ymax() - prior_bbox.ymin();
+                                                         ^
+src/caffe/util/bbox_util.cpp:470:40: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_center_x = (prior_bbox.xmin() + prior_bbox.xmax()) / 2.;
+                                        ^
+src/caffe/util/bbox_util.cpp:470:60: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_center_x = (prior_bbox.xmin() + prior_bbox.xmax()) / 2.;
+                                                            ^
+src/caffe/util/bbox_util.cpp:471:40: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_center_y = (prior_bbox.ymin() + prior_bbox.ymax()) / 2.;
+                                        ^
+src/caffe/util/bbox_util.cpp:471:60: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_center_y = (prior_bbox.ymin() + prior_bbox.ymax()) / 2.;
+                                                            ^
+src/caffe/util/bbox_util.cpp:478:35: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox_center_x = bbox.xmin() * prior_width + prior_center_x;
+                                   ^
+src/caffe/util/bbox_util.cpp:479:35: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox_center_y = bbox.ymin() * prior_height + prior_center_y;
+                                   ^
+src/caffe/util/bbox_util.cpp:480:36: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox_width = exp(bbox.xmax()) * prior_width;
+                                    ^
+src/caffe/util/bbox_util.cpp:481:37: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox_height = exp(bbox.ymax()) * prior_height;
+                                     ^
+src/caffe/util/bbox_util.cpp:485:36: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_variance[0] * bbox.xmin() * prior_width + prior_center_x;
+                                    ^
+src/caffe/util/bbox_util.cpp:487:36: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_variance[1] * bbox.ymin() * prior_height + prior_center_y;
+                                    ^
+src/caffe/util/bbox_util.cpp:489:40: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+           exp(prior_variance[2] * bbox.xmax()) * prior_width;
+                                        ^
+src/caffe/util/bbox_util.cpp:491:40: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+           exp(prior_variance[3] * bbox.ymax()) * prior_height;
+                                        ^
+src/caffe/util/bbox_util.cpp:494:18: error: request for member ‘set_xmin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+     decode_bbox->set_xmin(decode_bbox_center_x - decode_bbox_width / 2.);
+                  ^
+src/caffe/util/bbox_util.cpp:495:18: error: request for member ‘set_ymin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+     decode_bbox->set_ymin(decode_bbox_center_y - decode_bbox_height / 2.);
+                  ^
+src/caffe/util/bbox_util.cpp:496:18: error: request for member ‘set_xmax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+     decode_bbox->set_xmax(decode_bbox_center_x + decode_bbox_width / 2.);
+                  ^
+src/caffe/util/bbox_util.cpp:497:18: error: request for member ‘set_ymax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+     decode_bbox->set_ymax(decode_bbox_center_y + decode_bbox_height / 2.);
+                  ^
+src/caffe/util/bbox_util.cpp:499:36: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_width = prior_bbox.xmax() - prior_bbox.xmin();
+                                    ^
+src/caffe/util/bbox_util.cpp:499:56: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_width = prior_bbox.xmax() - prior_bbox.xmin();
+                                                        ^
+src/caffe/util/bbox_util.cpp:501:37: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_height = prior_bbox.ymax() - prior_bbox.ymin();
+                                     ^
+src/caffe/util/bbox_util.cpp:501:57: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+     float prior_height = prior_bbox.ymax() - prior_bbox.ymin();
+                                                         ^
+src/caffe/util/bbox_util.cpp:506:20: error: request for member ‘set_xmin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_xmin(prior_bbox.xmin() + bbox.xmin() * prior_width);
+                    ^
+src/caffe/util/bbox_util.cpp:506:40: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_xmin(prior_bbox.xmin() + bbox.xmin() * prior_width);
+                                        ^
+src/caffe/util/bbox_util.cpp:506:54: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_xmin(prior_bbox.xmin() + bbox.xmin() * prior_width);
+                                                      ^
+src/caffe/util/bbox_util.cpp:507:20: error: request for member ‘set_ymin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_ymin(prior_bbox.ymin() + bbox.ymin() * prior_height);
+                    ^
+src/caffe/util/bbox_util.cpp:507:40: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_ymin(prior_bbox.ymin() + bbox.ymin() * prior_height);
+                                        ^
+src/caffe/util/bbox_util.cpp:507:54: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_ymin(prior_bbox.ymin() + bbox.ymin() * prior_height);
+                                                      ^
+src/caffe/util/bbox_util.cpp:508:20: error: request for member ‘set_xmax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_xmax(prior_bbox.xmax() + bbox.xmax() * prior_width);
+                    ^
+src/caffe/util/bbox_util.cpp:508:40: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_xmax(prior_bbox.xmax() + bbox.xmax() * prior_width);
+                                        ^
+src/caffe/util/bbox_util.cpp:508:54: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_xmax(prior_bbox.xmax() + bbox.xmax() * prior_width);
+                                                      ^
+src/caffe/util/bbox_util.cpp:509:20: error: request for member ‘set_ymax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_ymax(prior_bbox.ymax() + bbox.ymax() * prior_height);
+                    ^
+src/caffe/util/bbox_util.cpp:509:40: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_ymax(prior_bbox.ymax() + bbox.ymax() * prior_height);
+                                        ^
+src/caffe/util/bbox_util.cpp:509:54: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+       decode_bbox->set_ymax(prior_bbox.ymax() + bbox.ymax() * prior_height);
+                                                      ^
+src/caffe/util/bbox_util.cpp:512:20: error: request for member ‘set_xmin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_xmin(
+                    ^
+src/caffe/util/bbox_util.cpp:513:22: error: request for member ‘xmin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           prior_bbox.xmin() + prior_variance[0] * bbox.xmin() * prior_width);
+                      ^
+src/caffe/util/bbox_util.cpp:513:56: error: request for member ‘xmin’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_bbox.xmin() + prior_variance[0] * bbox.xmin() * prior_width);
+                                                        ^
+src/caffe/util/bbox_util.cpp:514:20: error: request for member ‘set_ymin’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_ymin(
+                    ^
+src/caffe/util/bbox_util.cpp:515:22: error: request for member ‘ymin’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           prior_bbox.ymin() + prior_variance[1] * bbox.ymin() * prior_height);
+                      ^
+src/caffe/util/bbox_util.cpp:515:56: error: request for member ‘ymin’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_bbox.ymin() + prior_variance[1] * bbox.ymin() * prior_height);
+                                                        ^
+src/caffe/util/bbox_util.cpp:516:20: error: request for member ‘set_xmax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_xmax(
+                    ^
+src/caffe/util/bbox_util.cpp:517:22: error: request for member ‘xmax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           prior_bbox.xmax() + prior_variance[2] * bbox.xmax() * prior_width);
+                      ^
+src/caffe/util/bbox_util.cpp:517:56: error: request for member ‘xmax’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_bbox.xmax() + prior_variance[2] * bbox.xmax() * prior_width);
+                                                        ^
+src/caffe/util/bbox_util.cpp:518:20: error: request for member ‘set_ymax’ in ‘* decode_bbox’, which is of non-class type ‘int’
+       decode_bbox->set_ymax(
+                    ^
+src/caffe/util/bbox_util.cpp:519:22: error: request for member ‘ymax’ in ‘prior_bbox’, which is of non-class type ‘const int’
+           prior_bbox.ymax() + prior_variance[3] * bbox.ymax() * prior_height);
+                      ^
+src/caffe/util/bbox_util.cpp:519:56: error: request for member ‘ymax’ in ‘bbox’, which is of non-class type ‘const int’
+           prior_bbox.ymax() + prior_variance[3] * bbox.ymax() * prior_height);
+                                                        ^
+src/caffe/util/bbox_util.cpp:525:16: error: request for member ‘set_size’ in ‘* decode_bbox’, which is of non-class type ‘int’
+   decode_bbox->set_size(bbox_size);
+                ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:532:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& prior_bboxes,
+                  ^
+src/caffe/util/bbox_util.cpp:532:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& prior_bboxes,
+                                ^
+src/caffe/util/bbox_util.cpp:532:32: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:535:40: error: ‘NormalizedBBox’ was not declared in this scope
+     const bool clip_bbox, const vector<NormalizedBBox>& bboxes,
+                                        ^
+src/caffe/util/bbox_util.cpp:535:54: error: template argument 1 is invalid
+     const bool clip_bbox, const vector<NormalizedBBox>& bboxes,
+                                                      ^
+src/caffe/util/bbox_util.cpp:535:54: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:536:12: error: ‘NormalizedBBox’ was not declared in this scope
+     vector<NormalizedBBox>* decode_bboxes) {
+            ^
+src/caffe/util/bbox_util.cpp:536:26: error: template argument 1 is invalid
+     vector<NormalizedBBox>* decode_bboxes) {
+                          ^
+src/caffe/util/bbox_util.cpp:536:26: error: template argument 2 is invalid
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::DecodeBBoxes(const int&, const std::vector<std::vector<float> >&, caffe::CodeType, bool, bool, const int&, int*)’:
+src/caffe/util/bbox_util.cpp:537:25: error: request for member ‘size’ in ‘prior_bboxes’, which is of non-class type ‘const int’
+   CHECK_EQ(prior_bboxes.size(), prior_variances.size());
+                         ^
+src/caffe/util/bbox_util.cpp:538:25: error: request for member ‘size’ in ‘prior_bboxes’, which is of non-class type ‘const int’
+   CHECK_EQ(prior_bboxes.size(), bboxes.size());
+                         ^
+src/caffe/util/bbox_util.cpp:538:40: error: request for member ‘size’ in ‘bboxes’, which is of non-class type ‘const int’
+   CHECK_EQ(prior_bboxes.size(), bboxes.size());
+                                        ^
+src/caffe/util/bbox_util.cpp:539:33: error: request for member ‘size’ in ‘prior_bboxes’, which is of non-class type ‘const int’
+   int num_bboxes = prior_bboxes.size();
+                                 ^
+src/caffe/util/bbox_util.cpp:543:18: error: request for member ‘clear’ in ‘* decode_bboxes’, which is of non-class type ‘int’
+   decode_bboxes->clear();
+                  ^
+src/caffe/util/bbox_util.cpp:545:5: error: ‘NormalizedBBox’ was not declared in this scope
+     NormalizedBBox decode_bbox;
+     ^
+src/caffe/util/bbox_util.cpp:546:30: error: invalid types ‘const int[int]’ for array subscript
+     DecodeBBox(prior_bboxes[i], prior_variances[i], code_type,
+                              ^
+src/caffe/util/bbox_util.cpp:547:63: error: invalid types ‘const int[int]’ for array subscript
+                variance_encoded_in_target, clip_bbox, bboxes[i], &decode_bbox);
+                                                               ^
+src/caffe/util/bbox_util.cpp:547:67: error: ‘decode_bbox’ was not declared in this scope
+                variance_encoded_in_target, clip_bbox, bboxes[i], &decode_bbox);
+                                                                   ^
+src/caffe/util/bbox_util.cpp:548:20: error: request for member ‘push_back’ in ‘* decode_bboxes’, which is of non-class type ‘int’
+     decode_bboxes->push_back(decode_bbox);
+                    ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:553:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& prior_bboxes,
+                  ^
+src/caffe/util/bbox_util.cpp:553:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& prior_bboxes,
+                                ^
+src/caffe/util/bbox_util.cpp:553:32: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::DecodeBBoxesAll(const std::vector<int>&, const int&, const std::vector<std::vector<float> >&, int, bool, int, int, caffe::CodeType, bool, bool, std::vector<int>*)’:
+src/caffe/util/bbox_util.cpp:571:28: error: request for member ‘find’ in ‘(& all_loc_preds)->std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘const value_type {aka const int}’
+       if (all_loc_preds[i].find(label) == all_loc_preds[i].end()) {
+                            ^
+src/caffe/util/bbox_util.cpp:571:60: error: request for member ‘end’ in ‘(& all_loc_preds)->std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘const value_type {aka const int}’
+       if (all_loc_preds[i].find(label) == all_loc_preds[i].end()) {
+                                                            ^
+src/caffe/util/bbox_util.cpp:575:20: error: ‘NormalizedBBox’ was not declared in this scope
+       const vector<NormalizedBBox>& label_loc_preds =
+                    ^
+src/caffe/util/bbox_util.cpp:575:34: error: template argument 1 is invalid
+       const vector<NormalizedBBox>& label_loc_preds =
+                                  ^
+src/caffe/util/bbox_util.cpp:575:34: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:576:28: error: request for member ‘find’ in ‘(& all_loc_preds)->std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘const value_type {aka const int}’
+           all_loc_preds[i].find(label)->second;
+                            ^
+src/caffe/util/bbox_util.cpp:579:58: error: invalid types ‘caffe::LabelBBox {aka int}[int]’ for array subscript
+                    label_loc_preds, &(decode_bboxes[label]));
+                                                          ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:584:29: error: ‘NormalizedBBox’ was not declared in this scope
+ void MatchBBox(const vector<NormalizedBBox>& gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:584:43: error: template argument 1 is invalid
+ void MatchBBox(const vector<NormalizedBBox>& gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:584:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:585:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& pred_bboxes, const int label,
+                  ^
+src/caffe/util/bbox_util.cpp:585:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& pred_bboxes, const int label,
+                                ^
+src/caffe/util/bbox_util.cpp:585:32: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:586:11: error: ‘MatchType’ does not name a type
+     const MatchType match_type, const float overlap_threshold,
+           ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::MatchBBox(const int&, const int&, int, int, float, bool, std::vector<int>*, std::vector<float>*)’:
+src/caffe/util/bbox_util.cpp:589:30: error: request for member ‘size’ in ‘pred_bboxes’, which is of non-class type ‘const int’
+   int num_pred = pred_bboxes.size();
+                              ^
+src/caffe/util/bbox_util.cpp:599:24: error: request for member ‘size’ in ‘gt_bboxes’, which is of non-class type ‘const int’
+     num_gt = gt_bboxes.size();
+                        ^
+src/caffe/util/bbox_util.cpp:605:35: error: request for member ‘size’ in ‘gt_bboxes’, which is of non-class type ‘const int’
+     for (int i = 0; i < gt_bboxes.size(); ++i) {
+                                   ^
+src/caffe/util/bbox_util.cpp:606:22: error: invalid types ‘const int[int]’ for array subscript
+       if (gt_bboxes[i].label() == label) {
+                      ^
+src/caffe/util/bbox_util.cpp:619:72: error: invalid types ‘const int[int]’ for array subscript
+     if (ignore_cross_boundary_bbox && IsCrossBoundaryBBox(pred_bboxes[i])) {
+                                                                        ^
+src/caffe/util/bbox_util.cpp:624:51: error: invalid types ‘const int[int]’ for array subscript
+       float overlap = JaccardOverlap(pred_bboxes[i], gt_bboxes[gt_indices[j]]);
+                                                   ^
+src/caffe/util/bbox_util.cpp:624:77: error: invalid types ‘const int[__gnu_cxx::__alloc_traits<std::allocator<int> >::value_type {aka int}]’ for array subscript
+       float overlap = JaccardOverlap(pred_bboxes[i], gt_bboxes[gt_indices[j]]);
+                                                                             ^
+src/caffe/util/bbox_util.cpp:678:10: error: ‘MultiBoxLossParameter_MatchType_BIPARTITE’ was not declared in this scope
+     case MultiBoxLossParameter_MatchType_BIPARTITE:
+          ^
+src/caffe/util/bbox_util.cpp:681:10: error: ‘MultiBoxLossParameter_MatchType_PER_PREDICTION’ was not declared in this scope
+     case MultiBoxLossParameter_MatchType_PER_PREDICTION:
+          ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:723:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:723:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:723:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:723:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:723:45: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:724:20: error: ‘NormalizedBBox’ was not declared in this scope
+       const vector<NormalizedBBox>& prior_bboxes,
+                    ^
+src/caffe/util/bbox_util.cpp:724:34: error: template argument 1 is invalid
+       const vector<NormalizedBBox>& prior_bboxes,
+                                  ^
+src/caffe/util/bbox_util.cpp:724:34: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:726:13: error: ‘MultiBoxLossParameter’ does not name a type
+       const MultiBoxLossParameter& multibox_loss_param,
+             ^
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::FindMatches(const std::vector<int>&, const int&, const int&, const std::vector<std::vector<float> >&, const int&, std::vector<std::map<int, std::vector<float> > >*, std::vector<std::map<int, std::vector<int> > >*)’:
+src/caffe/util/bbox_util.cpp:732:29: error: request for member ‘has_num_classes’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   CHECK(multibox_loss_param.has_num_classes()) << "Must provide num_classes.";
+                             ^
+src/caffe/util/bbox_util.cpp:733:47: error: request for member ‘num_classes’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const int num_classes = multibox_loss_param.num_classes();
+                                               ^
+src/caffe/util/bbox_util.cpp:735:51: error: request for member ‘share_location’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const bool share_location = multibox_loss_param.share_location();
+                                                   ^
+src/caffe/util/bbox_util.cpp:737:9: error: ‘MatchType’ does not name a type
+   const MatchType match_type = multibox_loss_param.match_type();
+         ^
+src/caffe/util/bbox_util.cpp:738:55: error: request for member ‘overlap_threshold’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const float overlap_threshold = multibox_loss_param.overlap_threshold();
+                                                       ^
+src/caffe/util/bbox_util.cpp:740:27: error: request for member ‘use_prior_for_matching’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+       multibox_loss_param.use_prior_for_matching();
+                           ^
+src/caffe/util/bbox_util.cpp:741:55: error: request for member ‘background_label_id’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const int background_label_id = multibox_loss_param.background_label_id();
+                                                       ^
+src/caffe/util/bbox_util.cpp:742:50: error: request for member ‘code_type’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const CodeType code_type = multibox_loss_param.code_type();
+                                                  ^
+src/caffe/util/bbox_util.cpp:744:27: error: request for member ‘encode_variance_in_target’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+       multibox_loss_param.encode_variance_in_target();
+                           ^
+src/caffe/util/bbox_util.cpp:746:27: error: request for member ‘ignore_cross_boundary_bbox’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+       multibox_loss_param.ignore_cross_boundary_bbox();
+                           ^
+src/caffe/util/bbox_util.cpp:753:23: error: request for member ‘find’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+     if (all_gt_bboxes.find(i) == all_gt_bboxes.end()) {
+                       ^
+src/caffe/util/bbox_util.cpp:753:48: error: request for member ‘end’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+     if (all_gt_bboxes.find(i) == all_gt_bboxes.end()) {
+                                                ^
+src/caffe/util/bbox_util.cpp:760:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& gt_bboxes = all_gt_bboxes.find(i)->second;
+                  ^
+src/caffe/util/bbox_util.cpp:760:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& gt_bboxes = all_gt_bboxes.find(i)->second;
+                                ^
+src/caffe/util/bbox_util.cpp:760:32: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:760:61: error: request for member ‘find’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+     const vector<NormalizedBBox>& gt_bboxes = all_gt_bboxes.find(i)->second;
+                                                             ^
+src/caffe/util/bbox_util.cpp:761:10: error: in argument to unary !
+     if (!use_prior_for_matching) {
+          ^
+src/caffe/util/bbox_util.cpp:764:14: error: in argument to unary !
+         if (!share_location && label == background_label_id) {
+              ^
+src/caffe/util/bbox_util.cpp:769:16: error: the value of ‘NormalizedBBox’ is not usable in a constant expression
+         vector<NormalizedBBox> loc_bboxes;
+                ^
+src/caffe/util/bbox_util.cpp:760:18: note: ‘NormalizedBBox’ was not declared ‘constexpr’
+     const vector<NormalizedBBox>& gt_bboxes = all_gt_bboxes.find(i)->second;
+                  ^
+src/caffe/util/bbox_util.cpp:769:30: error: type/value mismatch at argument 1 in template parameter list for ‘template<class _Tp, class _Alloc> class std::vector’
+         vector<NormalizedBBox> loc_bboxes;
+                              ^
+src/caffe/util/bbox_util.cpp:769:30: note:   expected a type, got ‘NormalizedBBox’
+src/caffe/util/bbox_util.cpp:769:30: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:773:39: error: request for member ‘find’ in ‘(& all_loc_preds)->std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘const value_type {aka const int}’
+                      all_loc_preds[i].find(label)->second, &loc_bboxes);
+                                       ^
+src/caffe/util/bbox_util.cpp:774:49: error: ‘match_type’ was not declared in this scope
+         MatchBBox(gt_bboxes, loc_bboxes, label, match_type,
+                                                 ^
+src/caffe/util/bbox_util.cpp:783:49: error: ‘match_type’ was not declared in this scope
+       MatchBBox(gt_bboxes, prior_bboxes, label, match_type, overlap_threshold,
+                                                 ^
+src/caffe/util/bbox_util.cpp:792:39: error: request for member ‘size’ in ‘gt_bboxes’, which is of non-class type ‘const int’
+         for (int g = 0; g < gt_bboxes.size(); ++g) {
+                                       ^
+src/caffe/util/bbox_util.cpp:793:42: error: invalid types ‘const int[int]’ for array subscript
+           gt_labels.push_back(gt_bboxes[g].label());
+                                          ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:838:36: error: ‘MiningType’ does not name a type
+ inline bool IsEligibleMining(const MiningType mining_type, const int match_idx,
+                                    ^
+src/caffe/util/bbox_util.cpp: In function ‘bool caffe::IsEligibleMining(int, int, float, float)’:
+src/caffe/util/bbox_util.cpp:840:22: error: ‘MultiBoxLossParameter_MiningType_MAX_NEGATIVE’ was not declared in this scope
+   if (mining_type == MultiBoxLossParameter_MiningType_MAX_NEGATIVE) {
+                      ^
+src/caffe/util/bbox_util.cpp:842:29: error: ‘MultiBoxLossParameter_MiningType_HARD_EXAMPLE’ was not declared in this scope
+   } else if (mining_type == MultiBoxLossParameter_MiningType_HARD_EXAMPLE) {
+                             ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:850:29: error: ‘caffe::Blob’ is not a template
+ void MineHardExamples(const Blob<Dtype>& conf_blob,
+                             ^
+src/caffe/util/bbox_util.cpp:852:27: error: ‘NormalizedBBox’ was not declared in this scope
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                           ^
+src/caffe/util/bbox_util.cpp:852:41: error: template argument 1 is invalid
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                         ^
+src/caffe/util/bbox_util.cpp:852:41: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:852:43: error: template argument 2 is invalid
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:852:43: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:853:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& prior_bboxes,
+                  ^
+src/caffe/util/bbox_util.cpp:853:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& prior_bboxes,
+                                ^
+src/caffe/util/bbox_util.cpp:853:32: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:856:11: error: ‘MultiBoxLossParameter’ does not name a type
+     const MultiBoxLossParameter& multibox_loss_param,
+           ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::MineHardExamples(const caffe::Blob&, const std::vector<int>&, const int&, const int&, const std::vector<std::vector<float> >&, const std::vector<std::map<int, std::vector<float> > >&, const int&, int*, int*, std::vector<std::map<int, std::vector<int> > >*, std::vector<std::vector<int> >*)’:
+src/caffe/util/bbox_util.cpp:866:33: error: request for member ‘size’ in ‘prior_bboxes’, which is of non-class type ‘const int’
+   int num_priors = prior_bboxes.size();
+                                 ^
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp:869:29: error: request for member ‘has_num_classes’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   CHECK(multibox_loss_param.has_num_classes()) << "Must provide num_classes.";
+                             ^
+src/caffe/util/bbox_util.cpp:870:47: error: request for member ‘num_classes’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const int num_classes = multibox_loss_param.num_classes();
+                                               ^
+src/caffe/util/bbox_util.cpp:872:55: error: request for member ‘background_label_id’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const int background_label_id = multibox_loss_param.background_label_id();
+                                                       ^
+src/caffe/util/bbox_util.cpp:873:54: error: request for member ‘use_prior_for_nms’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const bool use_prior_for_nms = multibox_loss_param.use_prior_for_nms();
+                                                      ^
+src/caffe/util/bbox_util.cpp:874:9: error: ‘ConfLossType’ does not name a type
+   const ConfLossType conf_loss_type = multibox_loss_param.conf_loss_type();
+         ^
+src/caffe/util/bbox_util.cpp:875:9: error: ‘MiningType’ does not name a type
+   const MiningType mining_type = multibox_loss_param.mining_type();
+         ^
+src/caffe/util/bbox_util.cpp:876:7: error: ‘mining_type’ was not declared in this scope
+   if (mining_type == MultiBoxLossParameter_MiningType_NONE) {
+       ^
+src/caffe/util/bbox_util.cpp:876:22: error: ‘MultiBoxLossParameter_MiningType_NONE’ was not declared in this scope
+   if (mining_type == MultiBoxLossParameter_MiningType_NONE) {
+                      ^
+src/caffe/util/bbox_util.cpp:879:9: error: ‘LocLossType’ does not name a type
+   const LocLossType loc_loss_type = multibox_loss_param.loc_loss_type();
+         ^
+src/caffe/util/bbox_util.cpp:880:51: error: request for member ‘neg_pos_ratio’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const float neg_pos_ratio = multibox_loss_param.neg_pos_ratio();
+                                                   ^
+src/caffe/util/bbox_util.cpp:881:49: error: request for member ‘neg_overlap’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const float neg_overlap = multibox_loss_param.neg_overlap();
+                                                 ^
+src/caffe/util/bbox_util.cpp:882:50: error: request for member ‘code_type’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const CodeType code_type = multibox_loss_param.code_type();
+                                                  ^
+src/caffe/util/bbox_util.cpp:884:27: error: request for member ‘encode_variance_in_target’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+       multibox_loss_param.encode_variance_in_target();
+                           ^
+src/caffe/util/bbox_util.cpp:885:50: error: request for member ‘has_nms_param’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const bool has_nms_param = multibox_loss_param.has_nms_param();
+                                                  ^
+src/caffe/util/bbox_util.cpp:889:41: error: request for member ‘nms_param’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+     nms_threshold = multibox_loss_param.nms_param().nms_threshold();
+                                         ^
+src/caffe/util/bbox_util.cpp:890:33: error: request for member ‘nms_param’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+     top_k = multibox_loss_param.nms_param().top_k();
+                                 ^
+src/caffe/util/bbox_util.cpp:892:47: error: request for member ‘sample_size’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const int sample_size = multibox_loss_param.sample_size();
+                                               ^
+src/caffe/util/bbox_util.cpp:901:28: error: ‘conf_loss_type’ was not declared in this scope
+       background_label_id, conf_loss_type, *all_match_indices, all_gt_bboxes,
+                            ^
+src/caffe/util/bbox_util.cpp:905:7: error: ‘mining_type’ was not declared in this scope
+   if (mining_type == MultiBoxLossParameter_MiningType_HARD_EXAMPLE) {
+       ^
+src/caffe/util/bbox_util.cpp:905:22: error: ‘MultiBoxLossParameter_MiningType_HARD_EXAMPLE’ was not declared in this scope
+   if (mining_type == MultiBoxLossParameter_MiningType_HARD_EXAMPLE) {
+                      ^
+src/caffe/util/bbox_util.cpp:907:5: error: ‘caffe::Blob’ is not a template
+     Blob<Dtype> loc_pred, loc_gt;
+     ^
+src/caffe/util/bbox_util.cpp:913:56: error: no matching function for call to ‘caffe::Blob::mutable_cpu_data()’
+       Dtype* loc_pred_data = loc_pred.mutable_cpu_data();
+                                                        ^
+In file included from ./include/caffe/caffe.hpp:7:0,
+                 from ./include/caffe/util/bbox_util.hpp:19,
+                 from src/caffe/util/bbox_util.cpp:13:
+./include/caffe/blob.hpp:347:10: note: candidate: template<class Dtype> Dtype* caffe::Blob::mutable_cpu_data()
+   Dtype* mutable_cpu_data() {
+          ^
+./include/caffe/blob.hpp:347:10: note:   template argument deduction/substitution failed:
+src/caffe/util/bbox_util.cpp:913:56: note:   couldn't deduce template parameter ‘Dtype’
+       Dtype* loc_pred_data = loc_pred.mutable_cpu_data();
+                                                        ^
+src/caffe/util/bbox_util.cpp:914:52: error: no matching function for call to ‘caffe::Blob::mutable_cpu_data()’
+       Dtype* loc_gt_data = loc_gt.mutable_cpu_data();
+                                                    ^
+In file included from ./include/caffe/caffe.hpp:7:0,
+                 from ./include/caffe/util/bbox_util.hpp:19,
+                 from src/caffe/util/bbox_util.cpp:13:
+./include/caffe/blob.hpp:347:10: note: candidate: template<class Dtype> Dtype* caffe::Blob::mutable_cpu_data()
+   Dtype* mutable_cpu_data() {
+          ^
+./include/caffe/blob.hpp:347:10: note:   template argument deduction/substitution failed:
+src/caffe/util/bbox_util.cpp:914:52: note:   couldn't deduce template parameter ‘Dtype’
+       Dtype* loc_gt_data = loc_gt.mutable_cpu_data();
+                                                    ^
+src/caffe/util/bbox_util.cpp:920:32: error: ‘loc_loss_type’ was not declared in this scope
+                    num_priors, loc_loss_type, &all_loc_loss);
+                                ^
+src/caffe/util/bbox_util.cpp:947:30: error: ‘mining_type’ was not declared in this scope
+         if (IsEligibleMining(mining_type, match_indices[label][m],
+                              ^
+src/caffe/util/bbox_util.cpp:953:11: error: ‘mining_type’ was not declared in this scope
+       if (mining_type == MultiBoxLossParameter_MiningType_MAX_NEGATIVE) {
+           ^
+src/caffe/util/bbox_util.cpp:953:26: error: ‘MultiBoxLossParameter_MiningType_MAX_NEGATIVE’ was not declared in this scope
+       if (mining_type == MultiBoxLossParameter_MiningType_MAX_NEGATIVE) {
+                          ^
+src/caffe/util/bbox_util.cpp:961:33: error: ‘MultiBoxLossParameter_MiningType_HARD_EXAMPLE’ was not declared in this scope
+       } else if (mining_type == MultiBoxLossParameter_MiningType_HARD_EXAMPLE) {
+                                 ^
+src/caffe/util/bbox_util.cpp:969:16: error: ‘NormalizedBBox’ was not declared in this scope
+         vector<NormalizedBBox> sel_bboxes;
+                ^
+src/caffe/util/bbox_util.cpp:969:30: error: template argument 1 is invalid
+         vector<NormalizedBBox> sel_bboxes;
+                              ^
+src/caffe/util/bbox_util.cpp:969:30: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:972:34: error: ‘mining_type’ was not declared in this scope
+             if (IsEligibleMining(mining_type, match_indices[label][m],
+                                  ^
+src/caffe/util/bbox_util.cpp:975:26: error: request for member ‘push_back’ in ‘sel_bboxes’, which is of non-class type ‘int’
+               sel_bboxes.push_back(prior_bboxes[m]);
+                          ^
+src/caffe/util/bbox_util.cpp:975:50: error: invalid types ‘const int[int]’ for array subscript
+               sel_bboxes.push_back(prior_bboxes[m]);
+                                                  ^
+src/caffe/util/bbox_util.cpp:980:18: error: the value of ‘NormalizedBBox’ is not usable in a constant expression
+           vector<NormalizedBBox> loc_bboxes;
+                  ^
+src/caffe/util/bbox_util.cpp:969:16: note: ‘NormalizedBBox’ was not declared ‘constexpr’
+         vector<NormalizedBBox> sel_bboxes;
+                ^
+src/caffe/util/bbox_util.cpp:980:32: error: type/value mismatch at argument 1 in template parameter list for ‘template<class _Tp, class _Alloc> class std::vector’
+           vector<NormalizedBBox> loc_bboxes;
+                                ^
+src/caffe/util/bbox_util.cpp:980:32: note:   expected a type, got ‘NormalizedBBox’
+src/caffe/util/bbox_util.cpp:980:32: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:984:41: error: request for member ‘find’ in ‘all_loc_preds[i]’, which is of non-class type ‘const value_type {aka const int}’
+                        all_loc_preds[i].find(label)->second, &loc_bboxes);
+                                         ^
+src/caffe/util/bbox_util.cpp:986:34: error: ‘mining_type’ was not declared in this scope
+             if (IsEligibleMining(mining_type, match_indices[label][m],
+                                  ^
+src/caffe/util/bbox_util.cpp:989:26: error: request for member ‘push_back’ in ‘sel_bboxes’, which is of non-class type ‘int’
+               sel_bboxes.push_back(loc_bboxes[m]);
+                          ^
+src/caffe/util/bbox_util.cpp:989:48: error: invalid types ‘int[int]’ for array subscript
+               sel_bboxes.push_back(loc_bboxes[m]);
+                                                ^
+src/caffe/util/bbox_util.cpp:1015:15: error: ‘mining_type’ was not declared in this scope
+           if (mining_type == MultiBoxLossParameter_MiningType_HARD_EXAMPLE &&
+               ^
+src/caffe/util/bbox_util.cpp:1015:30: error: ‘MultiBoxLossParameter_MiningType_HARD_EXAMPLE’ was not declared in this scope
+           if (mining_type == MultiBoxLossParameter_MiningType_HARD_EXAMPLE &&
+                              ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1033:38: error: ‘caffe::Blob’ is not a template
+ template void MineHardExamples(const Blob<float>& conf_blob,
+                                      ^
+src/caffe/util/bbox_util.cpp:1035:27: error: ‘NormalizedBBox’ was not declared in this scope
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                           ^
+src/caffe/util/bbox_util.cpp:1035:41: error: template argument 1 is invalid
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                         ^
+src/caffe/util/bbox_util.cpp:1035:41: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1035:43: error: template argument 2 is invalid
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1035:43: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1036:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& prior_bboxes,
+                  ^
+src/caffe/util/bbox_util.cpp:1036:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& prior_bboxes,
+                                ^
+src/caffe/util/bbox_util.cpp:1036:32: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1039:11: error: ‘MultiBoxLossParameter’ does not name a type
+     const MultiBoxLossParameter& multibox_loss_param,
+           ^
+src/caffe/util/bbox_util.cpp:1033:15: error: template-id ‘MineHardExamples<>’ for ‘void caffe::MineHardExamples(const caffe::Blob&, const std::vector<int>&, const int&, const int&, const std::vector<std::vector<float> >&, const std::vector<std::map<int, std::vector<float> > >&, const int&, int*, int*, std::vector<std::map<int, std::vector<int> > >*, std::vector<std::vector<int> >*)’ does not match any template declaration
+ template void MineHardExamples(const Blob<float>& conf_blob,
+               ^
+src/caffe/util/bbox_util.cpp:1043:38: error: ‘caffe::Blob’ is not a template
+ template void MineHardExamples(const Blob<double>& conf_blob,
+                                      ^
+src/caffe/util/bbox_util.cpp:1045:27: error: ‘NormalizedBBox’ was not declared in this scope
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                           ^
+src/caffe/util/bbox_util.cpp:1045:41: error: template argument 1 is invalid
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                         ^
+src/caffe/util/bbox_util.cpp:1045:41: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1045:43: error: template argument 2 is invalid
+     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1045:43: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1046:18: error: ‘NormalizedBBox’ was not declared in this scope
+     const vector<NormalizedBBox>& prior_bboxes,
+                  ^
+src/caffe/util/bbox_util.cpp:1046:32: error: template argument 1 is invalid
+     const vector<NormalizedBBox>& prior_bboxes,
+                                ^
+src/caffe/util/bbox_util.cpp:1046:32: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1049:11: error: ‘MultiBoxLossParameter’ does not name a type
+     const MultiBoxLossParameter& multibox_loss_param,
+           ^
+src/caffe/util/bbox_util.cpp:1043:15: error: template-id ‘MineHardExamples<>’ for ‘void caffe::MineHardExamples(const caffe::Blob&, const std::vector<int>&, const int&, const int&, const std::vector<std::vector<float> >&, const std::vector<std::map<int, std::vector<float> > >&, const int&, int*, int*, std::vector<std::map<int, std::vector<int> > >*, std::vector<std::vector<int> >*)’ does not match any template declaration
+ template void MineHardExamples(const Blob<double>& conf_blob,
+               ^
+src/caffe/util/bbox_util.cpp:1057:23: error: ‘NormalizedBBox’ was not declared in this scope
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes) {
+                       ^
+src/caffe/util/bbox_util.cpp:1057:37: error: template argument 1 is invalid
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes) {
+                                     ^
+src/caffe/util/bbox_util.cpp:1057:37: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1057:39: error: template argument 2 is invalid
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes) {
+                                       ^
+src/caffe/util/bbox_util.cpp:1057:39: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::GetGroundTruth(const Dtype*, int, int, bool, int*)’:
+src/caffe/util/bbox_util.cpp:1058:18: error: request for member ‘clear’ in ‘all_gt_bboxes->’, which is of non-class type ‘int’
+   all_gt_bboxes->clear();
+                  ^
+src/caffe/util/bbox_util.cpp:1073:5: error: ‘NormalizedBBox’ was not declared in this scope
+     NormalizedBBox bbox;
+     ^
+src/caffe/util/bbox_util.cpp:1074:5: error: ‘bbox’ was not declared in this scope
+     bbox.set_label(label);
+     ^
+src/caffe/util/bbox_util.cpp:1082:29: error: invalid types ‘int[int]’ for array subscript
+     (*all_gt_bboxes)[item_id].push_back(bbox);
+                             ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1089:23: error: ‘NormalizedBBox’ was not declared in this scope
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
+                       ^
+src/caffe/util/bbox_util.cpp:1089:37: error: template argument 1 is invalid
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
+                                     ^
+src/caffe/util/bbox_util.cpp:1089:37: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1089:39: error: template argument 2 is invalid
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
+                                       ^
+src/caffe/util/bbox_util.cpp:1089:39: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1092:23: error: ‘NormalizedBBox’ was not declared in this scope
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
+                       ^
+src/caffe/util/bbox_util.cpp:1092:37: error: template argument 1 is invalid
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
+                                     ^
+src/caffe/util/bbox_util.cpp:1092:37: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1092:39: error: template argument 2 is invalid
+       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
+                                       ^
+src/caffe/util/bbox_util.cpp:1092:39: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::GetGroundTruth(const Dtype*, int, int, bool, std::map<int, int>*)’:
+src/caffe/util/bbox_util.cpp:1105:5: error: ‘NormalizedBBox’ was not declared in this scope
+     NormalizedBBox bbox;
+     ^
+src/caffe/util/bbox_util.cpp:1114:5: error: ‘bbox’ was not declared in this scope
+     bbox.set_xmin(gt_data[start_idx + 3]);
+     ^
+src/caffe/util/bbox_util.cpp:1121:36: error: invalid types ‘std::map<int, int>::mapped_type {aka int}[int]’ for array subscript
+     (*all_gt_bboxes)[item_id][label].push_back(bbox);
+                                    ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::GetLocPredictions(const Dtype*, int, int, int, bool, std::vector<int>*)’:
+src/caffe/util/bbox_util.cpp:1148:24: error: request for member ‘find’ in ‘label_bbox’, which is of non-class type ‘caffe::LabelBBox {aka int}’
+         if (label_bbox.find(label) == label_bbox.end()) {
+                        ^
+src/caffe/util/bbox_util.cpp:1148:50: error: request for member ‘end’ in ‘label_bbox’, which is of non-class type ‘caffe::LabelBBox {aka int}’
+         if (label_bbox.find(label) == label_bbox.end()) {
+                                                  ^
+src/caffe/util/bbox_util.cpp:1149:27: error: invalid types ‘caffe::LabelBBox {aka int}[int]’ for array subscript
+           label_bbox[label].resize(num_preds_per_class);
+                           ^
+src/caffe/util/bbox_util.cpp:1151:25: error: invalid types ‘caffe::LabelBBox {aka int}[int]’ for array subscript
+         label_bbox[label][p].set_xmin(loc_data[start_idx + c * 4]);
+                         ^
+src/caffe/util/bbox_util.cpp:1152:25: error: invalid types ‘caffe::LabelBBox {aka int}[int]’ for array subscript
+         label_bbox[label][p].set_ymin(loc_data[start_idx + c * 4 + 1]);
+                         ^
+src/caffe/util/bbox_util.cpp:1153:25: error: invalid types ‘caffe::LabelBBox {aka int}[int]’ for array subscript
+         label_bbox[label][p].set_xmax(loc_data[start_idx + c * 4 + 2]);
+                         ^
+src/caffe/util/bbox_util.cpp:1154:25: error: invalid types ‘caffe::LabelBBox {aka int}[int]’ for array subscript
+         label_bbox[label][p].set_ymax(loc_data[start_idx + c * 4 + 3]);
+                         ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1171:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:1171:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1171:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1171:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:1171:45: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1173:20: error: ‘NormalizedBBox’ was not declared in this scope
+       const vector<NormalizedBBox>& prior_bboxes,
+                    ^
+src/caffe/util/bbox_util.cpp:1173:34: error: template argument 1 is invalid
+       const vector<NormalizedBBox>& prior_bboxes,
+                                  ^
+src/caffe/util/bbox_util.cpp:1173:34: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1175:13: error: ‘MultiBoxLossParameter’ does not name a type
+       const MultiBoxLossParameter& multibox_loss_param,
+             ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::EncodeLocPrediction(const std::vector<int>&, const int&, const std::vector<std::map<int, std::vector<int> > >&, const int&, const std::vector<std::vector<float> >&, const int&, Dtype*, Dtype*)’:
+src/caffe/util/bbox_util.cpp:1180:50: error: request for member ‘code_type’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const CodeType code_type = multibox_loss_param.code_type();
+                                                  ^
+src/caffe/util/bbox_util.cpp:1182:27: error: request for member ‘encode_variance_in_target’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+       multibox_loss_param.encode_variance_in_target();
+                           ^
+src/caffe/util/bbox_util.cpp:1183:46: error: request for member ‘bp_inside’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const bool bp_inside = multibox_loss_param.bp_inside();
+                                              ^
+src/caffe/util/bbox_util.cpp:1185:27: error: request for member ‘use_prior_for_matching’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+       multibox_loss_param.use_prior_for_matching();
+                           ^
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp:1193:30: error: request for member ‘find’ in ‘all_loc_preds[i]’, which is of non-class type ‘const value_type {aka const int}’
+       CHECK(all_loc_preds[i].find(label) != all_loc_preds[i].end());
+                              ^
+src/caffe/util/bbox_util.cpp:1193:62: error: request for member ‘end’ in ‘all_loc_preds[i]’, which is of non-class type ‘const value_type {aka const int}’
+       CHECK(all_loc_preds[i].find(label) != all_loc_preds[i].end());
+                                                              ^
+src/caffe/util/bbox_util.cpp:1194:20: error: ‘NormalizedBBox’ was not declared in this scope
+       const vector<NormalizedBBox>& loc_pred =
+                    ^
+src/caffe/util/bbox_util.cpp:1194:34: error: template argument 1 is invalid
+       const vector<NormalizedBBox>& loc_pred =
+                                  ^
+src/caffe/util/bbox_util.cpp:1194:34: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1195:28: error: request for member ‘find’ in ‘all_loc_preds[i]’, which is of non-class type ‘const value_type {aka const int}’
+           all_loc_preds[i].find(label)->second;
+                            ^
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp:1202:29: error: request for member ‘find’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+         CHECK(all_gt_bboxes.find(i) != all_gt_bboxes.end());
+                             ^
+src/caffe/util/bbox_util.cpp:1202:54: error: request for member ‘end’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+         CHECK(all_gt_bboxes.find(i) != all_gt_bboxes.end());
+                                                      ^
+src/caffe/util/bbox_util.cpp:1203:40: error: request for member ‘find’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+         CHECK_LT(gt_idx, all_gt_bboxes.find(i)->second.size());
+                                        ^
+src/caffe/util/bbox_util.cpp:1204:15: error: ‘NormalizedBBox’ does not name a type
+         const NormalizedBBox& gt_bbox = all_gt_bboxes.find(i)->second[gt_idx];
+               ^
+src/caffe/util/bbox_util.cpp:1205:24: error: expected ‘;’ before ‘gt_encode’
+         NormalizedBBox gt_encode;
+                        ^
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp:1206:34: error: request for member ‘size’ in ‘prior_bboxes’, which is of non-class type ‘const int’
+         CHECK_LT(j, prior_bboxes.size());
+                                  ^
+src/caffe/util/bbox_util.cpp:1207:34: error: invalid types ‘const int[int]’ for array subscript
+         EncodeBBox(prior_bboxes[j], prior_variances[j], code_type,
+                                  ^
+src/caffe/util/bbox_util.cpp:1208:47: error: ‘gt_bbox’ was not declared in this scope
+                    encode_variance_in_target, gt_bbox, &gt_encode);
+                                               ^
+src/caffe/util/bbox_util.cpp:1208:57: error: ‘gt_encode’ was not declared in this scope
+                    encode_variance_in_target, gt_bbox, &gt_encode);
+                                                         ^
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp:1214:30: error: request for member ‘size’ in ‘loc_pred’, which is of non-class type ‘const int’
+         CHECK_LT(j, loc_pred.size());
+                              ^
+src/caffe/util/bbox_util.cpp:1216:26: error: expected ‘;’ before ‘match_bbox’
+           NormalizedBBox match_bbox = prior_bboxes[j];
+                          ^
+src/caffe/util/bbox_util.cpp:1219:38: error: invalid types ‘const int[int]’ for array subscript
+             DecodeBBox(prior_bboxes[j], prior_variances[j], code_type,
+                                      ^
+src/caffe/util/bbox_util.cpp:1220:72: error: invalid types ‘const int[int]’ for array subscript
+                        encode_variance_in_target, clip_bbox, loc_pred[j],
+                                                                        ^
+src/caffe/util/bbox_util.cpp:1221:25: error: ‘match_bbox’ was not declared in this scope
+                        &match_bbox);
+                         ^
+src/caffe/util/bbox_util.cpp:1226:16: error: ‘match_bbox’ was not declared in this scope
+               (match_bbox.xmin() < 0 || match_bbox.xmin() > 1) ?
+                ^
+src/caffe/util/bbox_util.cpp:1227:44: error: invalid types ‘const int[int]’ for array subscript
+               gt_encode.xmin() : loc_pred[j].xmin();
+                                            ^
+src/caffe/util/bbox_util.cpp:1230:44: error: invalid types ‘const int[int]’ for array subscript
+               gt_encode.ymin() : loc_pred[j].ymin();
+                                            ^
+src/caffe/util/bbox_util.cpp:1233:44: error: invalid types ‘const int[int]’ for array subscript
+               gt_encode.xmax() : loc_pred[j].xmax();
+                                            ^
+src/caffe/util/bbox_util.cpp:1236:44: error: invalid types ‘const int[int]’ for array subscript
+               gt_encode.ymax() : loc_pred[j].ymax();
+                                            ^
+src/caffe/util/bbox_util.cpp:1238:48: error: invalid types ‘const int[int]’ for array subscript
+           loc_pred_data[count * 4] = loc_pred[j].xmin();
+                                                ^
+src/caffe/util/bbox_util.cpp:1239:52: error: invalid types ‘const int[int]’ for array subscript
+           loc_pred_data[count * 4 + 1] = loc_pred[j].ymin();
+                                                    ^
+src/caffe/util/bbox_util.cpp:1240:52: error: invalid types ‘const int[int]’ for array subscript
+           loc_pred_data[count * 4 + 2] = loc_pred[j].xmax();
+                                                    ^
+src/caffe/util/bbox_util.cpp:1241:52: error: invalid types ‘const int[int]’ for array subscript
+           loc_pred_data[count * 4 + 3] = loc_pred[j].ymax();
+                                                    ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1258:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:1258:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1258:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1258:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:1258:45: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1260:20: error: ‘NormalizedBBox’ was not declared in this scope
+       const vector<NormalizedBBox>& prior_bboxes,
+                    ^
+src/caffe/util/bbox_util.cpp:1260:34: error: template argument 1 is invalid
+       const vector<NormalizedBBox>& prior_bboxes,
+                                  ^
+src/caffe/util/bbox_util.cpp:1260:34: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1262:13: error: ‘MultiBoxLossParameter’ does not name a type
+       const MultiBoxLossParameter& multibox_loss_param,
+             ^
+src/caffe/util/bbox_util.cpp:1265:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:1265:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1265:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1265:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:1265:45: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1267:20: error: ‘NormalizedBBox’ was not declared in this scope
+       const vector<NormalizedBBox>& prior_bboxes,
+                    ^
+src/caffe/util/bbox_util.cpp:1267:34: error: template argument 1 is invalid
+       const vector<NormalizedBBox>& prior_bboxes,
+                                  ^
+src/caffe/util/bbox_util.cpp:1267:34: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1269:13: error: ‘MultiBoxLossParameter’ does not name a type
+       const MultiBoxLossParameter& multibox_loss_param,
+             ^
+src/caffe/util/bbox_util.cpp:1273:27: error: ‘caffe::Blob’ is not a template
+ void ComputeLocLoss(const Blob<Dtype>& loc_pred, const Blob<Dtype>& loc_gt,
+                           ^
+src/caffe/util/bbox_util.cpp:1273:56: error: ‘caffe::Blob’ is not a template
+ void ComputeLocLoss(const Blob<Dtype>& loc_pred, const Blob<Dtype>& loc_gt,
+                                                        ^
+src/caffe/util/bbox_util.cpp:1275:50: error: ‘LocLossType’ does not name a type
+       const int num, const int num_priors, const LocLossType loc_loss_type,
+                                                  ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::ComputeLocLoss(const caffe::Blob&, const caffe::Blob&, const std::vector<std::map<int, std::vector<int> > >&, int, int, int, std::vector<std::vector<float> >*)’:
+src/caffe/util/bbox_util.cpp:1279:3: error: ‘caffe::Blob’ is not a template
+   Blob<Dtype> diff;
+   ^
+src/caffe/util/bbox_util.cpp:1283:44: error: no matching function for call to ‘caffe::Blob::cpu_data() const’
+     caffe_sub(loc_count, loc_pred.cpu_data(), loc_gt.cpu_data(),
+                                            ^
+In file included from ./include/caffe/caffe.hpp:7:0,
+                 from ./include/caffe/util/bbox_util.hpp:19,
+                 from src/caffe/util/bbox_util.cpp:13:
+./include/caffe/blob.hpp:335:16: note: candidate: template<class Dtype> const Dtype* caffe::Blob::cpu_data() const
+   const Dtype* cpu_data() const {
+                ^
+./include/caffe/blob.hpp:335:16: note:   template argument deduction/substitution failed:
+src/caffe/util/bbox_util.cpp:1283:44: note:   couldn't deduce template parameter ‘Dtype’
+     caffe_sub(loc_count, loc_pred.cpu_data(), loc_gt.cpu_data(),
+                                            ^
+src/caffe/util/bbox_util.cpp:1283:63: error: no matching function for call to ‘caffe::Blob::cpu_data() const’
+     caffe_sub(loc_count, loc_pred.cpu_data(), loc_gt.cpu_data(),
+                                                               ^
+In file included from ./include/caffe/caffe.hpp:7:0,
+                 from ./include/caffe/util/bbox_util.hpp:19,
+                 from src/caffe/util/bbox_util.cpp:13:
+./include/caffe/blob.hpp:335:16: note: candidate: template<class Dtype> const Dtype* caffe::Blob::cpu_data() const
+   const Dtype* cpu_data() const {
+                ^
+./include/caffe/blob.hpp:335:16: note:   template argument deduction/substitution failed:
+src/caffe/util/bbox_util.cpp:1283:63: note:   couldn't deduce template parameter ‘Dtype’
+     caffe_sub(loc_count, loc_pred.cpu_data(), loc_gt.cpu_data(),
+                                                               ^
+src/caffe/util/bbox_util.cpp:1284:37: error: no matching function for call to ‘caffe::Blob::mutable_cpu_data()’
+               diff.mutable_cpu_data());
+                                     ^
+In file included from ./include/caffe/caffe.hpp:7:0,
+                 from ./include/caffe/util/bbox_util.hpp:19,
+                 from src/caffe/util/bbox_util.cpp:13:
+./include/caffe/blob.hpp:347:10: note: candidate: template<class Dtype> Dtype* caffe::Blob::mutable_cpu_data()
+   Dtype* mutable_cpu_data() {
+          ^
+./include/caffe/blob.hpp:347:10: note:   template argument deduction/substitution failed:
+src/caffe/util/bbox_util.cpp:1284:37: note:   couldn't deduce template parameter ‘Dtype’
+               diff.mutable_cpu_data());
+                                     ^
+src/caffe/util/bbox_util.cpp:1285:31: error: no matching function for call to ‘caffe::Blob::cpu_data()’
+     diff_data = diff.cpu_data();
+                               ^
+In file included from ./include/caffe/caffe.hpp:7:0,
+                 from ./include/caffe/util/bbox_util.hpp:19,
+                 from src/caffe/util/bbox_util.cpp:13:
+./include/caffe/blob.hpp:335:16: note: candidate: template<class Dtype> const Dtype* caffe::Blob::cpu_data() const
+   const Dtype* cpu_data() const {
+                ^
+./include/caffe/blob.hpp:335:16: note:   template argument deduction/substitution failed:
+src/caffe/util/bbox_util.cpp:1285:31: note:   couldn't deduce template parameter ‘Dtype’
+     diff_data = diff.cpu_data();
+                               ^
+src/caffe/util/bbox_util.cpp:1302:32: error: ‘MultiBoxLossParameter_LocLossType_SMOOTH_L1’ was not declared in this scope
+           if (loc_loss_type == MultiBoxLossParameter_LocLossType_SMOOTH_L1) {
+                                ^
+src/caffe/util/bbox_util.cpp:1309:39: error: ‘MultiBoxLossParameter_LocLossType_L2’ was not declared in this scope
+           } else if (loc_loss_type == MultiBoxLossParameter_LocLossType_L2) {
+                                       ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1324:36: error: ‘caffe::Blob’ is not a template
+ template void ComputeLocLoss(const Blob<float>& loc_pred,
+                                    ^
+src/caffe/util/bbox_util.cpp:1325:13: error: ‘caffe::Blob’ is not a template
+       const Blob<float>& loc_gt,
+             ^
+src/caffe/util/bbox_util.cpp:1327:50: error: ‘LocLossType’ does not name a type
+       const int num, const int num_priors, const LocLossType loc_loss_type,
+                                                  ^
+src/caffe/util/bbox_util.cpp:1324:15: error: template-id ‘ComputeLocLoss<>’ for ‘void caffe::ComputeLocLoss(const caffe::Blob&, const caffe::Blob&, const std::vector<std::map<int, std::vector<int> > >&, int, int, int, std::vector<std::vector<float> >*)’ does not match any template declaration
+ template void ComputeLocLoss(const Blob<float>& loc_pred,
+               ^
+src/caffe/util/bbox_util.cpp:1329:36: error: ‘caffe::Blob’ is not a template
+ template void ComputeLocLoss(const Blob<double>& loc_pred,
+                                    ^
+src/caffe/util/bbox_util.cpp:1330:13: error: ‘caffe::Blob’ is not a template
+       const Blob<double>& loc_gt,
+             ^
+src/caffe/util/bbox_util.cpp:1332:50: error: ‘LocLossType’ does not name a type
+       const int num, const int num_priors, const LocLossType loc_loss_type,
+                                                  ^
+src/caffe/util/bbox_util.cpp:1329:15: error: template-id ‘ComputeLocLoss<>’ for ‘void caffe::ComputeLocLoss(const caffe::Blob&, const caffe::Blob&, const std::vector<std::map<int, std::vector<int> > >&, int, int, int, std::vector<std::vector<float> >*)’ does not match any template declaration
+ template void ComputeLocLoss(const Blob<double>& loc_pred,
+               ^
+src/caffe/util/bbox_util.cpp:1397:44: error: ‘ConfLossType’ does not name a type
+       const int background_label_id, const ConfLossType loss_type,
+                                            ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::ComputeConfLoss(const Dtype*, int, int, int, int, int, std::vector<std::vector<float> >*)’:
+src/caffe/util/bbox_util.cpp:1406:24: error: ‘MultiBoxLossParameter_ConfLossType_SOFTMAX’ was not declared in this scope
+       if (loss_type == MultiBoxLossParameter_ConfLossType_SOFTMAX) {
+                        ^
+src/caffe/util/bbox_util.cpp:1421:31: error: ‘MultiBoxLossParameter_ConfLossType_LOGISTIC’ was not declared in this scope
+       } else if (loss_type == MultiBoxLossParameter_ConfLossType_LOGISTIC) {
+                               ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1446:44: error: ‘ConfLossType’ does not name a type
+       const int background_label_id, const ConfLossType loss_type,
+                                            ^
+src/caffe/util/bbox_util.cpp:1450:44: error: ‘ConfLossType’ does not name a type
+       const int background_label_id, const ConfLossType loss_type,
+                                            ^
+src/caffe/util/bbox_util.cpp:1456:44: error: ‘ConfLossType’ does not name a type
+       const int background_label_id, const ConfLossType loss_type,
+                                            ^
+src/caffe/util/bbox_util.cpp:1458:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:1458:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1458:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1458:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:1458:45: error: template argument 4 is invalid
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::ComputeConfLoss(const Dtype*, int, int, int, int, int, const std::vector<std::map<int, std::vector<int> > >&, const int&, std::vector<std::vector<float> >*)’:
+src/caffe/util/bbox_util.cpp:1475:31: error: request for member ‘find’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+           CHECK(all_gt_bboxes.find(i) != all_gt_bboxes.end());
+                               ^
+src/caffe/util/bbox_util.cpp:1475:56: error: request for member ‘end’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+           CHECK(all_gt_bboxes.find(i) != all_gt_bboxes.end());
+                                                        ^
+src/caffe/util/bbox_util.cpp:1476:24: error: ‘NormalizedBBox’ was not declared in this scope
+           const vector<NormalizedBBox>& gt_bboxes =
+                        ^
+src/caffe/util/bbox_util.cpp:1476:38: error: template argument 1 is invalid
+           const vector<NormalizedBBox>& gt_bboxes =
+                                      ^
+src/caffe/util/bbox_util.cpp:1476:38: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1477:29: error: request for member ‘find’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+               all_gt_bboxes.find(i)->second;
+                             ^
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp:1478:46: error: request for member ‘size’ in ‘gt_bboxes’, which is of non-class type ‘const int’
+           CHECK_LT(match_index[p], gt_bboxes.size());
+                                              ^
+src/caffe/util/bbox_util.cpp:1479:43: error: invalid types ‘const int[const value_type {aka const int}]’ for array subscript
+           label = gt_bboxes[match_index[p]].label();
+                                           ^
+src/caffe/util/bbox_util.cpp:1488:24: error: ‘MultiBoxLossParameter_ConfLossType_SOFTMAX’ was not declared in this scope
+       if (loss_type == MultiBoxLossParameter_ConfLossType_SOFTMAX) {
+                        ^
+src/caffe/util/bbox_util.cpp:1503:31: error: ‘MultiBoxLossParameter_ConfLossType_LOGISTIC’ was not declared in this scope
+       } else if (loss_type == MultiBoxLossParameter_ConfLossType_LOGISTIC) {
+                               ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1528:44: error: ‘ConfLossType’ does not name a type
+       const int background_label_id, const ConfLossType loss_type,
+                                            ^
+src/caffe/util/bbox_util.cpp:1530:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:1530:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1530:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1530:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:1530:45: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1534:44: error: ‘ConfLossType’ does not name a type
+       const int background_label_id, const ConfLossType loss_type,
+                                            ^
+src/caffe/util/bbox_util.cpp:1536:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:1536:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1536:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1536:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:1536:45: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1541:35: error: ‘MultiBoxLossParameter’ does not name a type
+       const int num_priors, const MultiBoxLossParameter& multibox_loss_param,
+                                   ^
+src/caffe/util/bbox_util.cpp:1544:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:1544:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1544:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1544:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:1544:45: error: template argument 4 is invalid
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::EncodeConfPrediction(const Dtype*, int, int, const int&, const std::vector<std::map<int, std::vector<int> > >&, const std::vector<std::vector<int> >&, const int&, Dtype*, Dtype*)’:
+src/caffe/util/bbox_util.cpp:1549:29: error: request for member ‘has_num_classes’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   CHECK(multibox_loss_param.has_num_classes()) << "Must provide num_classes.";
+                             ^
+src/caffe/util/bbox_util.cpp:1550:47: error: request for member ‘num_classes’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const int num_classes = multibox_loss_param.num_classes();
+                                               ^
+src/caffe/util/bbox_util.cpp:1552:55: error: request for member ‘background_label_id’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   const int background_label_id = multibox_loss_param.background_label_id();
+                                                       ^
+src/caffe/util/bbox_util.cpp:1554:27: error: request for member ‘map_object_to_agnostic’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+       multibox_loss_param.map_object_to_agnostic();
+                           ^
+src/caffe/util/bbox_util.cpp:1562:9: error: ‘MiningType’ does not name a type
+   const MiningType mining_type = multibox_loss_param.mining_type();
+         ^
+src/caffe/util/bbox_util.cpp:1564:27: error: request for member ‘has_do_neg_mining’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+   if (multibox_loss_param.has_do_neg_mining()) {
+                           ^
+src/caffe/util/bbox_util.cpp:1566:41: error: request for member ‘do_neg_mining’ in ‘multibox_loss_param’, which is of non-class type ‘const int’
+     do_neg_mining = multibox_loss_param.do_neg_mining();
+                                         ^
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp:1568:14: error: ‘mining_type’ was not declared in this scope
+              mining_type != MultiBoxLossParameter_MiningType_NONE);
+              ^
+src/caffe/util/bbox_util.cpp:1568:29: error: ‘MultiBoxLossParameter_MiningType_NONE’ was not declared in this scope
+              mining_type != MultiBoxLossParameter_MiningType_NONE);
+                             ^
+src/caffe/util/bbox_util.cpp:1570:19: error: ‘mining_type’ was not declared in this scope
+   do_neg_mining = mining_type != MultiBoxLossParameter_MiningType_NONE;
+                   ^
+src/caffe/util/bbox_util.cpp:1570:34: error: ‘MultiBoxLossParameter_MiningType_NONE’ was not declared in this scope
+   do_neg_mining = mining_type != MultiBoxLossParameter_MiningType_NONE;
+                                  ^
+src/caffe/util/bbox_util.cpp:1571:9: error: ‘ConfLossType’ does not name a type
+   const ConfLossType conf_loss_type = multibox_loss_param.conf_loss_type();
+         ^
+src/caffe/util/bbox_util.cpp:1574:23: error: request for member ‘find’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+     if (all_gt_bboxes.find(i) != all_gt_bboxes.end()) {
+                       ^
+src/caffe/util/bbox_util.cpp:1574:48: error: request for member ‘end’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+     if (all_gt_bboxes.find(i) != all_gt_bboxes.end()) {
+                                                ^
+src/caffe/util/bbox_util.cpp:1587:27: error: request for member ‘find’ in ‘all_gt_bboxes’, which is of non-class type ‘const int’
+             all_gt_bboxes.find(i)->second[match_index[j]].label();
+                           ^
+src/caffe/util/bbox_util.cpp:1589:19: error: ‘conf_loss_type’ was not declared in this scope
+           switch (conf_loss_type) {
+                   ^
+src/caffe/util/bbox_util.cpp:1590:18: error: ‘MultiBoxLossParameter_ConfLossType_SOFTMAX’ was not declared in this scope
+             case MultiBoxLossParameter_ConfLossType_SOFTMAX:
+                  ^
+src/caffe/util/bbox_util.cpp:1593:18: error: ‘MultiBoxLossParameter_ConfLossType_LOGISTIC’ was not declared in this scope
+             case MultiBoxLossParameter_ConfLossType_LOGISTIC:
+                  ^
+src/caffe/util/bbox_util.cpp:1615:19: error: ‘conf_loss_type’ was not declared in this scope
+           switch (conf_loss_type) {
+                   ^
+src/caffe/util/bbox_util.cpp:1616:18: error: ‘MultiBoxLossParameter_ConfLossType_SOFTMAX’ was not declared in this scope
+             case MultiBoxLossParameter_ConfLossType_SOFTMAX:
+                  ^
+src/caffe/util/bbox_util.cpp:1619:18: error: ‘MultiBoxLossParameter_ConfLossType_LOGISTIC’ was not declared in this scope
+             case MultiBoxLossParameter_ConfLossType_LOGISTIC:
+                  ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1642:35: error: ‘MultiBoxLossParameter’ does not name a type
+       const int num_priors, const MultiBoxLossParameter& multibox_loss_param,
+                                   ^
+src/caffe/util/bbox_util.cpp:1645:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:1645:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1645:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1645:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:1645:45: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1648:35: error: ‘MultiBoxLossParameter’ does not name a type
+       const int num_priors, const MultiBoxLossParameter& multibox_loss_param,
+                                   ^
+src/caffe/util/bbox_util.cpp:1651:29: error: ‘NormalizedBBox’ was not declared in this scope
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                             ^
+src/caffe/util/bbox_util.cpp:1651:43: error: template argument 1 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                           ^
+src/caffe/util/bbox_util.cpp:1651:43: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1651:45: error: template argument 2 is invalid
+       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+                                             ^
+src/caffe/util/bbox_util.cpp:1651:45: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1656:14: error: ‘NormalizedBBox’ was not declared in this scope
+       vector<NormalizedBBox>* prior_bboxes,
+              ^
+src/caffe/util/bbox_util.cpp:1656:28: error: template argument 1 is invalid
+       vector<NormalizedBBox>* prior_bboxes,
+                            ^
+src/caffe/util/bbox_util.cpp:1656:28: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::GetPriorBBoxes(const Dtype*, int, int*, std::vector<std::vector<float> >*)’:
+src/caffe/util/bbox_util.cpp:1658:17: error: request for member ‘clear’ in ‘prior_bboxes->’, which is of non-class type ‘int’
+   prior_bboxes->clear();
+                 ^
+src/caffe/util/bbox_util.cpp:1662:5: error: ‘NormalizedBBox’ was not declared in this scope
+     NormalizedBBox bbox;
+     ^
+src/caffe/util/bbox_util.cpp:1663:5: error: ‘bbox’ was not declared in this scope
+     bbox.set_xmin(prior_data[start_idx]);
+     ^
+src/caffe/util/bbox_util.cpp:1669:19: error: request for member ‘push_back’ in ‘prior_bboxes->’, which is of non-class type ‘int’
+     prior_bboxes->push_back(bbox);
+                   ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1684:14: error: ‘NormalizedBBox’ was not declared in this scope
+       vector<NormalizedBBox>* prior_bboxes,
+              ^
+src/caffe/util/bbox_util.cpp:1684:28: error: template argument 1 is invalid
+       vector<NormalizedBBox>* prior_bboxes,
+                            ^
+src/caffe/util/bbox_util.cpp:1684:28: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1687:14: error: ‘NormalizedBBox’ was not declared in this scope
+       vector<NormalizedBBox>* prior_bboxes,
+              ^
+src/caffe/util/bbox_util.cpp:1687:28: error: template argument 1 is invalid
+       vector<NormalizedBBox>* prior_bboxes,
+                            ^
+src/caffe/util/bbox_util.cpp:1687:28: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1693:32: error: ‘NormalizedBBox’ was not declared in this scope
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections) {
+                                ^
+src/caffe/util/bbox_util.cpp:1693:46: error: template argument 1 is invalid
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections) {
+                                              ^
+src/caffe/util/bbox_util.cpp:1693:46: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1693:48: error: template argument 2 is invalid
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections) {
+                                                ^
+src/caffe/util/bbox_util.cpp:1693:48: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1693:50: error: template argument 2 is invalid
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections) {
+                                                  ^
+src/caffe/util/bbox_util.cpp:1693:50: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::GetDetectionResults(const Dtype*, int, int, int*)’:
+src/caffe/util/bbox_util.cpp:1694:19: error: request for member ‘clear’ in ‘all_detections->’, which is of non-class type ‘int’
+   all_detections->clear();
+                   ^
+src/caffe/util/bbox_util.cpp:1704:5: error: ‘NormalizedBBox’ was not declared in this scope
+     NormalizedBBox bbox;
+     ^
+src/caffe/util/bbox_util.cpp:1705:5: error: ‘bbox’ was not declared in this scope
+     bbox.set_score(det_data[start_idx + 2]);
+     ^
+src/caffe/util/bbox_util.cpp:1712:30: error: invalid types ‘int[int]’ for array subscript
+     (*all_detections)[item_id][label].push_back(bbox);
+                              ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1719:32: error: ‘NormalizedBBox’ was not declared in this scope
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections);
+                                ^
+src/caffe/util/bbox_util.cpp:1719:46: error: template argument 1 is invalid
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections);
+                                              ^
+src/caffe/util/bbox_util.cpp:1719:46: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1719:48: error: template argument 2 is invalid
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections);
+                                                ^
+src/caffe/util/bbox_util.cpp:1719:48: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1719:50: error: template argument 2 is invalid
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections);
+                                                  ^
+src/caffe/util/bbox_util.cpp:1719:50: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1722:32: error: ‘NormalizedBBox’ was not declared in this scope
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections);
+                                ^
+src/caffe/util/bbox_util.cpp:1722:46: error: template argument 1 is invalid
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections);
+                                              ^
+src/caffe/util/bbox_util.cpp:1722:46: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1722:48: error: template argument 2 is invalid
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections);
+                                                ^
+src/caffe/util/bbox_util.cpp:1722:48: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1722:50: error: template argument 2 is invalid
+       map<int, map<int, vector<NormalizedBBox> > >* all_detections);
+                                                  ^
+src/caffe/util/bbox_util.cpp:1722:50: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:1790:28: error: ‘NormalizedBBox’ was not declared in this scope
+ void ApplyNMS(const vector<NormalizedBBox>& bboxes, const vector<float>& scores,
+                            ^
+src/caffe/util/bbox_util.cpp:1790:42: error: template argument 1 is invalid
+ void ApplyNMS(const vector<NormalizedBBox>& bboxes, const vector<float>& scores,
+                                          ^
+src/caffe/util/bbox_util.cpp:1790:42: error: template argument 2 is invalid
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::ApplyNMS(const int&, const std::vector<float>&, float, int, bool, std::map<int, std::map<int, float> >*, std::vector<int>*)’:
+src/caffe/util/bbox_util.cpp:1794:19: error: request for member ‘size’ in ‘bboxes’, which is of non-class type ‘const int’
+   CHECK_EQ(bboxes.size(), scores.size())
+                   ^
+src/caffe/util/bbox_util.cpp:1808:11: error: ‘NormalizedBBox’ does not name a type
+     const NormalizedBBox& best_bbox = bboxes[best_idx];
+           ^
+src/caffe/util/bbox_util.cpp:1809:18: error: ‘best_bbox’ was not declared in this scope
+     if (BBoxSize(best_bbox) < 1e-5) {
+                  ^
+src/caffe/util/bbox_util.cpp:1828:13: error: ‘NormalizedBBox’ does not name a type
+       const NormalizedBBox& cur_bbox = bboxes[cur_idx];
+             ^
+src/caffe/util/bbox_util.cpp:1829:20: error: ‘cur_bbox’ was not declared in this scope
+       if (BBoxSize(cur_bbox) < 1e-5) {
+                    ^
+src/caffe/util/bbox_util.cpp:1847:40: error: ‘best_bbox’ was not declared in this scope
+           cur_overlap = JaccardOverlap(best_bbox, cur_bbox);
+                                        ^
+src/caffe/util/bbox_util.cpp:1847:51: error: ‘cur_bbox’ was not declared in this scope
+           cur_overlap = JaccardOverlap(best_bbox, cur_bbox);
+                                                   ^
+src/caffe/util/bbox_util.cpp:1852:38: error: ‘best_bbox’ was not declared in this scope
+         cur_overlap = JaccardOverlap(best_bbox, cur_bbox);
+                                      ^
+src/caffe/util/bbox_util.cpp:1852:49: error: ‘cur_bbox’ was not declared in this scope
+         cur_overlap = JaccardOverlap(best_bbox, cur_bbox);
+                                                 ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:1865:28: error: ‘NormalizedBBox’ was not declared in this scope
+ void ApplyNMS(const vector<NormalizedBBox>& bboxes, const vector<float>& scores,
+                            ^
+src/caffe/util/bbox_util.cpp:1865:42: error: template argument 1 is invalid
+ void ApplyNMS(const vector<NormalizedBBox>& bboxes, const vector<float>& scores,
+                                          ^
+src/caffe/util/bbox_util.cpp:1865:42: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:1901:32: error: ‘NormalizedBBox’ was not declared in this scope
+ void ApplyNMSFast(const vector<NormalizedBBox>& bboxes,
+                                ^
+src/caffe/util/bbox_util.cpp:1901:46: error: template argument 1 is invalid
+ void ApplyNMSFast(const vector<NormalizedBBox>& bboxes,
+                                              ^
+src/caffe/util/bbox_util.cpp:1901:46: error: template argument 2 is invalid
+In file included from ./include/caffe/util/bbox_util.hpp:17:0,
+                 from src/caffe/util/bbox_util.cpp:13:
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::ApplyNMSFast(const int&, const std::vector<float>&, float, float, float, int, std::vector<int>*)’:
+src/caffe/util/bbox_util.cpp:1906:19: error: request for member ‘size’ in ‘bboxes’, which is of non-class type ‘const int’
+   CHECK_EQ(bboxes.size(), scores.size())
+                   ^
+src/caffe/util/bbox_util.cpp:1922:50: error: invalid types ‘const int[const int]’ for array subscript
+         float overlap = JaccardOverlap(bboxes[idx], bboxes[kept_idx]);
+                                                  ^
+src/caffe/util/bbox_util.cpp:1922:68: error: invalid types ‘const int[const int]’ for array subscript
+         float overlap = JaccardOverlap(bboxes[idx], bboxes[kept_idx]);
+                                                                    ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:2137:57: error: ‘caffe::Blob’ is not a template
+ void VisualizeBBox(const vector<cv::Mat>& images, const Blob<Dtype>* detections,
+                                                         ^
+src/caffe/util/bbox_util.cpp: In function ‘void caffe::VisualizeBBox(const std::vector<cv::Mat>&, const caffe::Blob*, float, const std::vector<cv::Scalar_<double> >&, const std::map<int, std::__cxx11::basic_string<char> >&, const string&)’:
+src/caffe/util/bbox_util.cpp:2152:55: error: no matching function for call to ‘caffe::Blob::cpu_data() const’
+   const Dtype* detections_data = detections->cpu_data();
+                                                       ^
+In file included from ./include/caffe/caffe.hpp:7:0,
+                 from ./include/caffe/util/bbox_util.hpp:19,
+                 from src/caffe/util/bbox_util.cpp:13:
+./include/caffe/blob.hpp:335:16: note: candidate: template<class Dtype> const Dtype* caffe::Blob::cpu_data() const
+   const Dtype* cpu_data() const {
+                ^
+./include/caffe/blob.hpp:335:16: note:   template argument deduction/substitution failed:
+src/caffe/util/bbox_util.cpp:2152:55: note:   couldn't deduce template parameter ‘Dtype’
+   const Dtype* detections_data = detections->cpu_data();
+                                                       ^
+src/caffe/util/bbox_util.cpp:2164:5: error: ‘NormalizedBBox’ was not declared in this scope
+     NormalizedBBox bbox;
+     ^
+src/caffe/util/bbox_util.cpp:2165:5: error: ‘bbox’ was not declared in this scope
+     bbox.set_xmin(detections_data[i * 7 + 3] * width);
+     ^
+src/caffe/util/bbox_util.cpp:2170:34: error: invalid types ‘__gnu_cxx::__alloc_traits<std::allocator<int> >::value_type {aka int}[const int]’ for array subscript
+     all_detections[img_idx][label].push_back(bbox);
+                                  ^
+src/caffe/util/bbox_util.cpp:2190:26: error: ‘NormalizedBBox’ was not declared in this scope
+     for (map<int, vector<NormalizedBBox> >::iterator it =
+                          ^
+src/caffe/util/bbox_util.cpp:2190:40: error: template argument 1 is invalid
+     for (map<int, vector<NormalizedBBox> >::iterator it =
+                                        ^
+src/caffe/util/bbox_util.cpp:2190:40: error: template argument 2 is invalid
+src/caffe/util/bbox_util.cpp:2190:42: error: template argument 2 is invalid
+     for (map<int, vector<NormalizedBBox> >::iterator it =
+                                          ^
+src/caffe/util/bbox_util.cpp:2190:42: error: template argument 4 is invalid
+src/caffe/util/bbox_util.cpp:2190:54: error: expected ‘;’ before ‘it’
+     for (map<int, vector<NormalizedBBox> >::iterator it =
+                                                      ^
+src/caffe/util/bbox_util.cpp:2190:54: error: ‘it’ was not declared in this scope
+src/caffe/util/bbox_util.cpp:2191:28: error: request for member ‘begin’ in ‘all_detections[i]’, which is of non-class type ‘__gnu_cxx::__alloc_traits<std::allocator<int> >::value_type {aka int}’
+          all_detections[i].begin(); it != all_detections[i].end(); ++it) {
+                            ^
+src/caffe/util/bbox_util.cpp:2191:61: error: request for member ‘end’ in ‘all_detections[i]’, which is of non-class type ‘__gnu_cxx::__alloc_traits<std::allocator<int> >::value_type {aka int}’
+          all_detections[i].begin(); it != all_detections[i].end(); ++it) {
+                                                             ^
+src/caffe/util/bbox_util.cpp:2191:66: error: expected ‘)’ before ‘;’ token
+          all_detections[i].begin(); it != all_detections[i].end(); ++it) {
+                                                                  ^
+src/caffe/util/bbox_util.cpp:2191:70: error: ‘it’ was not declared in this scope
+          all_detections[i].begin(); it != all_detections[i].end(); ++it) {
+                                                                      ^
+src/caffe/util/bbox_util.cpp: At global scope:
+src/caffe/util/bbox_util.cpp:2237:26: error: ‘caffe::Blob’ is not a template
+                    const Blob<float>* detections,
+                          ^
+src/caffe/util/bbox_util.cpp:2236:6: error: template-id ‘VisualizeBBox<>’ for ‘void caffe::VisualizeBBox(const std::vector<cv::Mat>&, const caffe::Blob*, float, const std::vector<cv::Scalar_<double> >&, const std::map<int, std::__cxx11::basic_string<char> >&, const string&)’ does not match any template declaration
+ void VisualizeBBox(const vector<cv::Mat>& images,
+      ^
+src/caffe/util/bbox_util.cpp:2243:26: error: ‘caffe::Blob’ is not a template
+                    const Blob<double>* detections,
+                          ^
+src/caffe/util/bbox_util.cpp:2242:6: error: template-id ‘VisualizeBBox<>’ for ‘void caffe::VisualizeBBox(const std::vector<cv::Mat>&, const caffe::Blob*, float, const std::vector<cv::Scalar_<double> >&, const std::map<int, std::__cxx11::basic_string<char> >&, const string&)’ does not match any template declaration
+ void VisualizeBBox(const vector<cv::Mat>& images,
+      ^
+src/caffe/util/bbox_util.cpp: In instantiation of ‘void caffe::EncodeLocPrediction(const std::vector<int>&, const int&, const std::vector<std::map<int, std::vector<int> > >&, const int&, const std::vector<std::vector<float> >&, const int&, Dtype*, Dtype*) [with Dtype = float]’:
+src/caffe/util/bbox_util.cpp:1263:47:   required from here
+src/caffe/util/bbox_util.cpp:1217:11: error: in argument to unary !
+           if (!use_prior_for_matching) {
+           ^
+src/caffe/util/bbox_util.cpp: In instantiation of ‘void caffe::EncodeLocPrediction(const std::vector<int>&, const int&, const std::vector<std::map<int, std::vector<int> > >&, const int&, const std::vector<std::vector<float> >&, const int&, Dtype*, Dtype*) [with Dtype = double]’:
+src/caffe/util/bbox_util.cpp:1270:49:   required from here
+src/caffe/util/bbox_util.cpp:1217:11: error: in argument to unary !
