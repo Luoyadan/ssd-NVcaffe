@@ -451,6 +451,7 @@ message LayerParameter {
   optional LRNParameter lrn_param = 118;
   optional MemoryDataParameter memory_data_param = 119;
   optional MVNParameter mvn_param = 120;
+  optional ParameterParameter parameter_param = 151;
   optional PoolingParameter pooling_param = 121;
   optional PowerParameter power_param = 122;
   optional PReLUParameter prelu_param = 131;
@@ -1067,6 +1068,10 @@ message MVNParameter {
   optional float eps = 3 [default = 1e-9];
 }
 
+message ParameterParameter {
+  optional BlobShape shape = 1;
+}
+
 message PoolingParameter {
   enum PoolMethod {
     MAX = 0;
@@ -1491,6 +1496,7 @@ message V1LayerParameter {
   optional LRNParameter lrn_param = 18;
   optional MemoryDataParameter memory_data_param = 22;
   optional MVNParameter mvn_param = 34;
+  optional ParameterParameter parameter_param = 145;
   optional PoolingParameter pooling_param = 19;
   optional PowerParameter power_param = 21;
   optional ReLUParameter relu_param = 30;
