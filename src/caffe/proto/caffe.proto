@@ -452,6 +452,7 @@ message LayerParameter {
   optional MemoryDataParameter memory_data_param = 119;
   optional MVNParameter mvn_param = 120;
   optional ParameterParameter parameter_param = 151;
+  optional PermuteParameter permute_param = 202;
   optional PoolingParameter pooling_param = 121;
   optional PowerParameter power_param = 122;
   optional PReLUParameter prelu_param = 131;
@@ -1072,6 +1073,12 @@ message ParameterParameter {
   optional BlobShape shape = 1;
 }
 
+message PermuteParameter {
+  // The new orders of the axes of data. Notice it should be with
+  // in the same range as the input data, and it starts from 0.
+  // Do not provide repeated order.
+  repeated uint32 order = 1;
+}
 message PoolingParameter {
   enum PoolMethod {
     MAX = 0;
@@ -1497,6 +1504,7 @@ message V1LayerParameter {
   optional MemoryDataParameter memory_data_param = 22;
   optional MVNParameter mvn_param = 34;
   optional ParameterParameter parameter_param = 145;
+  
   optional PoolingParameter pooling_param = 19;
   optional PowerParameter power_param = 21;
   optional ReLUParameter relu_param = 30;
