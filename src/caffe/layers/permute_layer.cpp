@@ -5,10 +5,10 @@
 
 namespace caffe {
 
-template <typename Ftype, typename Btype>
-void Permute(const int count, Btype* bottom_data, const bool forward,
+template <typename Dtype>
+void Permute(const int count, Dtype* bottom_data, const bool forward,
     const int* permute_order, const int* old_steps, const int* new_steps,
-    const int num_axes, Btype* top_data) {
+    const int num_axes, Dtype* top_data) {
     for (int i = 0; i < count; ++i) {
       int old_idx = 0;
       int idx = i;
@@ -105,7 +105,7 @@ void PermuteLayer<Ftype, Btype>::Forward_cpu(const vector<Blob*>& bottom,
     const int* old_steps = old_steps_.cpu_data();
     const int* new_steps = new_steps_.cpu_data();
     bool forward = true;
-    Permute(top_count, bottom_data, forward, permute_order, old_steps,
+    Permute<Ftype>(top_count, bottom_data, forward, permute_order, old_steps,
             new_steps, num_axes_, top_data);
   } else {
     // If there is no need to permute, we share data to save memory.
@@ -124,7 +124,7 @@ void PermuteLayer<Ftype, Btype>::Backward_cpu(const vector<Blob*>& top,
     const int* old_steps = old_steps_.cpu_data();
     const int* new_steps = new_steps_.cpu_data();
     bool forward = false;
-    Permute(top_count, bottom_diff, forward, permute_order, old_steps,
+    Permute<Btype>(top_count, bottom_diff, forward, permute_order, old_steps,
             new_steps, num_axes_, top_diff);
   } else {
     // If there is no need to permute, we share diff to save memory.

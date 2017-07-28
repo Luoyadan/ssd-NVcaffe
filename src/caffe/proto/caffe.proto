@@ -451,6 +451,7 @@ message LayerParameter {
   optional LRNParameter lrn_param = 118;
   optional MemoryDataParameter memory_data_param = 119;
   optional MVNParameter mvn_param = 120;
+  optional NormalizeParameter norm_param = 206;
   optional ParameterParameter parameter_param = 151;
   optional PermuteParameter permute_param = 202;
   optional PoolingParameter pooling_param = 121;
@@ -1068,6 +1069,18 @@ message MVNParameter {
   // Epsilon for not dividing by zero while normalizing variance
   optional float eps = 3 [default = 1e-9];
 }
+
+// Message that stores parameters used by NormalizeLayer
+message NormalizeParameter {
+  optional bool across_spatial = 1 [default = true];
+  // Initial value of scale. Default is 1.0 for all
+  optional FillerParameter scale_filler = 2;
+  // Whether or not scale parameters are shared across channels.
+  optional bool channel_shared = 3 [default = true];
+  // Epsilon for not dividing by zero while normalizing variance
+  optional float eps = 4 [default = 1e-10];
+}
+
 
 message ParameterParameter {
   optional BlobShape shape = 1;
