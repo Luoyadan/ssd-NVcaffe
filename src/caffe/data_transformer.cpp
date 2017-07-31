@@ -1,7 +1,7 @@
 #ifdef USE_OPENCV
 
 #include <opencv2/core/core.hpp>
-
+#include <opencv2/videoio.hpp>
 #endif  // USE_OPENCV
 
 #include <string>
@@ -63,7 +63,7 @@ void DataTransformer<Dtype>::Copy(const cv::Mat& cv_img, Dtype *data) {
     }
   }
 }
-#endif
+#endif //USE_OPENCV
 
 template<typename Dtype>
 void DataTransformer<Dtype>::Copy(const Datum& datum, Dtype* data, size_t& out_sizeof_element) {
@@ -356,6 +356,62 @@ void DataTransformer<Dtype>::TransformPtrEntry(shared_ptr<Datum> datum,
     }
     TransformPtrInt(*datum, transformed_ptr, rand);
   }
+}
+
+template<typename Dtype>
+void DataTransformer<Dtype>::Transform(const Datum& datum,
+                                       TBlob<Dtype>* transformed_blob,
+                                       NormalizedBBox* crop_bbox,
+                                       bool* do_mirror) {
+  // If datum is encoded, decoded and transform the cv::image.
+  if (datum.encoded()) {
+#ifdef USE_OPENCV
+    CHECK(!(param_.force_color() && param_.force_gray()))
+        << "cannot set both force_color and force_gray";
+    cv::Mat cv_img;
+    if (param_.force_color() || param_.force_gray()) {
+    // If force_color then decode in color otherwise decode in gray.
+      cv_img = DecodeDatumToCVMat(datum, param_.force_color());
+    } else {
+      cv_img = DecodeDatumToCVMatNative(datum);
+    }
+    // Transform the cv::image into blob.
+    return Transform(cv_img, transformed_blob, crop_bbox, do_mirror);
+#else
+    LOG(FATAL) << "Encoded datum requires OpenCV; compile with USE_OPENCV.";
+#endif  // USE_OPENCV
+  } else {
+    if (param_.force_color() || param_.force_gray()) {
+      LOG(ERROR) << "force_color and force_gray only for encoded datum";
+    }
+  }
+
+  const int crop_size = param_.crop_size();
+  const int datum_channels = datum.channels();
+  const int datum_height = datum.height();
+  const int datum_width = datum.width();
+
+  // Check dimensions.
+  const int channels = transformed_blob->channels();
+  const int height = transformed_blob->height();
+  const int width = transformed_blob->width();
+  const int num = transformed_blob->num();
+
+  CHECK_EQ(channels, datum_channels);
+  CHECK_LE(height, datum_height);
+  CHECK_LE(width, datum_width);
+  CHECK_GE(num, 1);
+
+  if (crop_size) {
+    CHECK_EQ(crop_size, height);
+    CHECK_EQ(crop_size, width);
+  } else {
+    CHECK_EQ(datum_height, height);
+    CHECK_EQ(datum_width, width);
+  }
+
+  Dtype* transformed_data = transformed_blob->mutable_cpu_data();
+  Transform(datum, transformed_data, crop_bbox, do_mirror);
 }
 
 template<typename Dtype>
@@ -663,6 +719,7 @@ void DataTransformer<Dtype>::CropImage(const AnnotatedDatum& anno_datum,
                       cropped_anno_datum->mutable_annotation_group());
 }
 
+
 template<typename Dtype>
 void DataTransformer<Dtype>::ExpandImage(const Datum& datum,
                                          const float expand_ratio,
@@ -736,6 +793,7 @@ void DataTransformer<Dtype>::ExpandImage(const Datum& datum,
   }
   expand_datum->set_data(buffer);
 }
+
 
 template<typename Dtype>
 void DataTransformer<Dtype>::ExpandImage(const AnnotatedDatum& anno_datum,
@@ -955,6 +1013,103 @@ void DataTransformer<Dtype>::Transform(const cv::Mat& cv_img,
 }
 
 // Revised from ssd-caffe
+template <typename Dtype>
+void DataTransformer<Dtype>::CropImage(const cv::Mat& img,
+                                       const NormalizedBBox& bbox,
+                                       cv::Mat* crop_img) {
+  const int img_height = img.rows;
+  const int img_width = img.cols;
+
+  // Get the bbox dimension.
+  NormalizedBBox clipped_bbox;
+  ClipBBox(bbox, &clipped_bbox);
+  NormalizedBBox scaled_bbox;
+  ScaleBBox(clipped_bbox, img_height, img_width, &scaled_bbox);
+
+  // Crop the image using bbox.
+  int w_off = static_cast<int>(scaled_bbox.xmin());
+  int h_off = static_cast<int>(scaled_bbox.ymin());
+  int width = static_cast<int>(scaled_bbox.xmax() - scaled_bbox.xmin());
+  int height = static_cast<int>(scaled_bbox.ymax() - scaled_bbox.ymin());
+  cv::Rect bbox_roi(w_off, h_off, width, height);
+
+  img(bbox_roi).copyTo(*crop_img);
+}
+
+template <typename Dtype>
+void DataTransformer<Dtype>::ExpandImage(const cv::Mat& img,
+                                         const float expand_ratio,
+                                         NormalizedBBox* expand_bbox,
+                                         cv::Mat* expand_img) {
+  const int img_height = img.rows;
+  const int img_width = img.cols;
+  const int img_channels = img.channels();
+
+  // Get the bbox dimension.
+  int height = static_cast<int>(img_height * expand_ratio);
+  int width = static_cast<int>(img_width * expand_ratio);
+  float h_off, w_off;
+  caffe_rng_uniform(1, 0.f, static_cast<float>(height - img_height), &h_off);
+  caffe_rng_uniform(1, 0.f, static_cast<float>(width - img_width), &w_off);
+  h_off = floor(h_off);
+  w_off = floor(w_off);
+  expand_bbox->set_xmin(-w_off/img_width);
+  expand_bbox->set_ymin(-h_off/img_height);
+  expand_bbox->set_xmax((width - w_off)/img_width);
+  expand_bbox->set_ymax((height - h_off)/img_height);
+
+  expand_img->create(height, width, img.type());
+  expand_img->setTo(cv::Scalar(0));
+  const bool has_mean_file = param_.has_mean_file();
+  const bool has_mean_values = mean_values_.size() > 0;
+
+  if (has_mean_file) {
+    CHECK_EQ(img_channels, data_mean_.channels());
+    CHECK_EQ(height, data_mean_.height());
+    CHECK_EQ(width, data_mean_.width());
+    Dtype* mean = data_mean_.template mutable_cpu_data<Dtype>();
+    for (int h = 0; h < height; ++h) {
+      uchar* ptr = expand_img->ptr<uchar>(h);
+      int img_index = 0;
+      for (int w = 0; w < width; ++w) {
+        for (int c = 0; c < img_channels; ++c) {
+          int blob_index = (c * height + h) * width + w;
+          ptr[img_index++] = static_cast<char>(mean[blob_index]);
+        }
+      }
+    }
+  }
+  if (has_mean_values) {
+    CHECK(mean_values_.size() == 1 || mean_values_.size() == img_channels) <<
+        "Specify either 1 mean_value or as many as channels: " << img_channels;
+    if (img_channels > 1 && mean_values_.size() == 1) {
+      // Replicate the mean_value for simplicity
+      for (int c = 1; c < img_channels; ++c) {
+        mean_values_.push_back(mean_values_[0]);
+      }
+    }
+    vector<cv::Mat> channels(img_channels);
+    cv::split(*expand_img, channels);
+    CHECK_EQ(channels.size(), mean_values_.size());
+    for (int c = 0; c < img_channels; ++c) {
+      channels[c] = mean_values_[c];
+    }
+    cv::merge(channels, *expand_img);
+  }
+
+  cv::Rect bbox_roi(w_off, h_off, img_width, img_height);
+  img.copyTo((*expand_img)(bbox_roi));
+}
+
+#endif  // USE_OPENCV
+
+
+
+
+
+
+
+
 
 template<typename Dtype>
 void DataTransformer<Dtype>::Transform(const cv::Mat& cv_img,
@@ -1256,7 +1411,7 @@ void DataTransformer<Dtype>::TransformPtr(const cv::Mat& cv_img,
   }
 }
 
-#endif  // USE_OPENCV
+
 
 template<typename Dtype>
 vector<int> DataTransformer<Dtype>::InferBlobShape(const Datum& datum, bool use_gpu) {
