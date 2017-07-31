@@ -1,0 +1,1126 @@
+src/caffe/layers/multibox_loss_layer.cpp: In member function ‘virtual void caffe::MultiBoxLossLayer<Ftype, Btype>::Forward_cpu(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&)’:
+src/caffe/layers/multibox_loss_layer.cpp:182:37: error: no matching function for call to ‘MineHardExamples(caffe::Blob&, std::vector<std::map<int, std::vector<caffe::NormalizedBBox> > >&, std::map<int, std::vector<caffe::NormalizedBBox> >&, std::vector<caffe::NormalizedBBox>&, std::vector<std::vector<float> >&, std::vector<std::map<int, std::vector<float> > >&, caffe::MultiBoxLossParameter&, int*, int*, std::vector<std::map<int, std::vector<int> > >*, std::vector<std::vector<int> >*)’
+                    &all_neg_indices_);
+                                     ^
+In file included from ./include/caffe/layers/multibox_loss_layer.hpp:11:0,
+                 from src/caffe/layers/multibox_loss_layer.cpp:6:
+./include/caffe/util/bbox_util.hpp:179:6: note: candidate: template<class Dtype> void caffe::MineHardExamples(const caffe::TBlob<Dtype>&, const std::vector<std::map<int, std::vector<caffe::NormalizedBBox> > >&, const std::map<int, std::vector<caffe::NormalizedBBox> >&, const std::vector<caffe::NormalizedBBox>&, const std::vector<std::vector<float> >&, const std::vector<std::map<int, std::vector<float> > >&, const caffe::MultiBoxLossParameter&, int*, int*, std::vector<std::map<int, std::vector<int> > >*, std::vector<std::vector<int> >*)
+ void MineHardExamples(const TBlob<Dtype>& conf_blob,
+      ^
+./include/caffe/util/bbox_util.hpp:179:6: note:   template argument deduction/substitution failed:
+src/caffe/layers/multibox_loss_layer.cpp:182:37: note:   ‘caffe::Blob’ is not derived from ‘const caffe::TBlob<Dtype>’
+                    &all_neg_indices_);
+                                     ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/layers/multibox_loss_layer.hpp:8,
+                 from src/caffe/layers/multibox_loss_layer.cpp:6:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, float>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: error: no matching function for call to ‘boost::shared_ptr<caffe::Layer<float, float> >::shared_ptr(boost::shared_ptr<caffe::LayerBase>)’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, float>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<float, float> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, float>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::Layer<float, float>]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::shared_ptr<caffe::Layer<float, float> >&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   candidate expects 2 arguments, 1 provided
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, float>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<float, float> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, float>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::Layer<float, float>]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘const boost::shared_ptr<caffe::Layer<float, float> >&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::Layer<float, float>; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::Layer<float, float>]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, double>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: error: no matching function for call to ‘boost::shared_ptr<caffe::Layer<float, double> >::shared_ptr(boost::shared_ptr<caffe::LayerBase>)’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, double>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<float, double> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, double>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::Layer<float, double>]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::shared_ptr<caffe::Layer<float, double> >&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   candidate expects 2 arguments, 1 provided
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, double>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<float, double> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, double>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::Layer<float, double>]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘const boost::shared_ptr<caffe::Layer<float, double> >&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::Layer<float, double>; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::Layer<float, double>]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, float>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: error: no matching function for call to ‘boost::shared_ptr<caffe::Layer<double, float> >::shared_ptr(boost::shared_ptr<caffe::LayerBase>)’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, float>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<double, float> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, float>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::Layer<double, float>]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::shared_ptr<caffe::Layer<double, float> >&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   candidate expects 2 arguments, 1 provided
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, float>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<double, float> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, float>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::Layer<double, float>]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘const boost::shared_ptr<caffe::Layer<double, float> >&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::Layer<double, float>; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::Layer<double, float>]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, double>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: error: no matching function for call to ‘boost::shared_ptr<caffe::Layer<double, double> >::shared_ptr(boost::shared_ptr<caffe::LayerBase>)’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, double>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<double, double> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, double>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::Layer<double, double>]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::shared_ptr<caffe::Layer<double, double> >&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   candidate expects 2 arguments, 1 provided
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, double>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<double, double> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, double>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::Layer<double, double>]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘const boost::shared_ptr<caffe::Layer<double, double> >&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::Layer<double, double>; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::Layer<double, double>]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, float>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: error: no matching function for call to ‘boost::shared_ptr<caffe::Layer<half_float::half, float> >::shared_ptr(boost::shared_ptr<caffe::LayerBase>)’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, float>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<half_float::half, float> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, float>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::Layer<half_float::half, float>]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::shared_ptr<caffe::Layer<half_float::half, float> >&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   candidate expects 2 arguments, 1 provided
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, float>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<half_float::half, float> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, float>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = float]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::Layer<half_float::half, float>]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘const boost::shared_ptr<caffe::Layer<half_float::half, float> >&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::Layer<half_float::half, float>; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::Layer<half_float::half, float>]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, half_float::half>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: error: no matching function for call to ‘boost::shared_ptr<caffe::Layer<float, half_float::half> >::shared_ptr(boost::shared_ptr<caffe::LayerBase>)’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, half_float::half>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<float, half_float::half> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, half_float::half>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::Layer<float, half_float::half>]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::shared_ptr<caffe::Layer<float, half_float::half> >&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   candidate expects 2 arguments, 1 provided
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, half_float::half>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<float, half_float::half> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<float, half_float::half>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = float; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::Layer<float, half_float::half>]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘const boost::shared_ptr<caffe::Layer<float, half_float::half> >&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::Layer<float, half_float::half>; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::Layer<float, half_float::half>]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, double>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: error: no matching function for call to ‘boost::shared_ptr<caffe::Layer<half_float::half, double> >::shared_ptr(boost::shared_ptr<caffe::LayerBase>)’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, double>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<half_float::half, double> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, double>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::Layer<half_float::half, double>]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::shared_ptr<caffe::Layer<half_float::half, double> >&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   candidate expects 2 arguments, 1 provided
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, double>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<half_float::half, double> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, double>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = double]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::Layer<half_float::half, double>]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘const boost::shared_ptr<caffe::Layer<half_float::half, double> >&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::Layer<half_float::half, double>; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::Layer<half_float::half, double>]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, half_float::half>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: error: no matching function for call to ‘boost::shared_ptr<caffe::Layer<double, half_float::half> >::shared_ptr(boost::shared_ptr<caffe::LayerBase>)’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, half_float::half>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<double, half_float::half> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, half_float::half>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::Layer<double, half_float::half>]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::shared_ptr<caffe::Layer<double, half_float::half> >&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   candidate expects 2 arguments, 1 provided
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, half_float::half>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<double, half_float::half> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<double, half_float::half>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = double; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::Layer<double, half_float::half>]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘const boost::shared_ptr<caffe::Layer<double, half_float::half> >&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::Layer<double, half_float::half>; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::Layer<double, half_float::half>]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, half_float::half>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: error: no matching function for call to ‘boost::shared_ptr<caffe::Layer<half_float::half, half_float::half> >::shared_ptr(boost::shared_ptr<caffe::LayerBase>)’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, half_float::half>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<half_float::half, half_float::half> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, half_float::half>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::Layer<half_float::half, half_float::half>]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::shared_ptr<caffe::Layer<half_float::half, half_float::half> >&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘std::auto_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   candidate expects 2 arguments, 1 provided
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In substitution of ‘template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type) [with Y = caffe::LayerBase]’:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9:   required from ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, half_float::half>]’
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: error: no type named ‘type’ in ‘struct boost::detail::sp_enable_if_convertible<caffe::LayerBase, caffe::Layer<half_float::half, half_float::half> >’
+/usr/include/boost/smart_ptr/shared_ptr.hpp: In instantiation of ‘boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(boost::shared_ptr<Y>&&) [with Y = caffe::LayerBase; T = caffe::Layer<half_float::half, half_float::half>]’:
+src/caffe/layers/multibox_loss_layer.cpp:78:21:   required from ‘void caffe::MultiBoxLossLayer<Ftype, Btype>::LayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&) [with Ftype = half_float::half; Btype = half_float::half]’
+src/caffe/layers/multibox_loss_layer.cpp:374:1:   required from here
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   ‘boost::shared_ptr<caffe::LayerBase>’ is not derived from ‘const boost::weak_ptr<Y>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::Layer<half_float::half, half_float::half>]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘const boost::shared_ptr<caffe::Layer<half_float::half, half_float::half> >&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   cannot convert ‘r’ (type ‘boost::shared_ptr<caffe::LayerBase>’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:596:9: note:   mismatched types ‘Y*’ and ‘boost::shared_ptr<caffe::LayerBase>’
+         this_type( static_cast< shared_ptr<Y> && >( r ) ).swap( *this );
+         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::Layer<half_float::half, half_float::half>; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘boost::shared_ptr<caffe::LayerBase>’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::Layer<half_float::half, half_float::half>]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided

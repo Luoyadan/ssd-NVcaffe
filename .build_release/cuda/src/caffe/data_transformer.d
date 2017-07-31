@@ -323,6 +323,18 @@
     /usr/local/cuda/include/cuda_fp16.h \
     ./include/caffe/util/gpu_math_functions.cuh \
     ./include/caffe/data_transformer.hpp \
+    /usr/include/google/protobuf/repeated_field.h \
+    /usr/include/c++/5/iterator \
+    /usr/include/c++/5/bits/stream_iterator.h \
+    /usr/include/google/protobuf/stubs/common.h \
+    /usr/include/google/protobuf/stubs/type_traits.h \
+    /usr/include/google/protobuf/stubs/template_util.h \
+    /usr/include/google/protobuf/generated_message_util.h \
+    /usr/include/google/protobuf/stubs/once.h \
+    /usr/include/google/protobuf/stubs/atomicops.h \
+    /usr/include/google/protobuf/stubs/platform_macros.h \
+    /usr/include/google/protobuf/stubs/atomicops_internals_x86_gcc.h \
+    /usr/include/google/protobuf/message_lite.h \
     ./include/caffe/blob.hpp \
     /usr/include/boost/make_shared.hpp \
     /usr/include/boost/smart_ptr/make_shared.hpp \
@@ -735,8 +747,6 @@
     /usr/include/boost/date_time/time_duration.hpp \
     /usr/include/boost/operators.hpp \
     /usr/include/boost/iterator.hpp \
-    /usr/include/c++/5/iterator \
-    /usr/include/c++/5/bits/stream_iterator.h \
     /usr/include/boost/date_time/time_defs.hpp \
     /usr/include/boost/date_time/special_defs.hpp \
     /usr/include/boost/date_time/time_resolution_traits.hpp \
@@ -1071,18 +1081,8 @@
     ./3rdparty/half_float/half.hpp \
     ./include/caffe/syncedmem.hpp \
     .build_release/src/caffe/proto/caffe.pb.h \
-    /usr/include/google/protobuf/stubs/common.h \
-    /usr/include/google/protobuf/generated_message_util.h \
-    /usr/include/google/protobuf/stubs/once.h \
-    /usr/include/google/protobuf/stubs/atomicops.h \
-    /usr/include/google/protobuf/stubs/platform_macros.h \
-    /usr/include/google/protobuf/stubs/atomicops_internals_x86_gcc.h \
     /usr/include/google/protobuf/message.h \
-    /usr/include/google/protobuf/message_lite.h \
     /usr/include/google/protobuf/descriptor.h \
-    /usr/include/google/protobuf/repeated_field.h \
-    /usr/include/google/protobuf/stubs/type_traits.h \
-    /usr/include/google/protobuf/stubs/template_util.h \
     /usr/include/google/protobuf/extension_set.h \
     /usr/include/google/protobuf/generated_enum_reflection.h \
     /usr/include/google/protobuf/unknown_field_set.h \

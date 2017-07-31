@@ -176,7 +176,7 @@ int CountNumMatches(const vector<map<int, vector<int> > >& all_match_indices,
 //    all_match_indices: stores mapping between predictions and ground truth.
 //    all_loc_loss: stores the confidence loss per location for each image.
 template <typename Dtype>
-void MineHardExamples(const Blob<Dtype>& conf_blob,
+void MineHardExamples(const TBlob<Dtype>& conf_blob,
     const vector<LabelBBox>& all_loc_preds,
     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
     const vector<NormalizedBBox>& prior_bboxes,
@@ -246,7 +246,7 @@ void EncodeLocPrediction(const vector<LabelBBox>& all_loc_preds,
 //    loc_loss_type: type of localization loss, Smooth_L1 or L2.
 //    all_loc_loss: stores the localization loss for all priors in a batch.
 template <typename Dtype>
-void ComputeLocLoss(const Blob<Dtype>& loc_pred, const Blob<Dtype>& loc_gt,
+void ComputeLocLoss(const TBlob<Dtype>& loc_pred, const TBlob<Dtype>& loc_gt,
       const vector<map<int, vector<int> > >& all_match_indices,
       const int num, const int num_priors, const LocLossType loc_loss_type,
       vector<vector<float> >* all_loc_loss);
@@ -295,7 +295,7 @@ void ComputeConfLoss(const Dtype* conf_data, const int num,
       const int background_label_id, const ConfLossType loss_type,
       const vector<map<int, vector<int> > >& all_match_indices,
       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
-      vector<vector<float> >* all_conf_loss);
+      vector<vector<Dtype> >* all_conf_loss);
 
 // Compute the negative confidence loss for each prior from conf_data.
 //    conf_data: num x num_preds_per_class * num_classes blob.
@@ -310,7 +310,7 @@ template <typename Dtype>
 void ComputeConfLoss(const Dtype* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
-      vector<vector<float> >* all_conf_loss);
+      vector<vector<Dtype> >* all_conf_loss);
 
 // Encode the confidence predictions and ground truth for each matched prior.
 //    conf_data: num x num_priors * num_classes blob.
@@ -498,22 +498,22 @@ void ApplyNMSGPU(const Dtype* bbox_data, const Dtype* conf_data,
 template <typename Dtype>
 void GetDetectionsGPU(const Dtype* bbox_data, const Dtype* conf_data,
           const int image_id, const int label, const vector<int>& indices,
-          const bool clip_bbox, Blob<Dtype>* detection_blob);
+          const bool clip_bbox, TBlob<Dtype>* detection_blob);
 
 template <typename Dtype>
-  void ComputeConfLossGPU(const Blob<Dtype>& conf_blob, const int num,
+  void ComputeConfLossGPU(const TBlob<Dtype>& conf_blob, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
       const vector<map<int, vector<int> > >& all_match_indices,
       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
-      vector<vector<float> >* all_conf_loss);
+      vector<vector<Dtype> >* all_conf_loss);
 #endif  // !CPU_ONLY
 
 #ifdef USE_OPENCV
 vector<cv::Scalar> GetColors(const int n);
 
 template <typename Dtype>
-void VisualizeBBox(const vector<cv::Mat>& images, const Blob<Dtype>* detections,
+void VisualizeBBox(const vector<cv::Mat>& images, const TBlob<Dtype>* detections,
                    const float threshold, const vector<cv::Scalar>& colors,
                    const map<int, string>& label_to_display_name,
                    const string& save_file);

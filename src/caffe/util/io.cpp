@@ -210,6 +210,20 @@ bool DecodeDatum(Datum* datum, bool is_color) {
   }
 }
 
+void EncodeCVMatToDatum(const cv::Mat& cv_img, const string& encoding,
+                        Datum* datum) {
+  std::vector<uchar> buf;
+  cv::imencode("."+encoding, cv_img, buf);
+  datum->set_data(std::string(reinterpret_cast<char*>(&buf[0]),
+                              buf.size()));
+  datum->set_channels(cv_img.channels());
+  datum->set_height(cv_img.rows);
+  datum->set_width(cv_img.cols);
+  datum->set_encoded(true);
+}
+
+
+
 void CVMatToDatum(const cv::Mat& cv_img, Datum* datum) {
   CHECK(cv_img.depth() == CV_8U) << "Image data type must be unsigned byte";
   datum->set_channels(cv_img.channels());
