@@ -54,7 +54,70 @@ message Datum {
   // Unique record index assigned by Reader
   optional uint32 record_id = 8 [default = 0];
 }
+// The label (display) name and label id.
+message LabelMapItem {
+  // Both name and label are required.
+  optional string name = 1;
+  optional int32 label = 2;
+  // display_name is optional.
+  optional string display_name = 3;
+}
 
+message LabelMap {
+  repeated LabelMapItem item = 1;
+}
+
+// Sample a bbox in the normalized space [0, 1] with provided constraints.
+message Sampler {
+  // Minimum scale of the sampled bbox.
+  optional float min_scale = 1 [default = 1.];
+  // Maximum scale of the sampled bbox.
+  optional float max_scale = 2 [default = 1.];
+
+  // Minimum aspect ratio of the sampled bbox.
+  optional float min_aspect_ratio = 3 [default = 1.];
+  // Maximum aspect ratio of the sampled bbox.
+  optional float max_aspect_ratio = 4 [default = 1.];
+}
+
+// Constraints for selecting sampled bbox.
+message SampleConstraint {
+  // Minimum Jaccard overlap between sampled bbox and all bboxes in
+  // AnnotationGroup.
+  optional float min_jaccard_overlap = 1;
+  // Maximum Jaccard overlap between sampled bbox and all bboxes in
+  // AnnotationGroup.
+  optional float max_jaccard_overlap = 2;
+
+  // Minimum coverage of sampled bbox by all bboxes in AnnotationGroup.
+  optional float min_sample_coverage = 3;
+  // Maximum coverage of sampled bbox by all bboxes in AnnotationGroup.
+  optional float max_sample_coverage = 4;
+
+  // Minimum coverage of all bboxes in AnnotationGroup by sampled bbox.
+  optional float min_object_coverage = 5;
+  // Maximum coverage of all bboxes in AnnotationGroup by sampled bbox.
+  optional float max_object_coverage = 6;
+}
+
+// Sample a batch of bboxes with provided constraints.
+message BatchSampler {
+  // Use original image as the source for sampling.
+  optional bool use_original_image = 1 [default = true];
+
+  // Constraints for sampling bbox.
+  optional Sampler sampler = 2;
+
+  // Constraints for determining if a sampled bbox is positive or negative.
+  optional SampleConstraint sample_constraint = 3;
+
+  // If provided, break when found certain number of samples satisfing the
+  // sample_constraint.
+  optional uint32 max_sample = 4;
+
+  // Maximum number of trials for sampling to avoid infinite loop.
+  optional uint32 max_trials = 5 [default = 100];
+}
 
 // Condition for emitting annotations.
 message EmitConstraint {
@@ -475,6 +538,7 @@ message LayerParameter {
   // The default for the engine is set by the ENGINE switch at compile-time.
   optional AccuracyParameter accuracy_param = 102;
   optional ArgMaxParameter argmax_param = 103;
+  optional AnnotatedDataParameter annotated_data_param = 200;
   optional BatchNormParameter batch_norm_param = 139;
   optional BiasParameter bias_param = 141;
   optional ConcatParameter concat_param = 104;
@@ -814,6 +878,16 @@ message AccuracyParameter {
 
   // If specified, ignore instances with the given label.
   optional int32 ignore_label = 3;
+}
+
+message AnnotatedDataParameter {
+  // Define the sampler.
+  repeated BatchSampler batch_sampler = 1;
+  // Store label name and label id in LabelMap format.
+  optional string label_map_file = 2;
+  // If provided, it will replace the AnnotationType stored in each
+  // AnnotatedDatum.
+  optional AnnotatedDatum.AnnotationType anno_type = 3;
 }
 
 message ArgMaxParameter {

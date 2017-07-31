@@ -1,0 +1,2008 @@
+src/caffe/layers/annotated_data_layer.cpp:24:20: error: ‘type’ was not declared in this scope
+ AnnotatedDataLayer<type, Btype>::~AnnotatedDataLayer() {
+                    ^
+src/caffe/layers/annotated_data_layer.cpp:24:20: note: suggested alternatives:
+In file included from /usr/include/boost/bind/bind.hpp:27:0,
+                 from /usr/include/boost/bind.hpp:22,
+                 from /usr/include/boost/thread/detail/thread.hpp:30,
+                 from /usr/include/boost/thread/thread_only.hpp:22,
+                 from /usr/include/boost/thread/thread.hpp:12,
+                 from /usr/include/boost/thread.hpp:13,
+                 from ./include/caffe/common.hpp:13,
+                 from ./include/caffe/blob.hpp:13,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/type.hpp:14:10: note:   ‘boost::type’
+   struct type {};
+          ^
+In file included from /usr/include/boost/bind.hpp:22:0,
+                 from /usr/include/boost/thread/detail/thread.hpp:30,
+                 from /usr/include/boost/thread/thread_only.hpp:22,
+                 from /usr/include/boost/thread/thread.hpp:12,
+                 from /usr/include/boost/thread.hpp:13,
+                 from ./include/caffe/common.hpp:13,
+                 from ./include/caffe/blob.hpp:13,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/bind/bind.hpp:140:25: note:   ‘boost::_bi::type’
+ template<class T> class type {};
+                         ^
+src/caffe/layers/annotated_data_layer.cpp:24:31: error: template argument 1 is invalid
+ AnnotatedDataLayer<type, Btype>::~AnnotatedDataLayer() {
+                               ^
+src/caffe/layers/annotated_data_layer.cpp:29:25: error: ‘type’ was not declared in this scope
+ void AnnotatedDataLayer<type, Btype>::DataLayerSetUp(
+                         ^
+src/caffe/layers/annotated_data_layer.cpp:29:25: note: suggested alternatives:
+In file included from /usr/include/boost/bind/bind.hpp:27:0,
+                 from /usr/include/boost/bind.hpp:22,
+                 from /usr/include/boost/thread/detail/thread.hpp:30,
+                 from /usr/include/boost/thread/thread_only.hpp:22,
+                 from /usr/include/boost/thread/thread.hpp:12,
+                 from /usr/include/boost/thread.hpp:13,
+                 from ./include/caffe/common.hpp:13,
+                 from ./include/caffe/blob.hpp:13,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/type.hpp:14:10: note:   ‘boost::type’
+   struct type {};
+          ^
+In file included from /usr/include/boost/bind.hpp:22:0,
+                 from /usr/include/boost/thread/detail/thread.hpp:30,
+                 from /usr/include/boost/thread/thread_only.hpp:22,
+                 from /usr/include/boost/thread/thread.hpp:12,
+                 from /usr/include/boost/thread.hpp:13,
+                 from ./include/caffe/common.hpp:13,
+                 from ./include/caffe/blob.hpp:13,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/bind/bind.hpp:140:25: note:   ‘boost::_bi::type’
+ template<class T> class type {};
+                         ^
+src/caffe/layers/annotated_data_layer.cpp:29:36: error: template argument 1 is invalid
+ void AnnotatedDataLayer<type, Btype>::DataLayerSetUp(
+                                    ^
+src/caffe/layers/annotated_data_layer.cpp: In function ‘void caffe::DataLayerSetUp(const std::vector<caffe::Blob*>&, const std::vector<caffe::Blob*>&)’:
+src/caffe/layers/annotated_data_layer.cpp:31:26: error: invalid use of ‘this’ in non-member function
+   const int batch_size = this->layer_param_.data_param().batch_size();
+                          ^
+src/caffe/layers/annotated_data_layer.cpp:33:7: error: invalid use of ‘this’ in non-member function
+       this->layer_param_.annotated_data_param();
+       ^
+src/caffe/layers/annotated_data_layer.cpp:35:5: error: ‘batch_samplers_’ was not declared in this scope
+     batch_samplers_.push_back(anno_data_param.batch_sampler(i));
+     ^
+src/caffe/layers/annotated_data_layer.cpp:37:3: error: ‘label_map_file_’ was not declared in this scope
+   label_map_file_ = anno_data_param.label_map_file();
+   ^
+src/caffe/layers/annotated_data_layer.cpp:40:5: error: invalid use of ‘this’ in non-member function
+     this->layer_param_.transform_param();
+     ^
+src/caffe/layers/annotated_data_layer.cpp:50:34: error: ‘reader_’ was not declared in this scope
+   AnnotatedDatum& anno_datum = *(reader_.full().peek());
+                                  ^
+src/caffe/layers/annotated_data_layer.cpp:54:7: error: invalid use of ‘this’ in non-member function
+       this->data_transformer_->InferBlobShape(anno_datum.datum());
+       ^
+src/caffe/layers/annotated_data_layer.cpp:55:3: error: invalid use of ‘this’ in non-member function
+   this->transformed_data_.Reshape(top_shape);
+   ^
+src/caffe/layers/annotated_data_layer.cpp:59:23: error: invalid use of ‘this’ in non-member function
+   for (int i = 0; i < this->PREFETCH_COUNT; ++i) {
+                       ^
+src/caffe/layers/annotated_data_layer.cpp:60:5: error: invalid use of ‘this’ in non-member function
+     this->prefetch_[i].data_.Reshape(top_shape);
+     ^
+src/caffe/layers/annotated_data_layer.cpp:66:7: error: invalid use of ‘this’ in non-member function
+   if (this->output_labels_) {
+       ^
+src/caffe/layers/annotated_data_layer.cpp:67:5: error: ‘has_anno_type_’ was not declared in this scope
+     has_anno_type_ = anno_datum.has_type() || anno_data_param.has_anno_type();
+     ^
+src/caffe/layers/annotated_data_layer.cpp:70:7: error: ‘anno_type_’ was not declared in this scope
+       anno_type_ = anno_datum.type();
+       ^
+src/caffe/layers/annotated_data_layer.cpp:104:25: error: invalid use of ‘this’ in non-member function
+     for (int i = 0; i < this->PREFETCH_COUNT; ++i) {
+                         ^
+src/caffe/layers/annotated_data_layer.cpp:105:7: error: invalid use of ‘this’ in non-member function
+       this->prefetch_[i].label_.Reshape(label_shape);
+       ^
+src/caffe/layers/annotated_data_layer.cpp: At global scope:
+src/caffe/layers/annotated_data_layer.cpp:112:6: error: prototype for ‘void caffe::AnnotatedDataLayer<Ftype, Btype>::load_batch(caffe::Batch<Ftype>*)’ does not match any in class ‘caffe::AnnotatedDataLayer<Ftype, Btype>’
+ void AnnotatedDataLayer<Ftype, Btype>::load_batch(Batch<Ftype>* batch) {
+      ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:35:8: error: candidate is: void caffe::AnnotatedDataLayer<Ftype, Btype>::load_batch(caffe::Batch<Ftype>*, int, size_t)
+   void load_batch(Batch<Ftype>* batch, int thread_id, size_t queue_id = 0UL) override;
+        ^
+src/caffe/layers/annotated_data_layer.cpp: In instantiation of ‘caffe::AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const caffe::LayerParameter&) [with Ftype = float; Btype = float]’:
+src/caffe/layers/annotated_data_layer.cpp:310:1:   required from here
+src/caffe/layers/annotated_data_layer.cpp:20:18: error: no matching function for call to ‘boost::shared_ptr<caffe::DataReader>::shared_ptr(const caffe::LayerParameter&)’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘boost::shared_ptr<X>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::shared_ptr<caffe::DataReader>&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::unique_ptr<_Tp, _Dp>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘const boost::shared_ptr<caffe::DataReader>&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::DataReader; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::DataReader]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:14: note: ‘const bool caffe::AnnotatedDataLayer<float, float>::cache_’ should be initialized
+   const bool cache_, shuffle_;
+              ^
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:22: note: ‘const bool caffe::AnnotatedDataLayer<float, float>::shuffle_’ should be initialized
+   const bool cache_, shuffle_;
+                      ^
+src/caffe/layers/annotated_data_layer.cpp: In instantiation of ‘caffe::AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const caffe::LayerParameter&) [with Ftype = float; Btype = double]’:
+src/caffe/layers/annotated_data_layer.cpp:310:1:   required from here
+src/caffe/layers/annotated_data_layer.cpp:20:18: error: no matching function for call to ‘boost::shared_ptr<caffe::DataReader>::shared_ptr(const caffe::LayerParameter&)’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘boost::shared_ptr<X>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::shared_ptr<caffe::DataReader>&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::unique_ptr<_Tp, _Dp>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘const boost::shared_ptr<caffe::DataReader>&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::DataReader; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::DataReader]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:14: note: ‘const bool caffe::AnnotatedDataLayer<float, double>::cache_’ should be initialized
+   const bool cache_, shuffle_;
+              ^
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:22: note: ‘const bool caffe::AnnotatedDataLayer<float, double>::shuffle_’ should be initialized
+   const bool cache_, shuffle_;
+                      ^
+src/caffe/layers/annotated_data_layer.cpp: In instantiation of ‘caffe::AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const caffe::LayerParameter&) [with Ftype = double; Btype = float]’:
+src/caffe/layers/annotated_data_layer.cpp:310:1:   required from here
+src/caffe/layers/annotated_data_layer.cpp:20:18: error: no matching function for call to ‘boost::shared_ptr<caffe::DataReader>::shared_ptr(const caffe::LayerParameter&)’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘boost::shared_ptr<X>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::shared_ptr<caffe::DataReader>&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::unique_ptr<_Tp, _Dp>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘const boost::shared_ptr<caffe::DataReader>&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::DataReader; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::DataReader]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:14: note: ‘const bool caffe::AnnotatedDataLayer<double, float>::cache_’ should be initialized
+   const bool cache_, shuffle_;
+              ^
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:22: note: ‘const bool caffe::AnnotatedDataLayer<double, float>::shuffle_’ should be initialized
+   const bool cache_, shuffle_;
+                      ^
+src/caffe/layers/annotated_data_layer.cpp: In instantiation of ‘caffe::AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const caffe::LayerParameter&) [with Ftype = double; Btype = double]’:
+src/caffe/layers/annotated_data_layer.cpp:310:1:   required from here
+src/caffe/layers/annotated_data_layer.cpp:20:18: error: no matching function for call to ‘boost::shared_ptr<caffe::DataReader>::shared_ptr(const caffe::LayerParameter&)’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘boost::shared_ptr<X>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::shared_ptr<caffe::DataReader>&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::unique_ptr<_Tp, _Dp>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘const boost::shared_ptr<caffe::DataReader>&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::DataReader; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::DataReader]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:14: note: ‘const bool caffe::AnnotatedDataLayer<double, double>::cache_’ should be initialized
+   const bool cache_, shuffle_;
+              ^
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:22: note: ‘const bool caffe::AnnotatedDataLayer<double, double>::shuffle_’ should be initialized
+   const bool cache_, shuffle_;
+                      ^
+src/caffe/layers/annotated_data_layer.cpp: In instantiation of ‘caffe::AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const caffe::LayerParameter&) [with Ftype = half_float::half; Btype = float]’:
+src/caffe/layers/annotated_data_layer.cpp:310:1:   required from here
+src/caffe/layers/annotated_data_layer.cpp:20:18: error: no matching function for call to ‘boost::shared_ptr<caffe::DataReader>::shared_ptr(const caffe::LayerParameter&)’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘boost::shared_ptr<X>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::shared_ptr<caffe::DataReader>&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::unique_ptr<_Tp, _Dp>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘const boost::shared_ptr<caffe::DataReader>&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::DataReader; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::DataReader]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:14: note: ‘const bool caffe::AnnotatedDataLayer<half_float::half, float>::cache_’ should be initialized
+   const bool cache_, shuffle_;
+              ^
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:22: note: ‘const bool caffe::AnnotatedDataLayer<half_float::half, float>::shuffle_’ should be initialized
+   const bool cache_, shuffle_;
+                      ^
+src/caffe/layers/annotated_data_layer.cpp: In instantiation of ‘caffe::AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const caffe::LayerParameter&) [with Ftype = float; Btype = half_float::half]’:
+src/caffe/layers/annotated_data_layer.cpp:310:1:   required from here
+src/caffe/layers/annotated_data_layer.cpp:20:18: error: no matching function for call to ‘boost::shared_ptr<caffe::DataReader>::shared_ptr(const caffe::LayerParameter&)’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘boost::shared_ptr<X>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::shared_ptr<caffe::DataReader>&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::unique_ptr<_Tp, _Dp>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘const boost::shared_ptr<caffe::DataReader>&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::DataReader; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::DataReader]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:14: note: ‘const bool caffe::AnnotatedDataLayer<float, half_float::half>::cache_’ should be initialized
+   const bool cache_, shuffle_;
+              ^
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:22: note: ‘const bool caffe::AnnotatedDataLayer<float, half_float::half>::shuffle_’ should be initialized
+   const bool cache_, shuffle_;
+                      ^
+src/caffe/layers/annotated_data_layer.cpp: In instantiation of ‘caffe::AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const caffe::LayerParameter&) [with Ftype = half_float::half; Btype = double]’:
+src/caffe/layers/annotated_data_layer.cpp:310:1:   required from here
+src/caffe/layers/annotated_data_layer.cpp:20:18: error: no matching function for call to ‘boost::shared_ptr<caffe::DataReader>::shared_ptr(const caffe::LayerParameter&)’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘boost::shared_ptr<X>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::shared_ptr<caffe::DataReader>&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::unique_ptr<_Tp, _Dp>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘const boost::shared_ptr<caffe::DataReader>&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::DataReader; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::DataReader]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:14: note: ‘const bool caffe::AnnotatedDataLayer<half_float::half, double>::cache_’ should be initialized
+   const bool cache_, shuffle_;
+              ^
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:22: note: ‘const bool caffe::AnnotatedDataLayer<half_float::half, double>::shuffle_’ should be initialized
+   const bool cache_, shuffle_;
+                      ^
+src/caffe/layers/annotated_data_layer.cpp: In instantiation of ‘caffe::AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const caffe::LayerParameter&) [with Ftype = double; Btype = half_float::half]’:
+src/caffe/layers/annotated_data_layer.cpp:310:1:   required from here
+src/caffe/layers/annotated_data_layer.cpp:20:18: error: no matching function for call to ‘boost::shared_ptr<caffe::DataReader>::shared_ptr(const caffe::LayerParameter&)’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘boost::shared_ptr<X>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::shared_ptr<caffe::DataReader>&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::unique_ptr<_Tp, _Dp>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘const boost::shared_ptr<caffe::DataReader>&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::DataReader; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::DataReader]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:14: note: ‘const bool caffe::AnnotatedDataLayer<double, half_float::half>::cache_’ should be initialized
+   const bool cache_, shuffle_;
+              ^
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:22: note: ‘const bool caffe::AnnotatedDataLayer<double, half_float::half>::shuffle_’ should be initialized
+   const bool cache_, shuffle_;
+                      ^
+src/caffe/layers/annotated_data_layer.cpp: In instantiation of ‘caffe::AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const caffe::LayerParameter&) [with Ftype = half_float::half; Btype = half_float::half]’:
+src/caffe/layers/annotated_data_layer.cpp:310:1:   required from here
+src/caffe/layers/annotated_data_layer.cpp:20:18: error: no matching function for call to ‘boost::shared_ptr<caffe::DataReader>::shared_ptr(const caffe::LayerParameter&)’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<Y>&&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> && r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:572:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘boost::shared_ptr<X>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::shared_ptr<T>&&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr && r ) BOOST_NOEXCEPT : px( r.px ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:563:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::shared_ptr<caffe::DataReader>&&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(std::unique_ptr<_Up, _Ep>&&)
+     shared_ptr( std::unique_ptr< Y, D > && r ): px( r.get() ), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:486:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::unique_ptr<_Tp, _Dp>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&&)
+     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:454:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(std::auto_ptr<_Up>&)
+     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:441:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   types ‘std::auto_ptr<Y>’ and ‘const caffe::LayerParameter’ have incompatible cv-qualifiers
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, boost::shared_ptr<T>::element_type*)
+     shared_ptr( shared_ptr<Y> const & r, element_type * p ) BOOST_NOEXCEPT : px( p ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:434:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<Y>&, typename boost::detail::sp_enable_if_convertible<Y, T>::type)
+     shared_ptr( shared_ptr<Y> const & r, typename boost::detail::sp_enable_if_convertible<Y,T>::type = boost::detail::sp_empty() )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:420:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::shared_ptr<X>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&, boost::detail::sp_nothrow_tag)
+     shared_ptr( weak_ptr<Y> const & r, boost::detail::sp_nothrow_tag )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:408:5: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(const boost::weak_ptr<Y>&)
+     explicit shared_ptr( weak_ptr<Y> const & r ): pn( r.pn ) // may throw
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:399:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   ‘const caffe::LayerParameter’ is not derived from ‘const boost::weak_ptr<Y>’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note: candidate: boost::shared_ptr<T>::shared_ptr(const boost::shared_ptr<T>&) [with T = caffe::DataReader]
+     shared_ptr( shared_ptr const & r ) BOOST_NOEXCEPT : px( r.px ), pn( r.pn )
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:392:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘const boost::shared_ptr<caffe::DataReader>&’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note: candidate: template<class D, class A> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D, A)
+     template<class D, class A> shared_ptr( boost::detail::sp_nullptr_t p, D d, A a ): px( p ), pn( p, d, a )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:380:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note: candidate: template<class Y, class D, class A> boost::shared_ptr<T>::shared_ptr(Y*, D, A)
+     template<class Y, class D, class A> shared_ptr( Y * p, D d, A a ): px( p ), pn( p, d, a )
+                                         ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:373:41: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note: candidate: template<class D> boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t, D)
+     template<class D> shared_ptr( boost::detail::sp_nullptr_t p, D d ): px( p ), pn( p, d )
+                       ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:365:23: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   cannot convert ‘param’ (type ‘const caffe::LayerParameter’) to type ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note: candidate: template<class Y, class D> boost::shared_ptr<T>::shared_ptr(Y*, D)
+     template<class Y, class D> shared_ptr( Y * p, D d ): px( p ), pn( p, d )
+                                ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:358:32: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note: candidate: template<class Y> boost::shared_ptr<T>::shared_ptr(Y*)
+     explicit shared_ptr( Y * p ): px( p ), pn() // Y must be complete
+              ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:347:14: note:   template argument deduction/substitution failed:
+src/caffe/layers/annotated_data_layer.cpp:20:18: note:   mismatched types ‘Y*’ and ‘caffe::LayerParameter’
+     reader_(param) {
+                  ^
+In file included from /usr/include/boost/smart_ptr/make_shared_object.hpp:16:0,
+                 from /usr/include/boost/smart_ptr/make_shared.hpp:15,
+                 from /usr/include/boost/make_shared.hpp:15,
+                 from ./include/caffe/blob.hpp:4,
+                 from ./include/caffe/data_transformer.hpp:8,
+                 from src/caffe/layers/annotated_data_layer.cpp:10:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note: candidate: boost::shared_ptr<T>::shared_ptr(boost::detail::sp_nullptr_t) [with T = caffe::DataReader; boost::detail::sp_nullptr_t = std::nullptr_t]
+     shared_ptr( boost::detail::sp_nullptr_t ) BOOST_NOEXCEPT : px( 0 ), pn() // never throws
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:340:5: note:   no known conversion for argument 1 from ‘const caffe::LayerParameter’ to ‘boost::detail::sp_nullptr_t {aka std::nullptr_t}’
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note: candidate: boost::shared_ptr<T>::shared_ptr() [with T = caffe::DataReader]
+     shared_ptr() BOOST_NOEXCEPT : px( 0 ), pn() // never throws in 1.30+
+     ^
+/usr/include/boost/smart_ptr/shared_ptr.hpp:334:5: note:   candidate expects 0 arguments, 1 provided
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:14: note: ‘const bool caffe::AnnotatedDataLayer<half_float::half, half_float::half>::cache_’ should be initialized
+   const bool cache_, shuffle_;
+              ^
+src/caffe/layers/annotated_data_layer.cpp:18:1: error: uninitialized const member in ‘const bool’ [-fpermissive]
+ AnnotatedDataLayer<Ftype, Btype>::AnnotatedDataLayer(const LayerParameter& param)
+ ^
+In file included from src/caffe/layers/annotated_data_layer.cpp:11:0:
+./include/caffe/layers/annotated_data_layer.hpp:47:22: note: ‘const bool caffe::AnnotatedDataLayer<half_float::half, half_float::half>::shuffle_’ should be initialized
+   const bool cache_, shuffle_;
+                      ^
