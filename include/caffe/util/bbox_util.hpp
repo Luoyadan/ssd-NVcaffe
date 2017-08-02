@@ -165,7 +165,7 @@ int CountNumMatches(const vector<map<int, vector<int> > >& all_match_indices,
                     const int num);
 
 // Mine the hard examples from the batch.
-//    conf_blob: stores the confidence prediction.
+//    conf_blob: stores the confidence prediction.(vectors！)
 //    all_loc_preds: stores the location prediction, where each item contains
 //      location prediction for an image.
 //    all_gt_bboxes: stores ground truth bboxes for the batch.
@@ -175,8 +175,8 @@ int CountNumMatches(const vector<map<int, vector<int> > >& all_match_indices,
 //    multibox_loss_param: stores the parameters for MultiBoxLossLayer.
 //    all_match_indices: stores mapping between predictions and ground truth.
 //    all_loc_loss: stores the confidence loss per location for each image.
-template <typename Dtype>
-void MineHardExamples(const TBlob<Dtype>& conf_blob,
+
+void MineHardExamples(Blob& conf_blob,
     const vector<LabelBBox>& all_loc_preds,
     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
     const vector<NormalizedBBox>& prior_bboxes,

@@ -47,7 +47,7 @@ class MultiBoxLossLayer : public LossLayer<Ftype, Btype> {
       const vector<bool>& propagate_down, const vector<Blob*>& bottom);
 
   // The internal localization loss layer.
-  shared_ptr<Layer<Ftype, Btype> > loc_loss_layer_;
+  shared_ptr<LayerBase>  loc_loss_layer_;
   LocLossType loc_loss_type_;
   float loc_weight_;
   // bottom vector holder used in Forward function.
@@ -62,7 +62,7 @@ class MultiBoxLossLayer : public LossLayer<Ftype, Btype> {
   TBlob<Ftype> loc_loss_;
 
   // The internal confidence loss layer.
-  shared_ptr<Layer<Ftype, Btype> > conf_loss_layer_;
+  shared_ptr<LayerBase>  conf_loss_layer_;
   ConfLossType conf_loss_type_;
   // bottom vector holder used in Forward function.
   vector<Blob*> conf_bottom_vec_;

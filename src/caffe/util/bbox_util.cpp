@@ -1262,6 +1262,13 @@ template void EncodeLocPrediction(const vector<LabelBBox>& all_loc_preds,
       const vector<NormalizedBBox>& prior_bboxes,
       const vector<vector<float> >& prior_variances,
       const MultiBoxLossParameter& multibox_loss_param,
+      float16* loc_pred_data, float16* loc_gt_data);
+template void EncodeLocPrediction(const vector<LabelBBox>& all_loc_preds,
+      const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+      const vector<map<int, vector<int> > >& all_match_indices,
+      const vector<NormalizedBBox>& prior_bboxes,
+      const vector<vector<float> >& prior_variances,
+      const MultiBoxLossParameter& multibox_loss_param,
       float* loc_pred_data, float* loc_gt_data);
 template void EncodeLocPrediction(const vector<LabelBBox>& all_loc_preds,
       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
@@ -1323,6 +1330,11 @@ void ComputeLocLoss(const TBlob<Dtype>& loc_pred, const TBlob<Dtype>& loc_gt,
 }
 
 // Explicit initialization.
+   void ComputeLocLoss(const TBlob<float16>& loc_pred,
+      const TBlob<float>& loc_gt,
+      const vector<map<int, vector<int> > >& all_match_indices,
+      const int num, const int num_priors, const LocLossType loc_loss_type,
+      vector<vector<float> >* all_loc_loss);
 template void ComputeLocLoss(const TBlob<float>& loc_pred,
       const TBlob<float>& loc_gt,
       const vector<map<int, vector<int> > >& all_match_indices,
@@ -1353,6 +1365,9 @@ void GetConfidenceScores(const Dtype* conf_data, const int num,
 }
 
 // Explicit initialization.
+template void GetConfidenceScores(const float16* conf_data, const int num,
+      const int num_preds_per_class, const int num_classes,
+      vector<map<int, vector<float> > >* conf_preds);
 template void GetConfidenceScores(const float* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       vector<map<int, vector<float> > >* conf_preds);
@@ -1386,6 +1401,9 @@ void GetConfidenceScores(const Dtype* conf_data, const int num,
 }
 
 // Explicit initialization.
+template void GetConfidenceScores(const float16* conf_data, const int num,
+      const int num_preds_per_class, const int num_classes,
+      const bool class_major, vector<map<int, vector<float> > >* conf_preds);
 template void GetConfidenceScores(const float* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       const bool class_major, vector<map<int, vector<float> > >* conf_preds);
@@ -1443,15 +1461,19 @@ void ComputeConfLoss(const Dtype* conf_data, const int num,
 }
 
 // Explicit initialization.
-template void ComputeConfLoss(const float* conf_data, const int num,
+ void ComputeConfLoss(const float16* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
       vector<vector<float> >* all_conf_loss);
-/*template void ComputeConfLoss(const double* conf_data, const int num,
+ void ComputeConfLoss(const float* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
       vector<vector<float> >* all_conf_loss);
-*/
+ void ComputeConfLoss(const double* conf_data, const int num,
+      const int num_preds_per_class, const int num_classes,
+      const int background_label_id, const ConfLossType loss_type,
+      vector<vector<float> >* all_conf_loss);
+
 template <typename Dtype>
 void ComputeConfLoss(const Dtype* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
@@ -1525,19 +1547,25 @@ void ComputeConfLoss(const Dtype* conf_data, const int num,
 }
 
 // Explicit initialization.
-template void ComputeConfLoss(const float* conf_data, const int num,
+ void ComputeConfLoss(const float16* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
       const vector<map<int, vector<int> > >& all_match_indices,
       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
       vector<vector<float> >* all_conf_loss);
-/*template void ComputeConfLoss(const double* conf_data, const int num,
+ void ComputeConfLoss(const float* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
       const vector<map<int, vector<int> > >& all_match_indices,
       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
       vector<vector<float> >* all_conf_loss);
-*/
+ void ComputeConfLoss(const double* conf_data, const int num,
+      const int num_preds_per_class, const int num_classes,
+      const int background_label_id, const ConfLossType loss_type,
+      const vector<map<int, vector<int> > >& all_match_indices,
+      const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+      vector<vector<float> >* all_conf_loss);
+
 template <typename Dtype>
 void EncodeConfPrediction(const Dtype* conf_data, const int num,
       const int num_priors, const MultiBoxLossParameter& multibox_loss_param,
@@ -1640,6 +1668,12 @@ void EncodeConfPrediction(const Dtype* conf_data, const int num,
 }
 
 // Explicite initialization.
+template void EncodeConfPrediction(const float16* conf_data, const int num,
+      const int num_priors, const MultiBoxLossParameter& multibox_loss_param,
+      const vector<map<int, vector<int> > >& all_match_indices,
+      const vector<vector<int> >& all_neg_indices,
+      const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+      float16* conf_pred_data, float16* conf_gt_data);
 template void EncodeConfPrediction(const float* conf_data, const int num,
       const int num_priors, const MultiBoxLossParameter& multibox_loss_param,
       const vector<map<int, vector<int> > >& all_match_indices,
@@ -1682,12 +1716,16 @@ void GetPriorBBoxes(const Dtype* prior_data, const int num_priors,
 }
 
 // Explicit initialization.
+template void GetPriorBBoxes(const float16* prior_data, const int num_priors,
+      vector<NormalizedBBox>* prior_bboxes,
+      vector<vector<float> >* prior_variances);
 template void GetPriorBBoxes(const float* prior_data, const int num_priors,
       vector<NormalizedBBox>* prior_bboxes,
       vector<vector<float> >* prior_variances);
 template void GetPriorBBoxes(const double* prior_data, const int num_priors,
       vector<NormalizedBBox>* prior_bboxes,
       vector<vector<float> >* prior_variances);
+
 
 template <typename Dtype>
 void GetDetectionResults(const Dtype* det_data, const int num_det,
