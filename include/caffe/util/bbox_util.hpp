@@ -175,8 +175,8 @@ int CountNumMatches(const vector<map<int, vector<int> > >& all_match_indices,
 //    multibox_loss_param: stores the parameters for MultiBoxLossLayer.
 //    all_match_indices: stores mapping between predictions and ground truth.
 //    all_loc_loss: stores the confidence loss per location for each image.
-
-void MineHardExamples(Blob& conf_blob,
+//template <typename Ftype, typename Btype>
+void MineHardExamples(const Blob& conf_blob,
     const vector<LabelBBox>& all_loc_preds,
     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
     const vector<NormalizedBBox>& prior_bboxes,
@@ -501,7 +501,7 @@ void GetDetectionsGPU(const Dtype* bbox_data, const Dtype* conf_data,
           const bool clip_bbox, TBlob<Dtype>* detection_blob);
 
 template <typename Dtype>
-  void ComputeConfLossGPU(const TBlob<Dtype>& conf_blob, const int num,
+ void ComputeConfLossGPU(const Blob& conf_blob, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
       const vector<map<int, vector<int> > >& all_match_indices,

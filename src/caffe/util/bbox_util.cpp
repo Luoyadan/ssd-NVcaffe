@@ -846,8 +846,8 @@ inline bool IsEligibleMining(const MiningType mining_type, const int match_idx,
   }
 }
 
-template <typename Dtype>
-void MineHardExamples(const TBlob<Dtype>& conf_blob,
+//template<typename Ftype, typename Btype>
+void MineHardExamples(const Blob& conf_blob,
     const vector<LabelBBox>& all_loc_preds,
     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
     const vector<NormalizedBBox>& prior_bboxes,
@@ -891,27 +891,27 @@ void MineHardExamples(const TBlob<Dtype>& conf_blob,
   }
   const int sample_size = multibox_loss_param.sample_size();
   // Compute confidence losses based on matching results.
-  vector<vector<Dtype> > all_conf_loss;
-#ifdef CPU_ONLY
-  ComputeConfLoss(conf_blob.template cpu_data(), num, num_priors, num_classes,
+  vector<vector<float> > all_conf_loss;
+//#ifdef CPU_ONLY
+  ComputeConfLoss(conf_blob.cpu_data<float>(), num, num_priors, num_classes,
       background_label_id, conf_loss_type, *all_match_indices, all_gt_bboxes,
       &all_conf_loss);
-#else
-  ComputeConfLossGPU(conf_blob, num, num_priors, num_classes,
-      background_label_id, conf_loss_type, *all_match_indices, all_gt_bboxes,
-      &all_conf_loss);
-#endif
+//#else
+  //ComputeConfLossGPU(conf_blob, num, num_priors, num_classes,
+  //    background_label_id, conf_loss_type, *all_match_indices, all_gt_bboxes,
+  //    &all_conf_loss);
+//#endif
   vector<vector<float> > all_loc_loss;
   if (mining_type == MultiBoxLossParameter_MiningType_HARD_EXAMPLE) {
     // Compute localization losses based on matching results.
-    TBlob<Dtype> loc_pred, loc_gt;
+    TBlob<float> loc_pred, loc_gt;
     if (*num_matches != 0) {
       vector<int> loc_shape(2, 1);
       loc_shape[1] = *num_matches * 4;
       loc_pred.Reshape(loc_shape);
       loc_gt.Reshape(loc_shape);
-      Dtype* loc_pred_data = loc_pred.mutable_cpu_data();
-      Dtype* loc_gt_data = loc_gt.mutable_cpu_data();
+      float* loc_pred_data = loc_pred.template mutable_cpu_data<float>();
+      float* loc_gt_data = loc_gt.template mutable_cpu_data<float>();
       EncodeLocPrediction(all_loc_preds, all_gt_bboxes, *all_match_indices,
                           prior_bboxes, prior_variances, multibox_loss_param,
                           loc_pred_data, loc_gt_data);
@@ -929,7 +929,7 @@ void MineHardExamples(const TBlob<Dtype>& conf_blob,
     map<int, vector<int> >& match_indices = (*all_match_indices)[i];
     const map<int, vector<float> >& match_overlaps = all_match_overlaps[i];
     // loc + conf loss.
-    const vector<Dtype>& conf_loss = all_conf_loss[i];
+    const vector<float>& conf_loss = all_conf_loss[i];
     const vector<float>& loc_loss = all_loc_loss[i];
     vector<float> loss;
     std::transform(conf_loss.begin(), conf_loss.end(), loc_loss.begin(),
@@ -1030,8 +1030,7 @@ void MineHardExamples(const TBlob<Dtype>& conf_blob,
 }
 
 // Explicite initialization.
-/*
-template void MineHardExamples(const TBlob<float>& conf_blob,
+ void MineHardExamples(const Blob& conf_blob,
     const vector<LabelBBox>& all_loc_preds,
     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
     const vector<NormalizedBBox>& prior_bboxes,
@@ -1041,7 +1040,17 @@ template void MineHardExamples(const TBlob<float>& conf_blob,
     int* num_matches, int* num_negs,
     vector<map<int, vector<int> > >* all_match_indices,
     vector<vector<int> >* all_neg_indices);
-template void MineHardExamples(const TBlob<double>& conf_blob,
+/*void MineHardExamples(const Blob<float>& conf_blob,
+    const vector<LabelBBox>& all_loc_preds,
+    const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
+    const vector<NormalizedBBox>& prior_bboxes,
+    const vector<vector<float> >& prior_variances,
+    const vector<map<int, vector<float> > >& all_match_overlaps,
+    const MultiBoxLossParameter& multibox_loss_param,
+    int* num_matches, int* num_negs,
+    vector<map<int, vector<int> > >* all_match_indices,
+    vector<vector<int> >* all_neg_indices);
+ void MineHardExamples(const Blob<double>& conf_blob,
     const vector<LabelBBox>& all_loc_preds,
     const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
     const vector<NormalizedBBox>& prior_bboxes,
@@ -1086,6 +1095,9 @@ void GetGroundTruth(const Dtype* gt_data, const int num_gt,
 }
 
 // Explicit initialization.
+template void GetGroundTruth(const float16* gt_data, const int num_gt,
+      const int background_label_id, const bool use_difficult_gt,
+      map<int, vector<NormalizedBBox> >* all_gt_bboxes);
 template void GetGroundTruth(const float* gt_data, const int num_gt,
       const int background_label_id, const bool use_difficult_gt,
       map<int, vector<NormalizedBBox> >* all_gt_bboxes);
@@ -1125,6 +1137,9 @@ void GetGroundTruth(const Dtype* gt_data, const int num_gt,
 }
 
 // Explicit initialization.
+template void GetGroundTruth(const float16* gt_data, const int num_gt,
+      const int background_label_id, const bool use_difficult_gt,
+      map<int, LabelBBox>* all_gt_bboxes);
 template void GetGroundTruth(const float* gt_data, const int num_gt,
       const int background_label_id, const bool use_difficult_gt,
       map<int, LabelBBox>* all_gt_bboxes);
@@ -1161,6 +1176,9 @@ void GetLocPredictions(const Dtype* loc_data, const int num,
 }
 
 // Explicit initialization.
+template void GetLocPredictions(const float16* loc_data, const int num,
+      const int num_preds_per_class, const int num_loc_classes,
+      const bool share_location, vector<LabelBBox>* loc_preds);
 template void GetLocPredictions(const float* loc_data, const int num,
       const int num_preds_per_class, const int num_loc_classes,
       const bool share_location, vector<LabelBBox>* loc_preds);
@@ -1465,7 +1483,7 @@ void ComputeConfLoss(const Dtype* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
       vector<vector<float> >* all_conf_loss);
- void ComputeConfLoss(const float* conf_data, const int num,
+template void ComputeConfLoss(const float* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
       vector<vector<float> >* all_conf_loss);
@@ -1553,7 +1571,7 @@ void ComputeConfLoss(const Dtype* conf_data, const int num,
       const vector<map<int, vector<int> > >& all_match_indices,
       const map<int, vector<NormalizedBBox> >& all_gt_bboxes,
       vector<vector<float> >* all_conf_loss);
- void ComputeConfLoss(const float* conf_data, const int num,
+template void ComputeConfLoss(const float* conf_data, const int num,
       const int num_preds_per_class, const int num_classes,
       const int background_label_id, const ConfLossType loss_type,
       const vector<map<int, vector<int> > >& all_match_indices,

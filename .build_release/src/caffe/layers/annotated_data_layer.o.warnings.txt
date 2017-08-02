@@ -1,2 +1,0 @@
-src/caffe/layers/annotated_data_layer.cpp:11:49: fatal error: caffe/layers/annotated_data_layer.hpp: No such file or directory
-compilation terminated.
