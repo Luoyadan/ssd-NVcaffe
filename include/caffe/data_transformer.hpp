@@ -121,7 +121,17 @@ class DataTransformer {
   void Transform(const AnnotatedDatum& anno_datum,
                  TBlob<Dtype>* transformed_blob,
                  vector<AnnotationGroup>* transformed_anno_vec);
-
+	//revised for annotated_data_layer
+  void Transform(const AnnotatedDatum& anno_datum, Blob& transformed_blob,
+                 vector<AnnotationGroup>* transformed_anno_vec);
+  void Transform(const AnnotatedDatum& anno_datum,
+                 Blob& transformed_blob,
+                 vector<AnnotationGroup>* transformed_anno_vec,
+                 bool* do_mirror);
+  void Transform(const AnnotatedDatum& anno_datum,
+                 Blob& transformed_blob,
+                 RepeatedPtrField<AnnotationGroup>* transformed_anno_vec,
+                 bool* do_mirror);
   /**
    * @brief Transform the annotation according to the transformation applied
    * to the datum.
@@ -197,6 +207,9 @@ class DataTransformer {
   void Transform(const cv::Mat& cv_img, TBlob<Dtype>* transformed_blob,
                  NormalizedBBox* crop_bbox, bool* do_mirror);
   void Transform(const cv::Mat& cv_img, TBlob<Dtype>* transformed_blob);
+  //revised for annotated_data_layer
+  void Transform(const cv::Mat& cv_img, Blob& transformed_blob,
+                 NormalizedBBox* crop_bbox, bool* do_mirror);
   
   /**
    * @brief Crops img according to bbox.
@@ -309,6 +322,8 @@ class DataTransformer {
                  NormalizedBBox* crop_bbox, bool* do_mirror);
   void Transform(const Datum& datum, Dtype* transformed_data);
   void Transform(const Datum& datum, TBlob<Dtype>* transformed_blob,
+                 NormalizedBBox* crop_bbox, bool* do_mirror);
+  void Transform(const Datum& datum, Blob& transformed_blob,
                  NormalizedBBox* crop_bbox, bool* do_mirror);
   
 
