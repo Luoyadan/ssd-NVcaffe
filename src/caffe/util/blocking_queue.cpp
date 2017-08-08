@@ -5,6 +5,7 @@
 #include "caffe/layers/base_data_layer.hpp"
 #include "caffe/parallel.hpp"
 #include "caffe/util/blocking_queue.hpp"
+#include "caffe/proto/caffe.pb.h"
 
 namespace caffe {
 
@@ -98,6 +99,7 @@ template class BlockingQueue<shared_ptr<Batch<double>>>;
 template class BlockingQueue<shared_ptr<Batch<float16>>>;
 #endif
 template class BlockingQueue<shared_ptr<Datum>>;
+template class BlockingQueue<shared_ptr<AnnotatedDatum>>;
 template class BlockingQueue<P2PSync*>;
 
 }  // namespace caffe

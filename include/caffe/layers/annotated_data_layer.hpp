@@ -1,4 +1,3 @@
-
 #ifndef CAFFE_DATA_LAYER_HPP_
 #define CAFFE_DATA_LAYER_HPP_
 
@@ -7,7 +6,7 @@
 #include <atomic>
 
 #include "caffe/blob.hpp"
-#include "caffe/data_reader.hpp"
+#include "caffe/annodata_reader.hpp"
 #include "caffe/data_transformer.hpp"
 #include "caffe/internal_thread.hpp"
 #include "caffe/layer.hpp"
@@ -23,7 +22,7 @@ class AnnotatedDataLayer : public BasePrefetchingDataLayer<Ftype, Btype> {
  public:
   explicit AnnotatedDataLayer(const LayerParameter& param);
   virtual ~AnnotatedDataLayer();
-  virtual void DataLayerSetUp(const vector<Blob*>& bottom,
+  void DataLayerSetUp(const vector<Blob*>& bottom,
       const vector<Blob*>& top) override;
   // AnnotatedDataLayer uses DataReader instead for sharing for parallelism
   bool ShareInParallel() const { return false; }
@@ -43,7 +42,7 @@ class AnnotatedDataLayer : public BasePrefetchingDataLayer<Ftype, Btype> {
   void start_reading() override {
     reader_->start_reading();
   }
-  shared_ptr<DataReader> sample_reader_, reader_;
+  shared_ptr<AnnodataReader> sample_reader_, reader_;
   mutable vector<size_t> parser_offsets_, queue_ids_;
   Flag layer_inititialized_flag_;
   std::atomic_bool sample_only_;

@@ -2192,13 +2192,13 @@ static clock_t start_clock = clock();
 static cv::VideoWriter cap_out;
 
 template <typename Dtype>
-void VisualizeBBox(const vector<cv::Mat>& images, const TBlob<Dtype>* detections,
+void VisualizeBBox(const vector<cv::Mat>& images, const Blob& detections,
                    const float threshold, const vector<cv::Scalar>& colors,
                    const map<int, string>& label_to_display_name,
                    const string& save_file) {
   // Retrieve detections.
-  CHECK_EQ(detections->width(), 7);
-  const int num_det = detections->height();
+  CHECK_EQ(detections.width(), 7);
+  const int num_det = detections.height();
   const int num_img = images.size();
   if (num_det == 0 || num_img == 0) {
     return;
@@ -2207,7 +2207,7 @@ void VisualizeBBox(const vector<cv::Mat>& images, const TBlob<Dtype>* detections
   float fps = num_img / (static_cast<double>(clock() - start_clock) /
           CLOCKS_PER_SEC);
 
-  const Dtype* detections_data = detections->cpu_data();
+  const Dtype* detections_data = detections.cpu_data<Dtype>();
   const int width = images[0].cols;
   const int height = images[0].rows;
   vector<LabelBBox> all_detections(num_img);
@@ -2290,15 +2290,19 @@ void VisualizeBBox(const vector<cv::Mat>& images, const TBlob<Dtype>* detections
   start_clock = clock();
 }
 
-template
-void VisualizeBBox(const vector<cv::Mat>& images,
-                   const TBlob<float>* detections,
+
+template void VisualizeBBox<float>(const vector<cv::Mat>& images,
+                   const Blob& detections,
                    const float threshold, const vector<cv::Scalar>& colors,
                    const map<int, string>& label_to_display_name,
                    const string& save_file);
-template
-void VisualizeBBox(const vector<cv::Mat>& images,
-                   const TBlob<double>* detections,
+template void VisualizeBBox<double>(const vector<cv::Mat>& images,
+                   const Blob& detections,
+                   const float threshold, const vector<cv::Scalar>& colors,
+                   const map<int, string>& label_to_display_name,
+                   const string& save_file);
+template void VisualizeBBox<float16>(const vector<cv::Mat>& images,
+                   const Blob& detections,
                    const float threshold, const vector<cv::Scalar>& colors,
                    const map<int, string>& label_to_display_name,
                    const string& save_file);

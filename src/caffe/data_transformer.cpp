@@ -318,7 +318,7 @@ void DataTransformer<Dtype>::Transform(const Datum& datum,
 // do_mirror, h_off, w_off require that random values be passed in,
 // because the random draws should have been taken in deterministic order
 template<typename Dtype>
-void DataTransformer<Dtype>::TransformPtrInt(Datum& datum,
+void DataTransformer<Dtype>::TransformPtrInt(const Datum& datum,
     Dtype *transformed_data, const std::array<unsigned int, 3>& rand) {
   Transform(datum, transformed_data, rand);
 }
@@ -356,6 +356,43 @@ void DataTransformer<Dtype>::TransformPtrEntry(shared_ptr<Datum> datum,
       LOG(ERROR) << "force_color and force_gray only for encoded datum";
     }
     TransformPtrInt(*datum, transformed_ptr, rand);
+  }
+}
+
+
+template<typename Dtype>
+void DataTransformer<Dtype>::TransformPtrEntry(const Datum& datum,
+    Dtype *transformed_ptr,
+    std::array<unsigned int, 3> rand,
+    bool output_labels,
+    Dtype *label) {
+  // Get label from datum if needed
+  if (output_labels) {
+    *label = datum.label();
+  }
+
+  // If datum is encoded, decoded and transform the cv::image.
+  if (datum.encoded()) {
+#ifdef USE_OPENCV
+    CHECK(!(param_.force_color() && param_.force_gray()))
+    << "cannot set both force_color and force_gray";
+    cv::Mat cv_img;
+    if (param_.force_color() || param_.force_gray()) {
+      // If force_color then decode in color otherwise decode in gray.
+      cv_img = DecodeDatumToCVMat(datum, param_.force_color());
+    } else {
+      cv_img = DecodeDatumToCVMatNative(datum);
+    }
+    // Transform the cv::image into blob.
+    TransformPtr(cv_img, transformed_ptr, rand);
+#else
+    LOG(FATAL) << "Encoded datum requires OpenCV; compile with USE_OPENCV.";
+#endif  // USE_OPENCV
+  } else {
+    if (param_.force_color() || param_.force_gray()) {
+      LOG(ERROR) << "force_color and force_gray only for encoded datum";
+    }
+    TransformPtrInt(datum, transformed_ptr, rand);
   }
 }
 
@@ -1526,25 +1563,25 @@ void DataTransformer<Dtype>::TransformInv(const Dtype* data, cv::Mat* cv_img,
   }
 }
 
+
+
 template<typename Dtype>
-void DataTransformer<Dtype>::TransformInv(const TBlob<Dtype>* blob,
+void DataTransformer<Dtype>::TransformInv(const Blob& blob,
                                           vector<cv::Mat>* cv_imgs) {
-  const int channels = blob->channels();
-  const int height = blob->height();
-  const int width = blob->width();
-  const int num = blob->num();
+  const int channels = blob.channels();
+  const int height = blob.height();
+  const int width = blob.width();
+  const int num = blob.num();
   CHECK_GE(num, 1);
-  const Dtype* image_data = blob->cpu_data();
+  const Dtype* image_data = blob.cpu_data<Dtype>();
 
   for (int i = 0; i < num; ++i) {
     cv::Mat cv_img;
     TransformInv(image_data, &cv_img, height, width, channels);
     cv_imgs->push_back(cv_img);
-    image_data += blob->offset(1);
+    image_data += blob.offset(1);
   }
 }
-
-
 
 
 

@@ -186,7 +186,7 @@ ifneq ($(NO_NVML), 1)
 endif
 endif
 
-LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5
+LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5 boost_regex
 
 # handle IO dependencies
 USE_LEVELDB ?= 1

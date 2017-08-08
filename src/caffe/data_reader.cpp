@@ -5,7 +5,7 @@
 #include "caffe/common.hpp"
 #include "caffe/parallel.hpp"
 #include "caffe/data_reader.hpp"
-
+#include "caffe/proto/caffe.pb.h"
 namespace caffe {
 
 std::mutex DataReader::DataCache::cache_mutex_;
@@ -307,5 +307,6 @@ void DataReader::CursorManager::fetch(Datum* datum) {
     LOG(ERROR) << "Database cursor failed to parse Datum record";
   }
 }
+
 
 }  // namespace caffe

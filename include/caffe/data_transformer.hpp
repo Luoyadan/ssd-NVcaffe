@@ -82,7 +82,8 @@ class DataTransformer {
    */
   void TransformPtrEntry(shared_ptr<Datum> datum, Dtype* transformed_ptr,
       std::array<unsigned int, 3> rand, bool output_labels, Dtype* label);
-
+void TransformPtrEntry(const Datum& datum, Dtype* transformed_ptr,
+      std::array<unsigned int, 3> rand, bool output_labels, Dtype* label);
   /**
    * @brief Applies the transformation defined in the data layer's
    * transform_param block to a vector of Datum.
@@ -223,7 +224,8 @@ class DataTransformer {
   void ExpandImage(const cv::Mat& img, const float expand_ratio,
                    NormalizedBBox* expand_bbox, cv::Mat* expand_img);
 
-  void TransformInv(const TBlob<Dtype>* blob, vector<cv::Mat>* cv_imgs);
+ 
+  void TransformInv(const Blob& blob, vector<cv::Mat>* cv_imgs);
   void TransformInv(const Dtype* data, cv::Mat* cv_img, const int height,
                     const int width, const int channels);
 
@@ -316,7 +318,7 @@ class DataTransformer {
       const std::array<unsigned int, 3>& rand);
   void Transform(const Datum& datum, Dtype* transformed_data,
       const std::array<unsigned int, 3>& rand);
-  void TransformPtrInt(Datum& datum, Dtype* transformed_data,
+  void TransformPtrInt(const Datum& datum, Dtype* transformed_data,
       const std::array<unsigned int, 3>& rand);
   void Transform(const Datum& datum, Dtype* transformed_data,
                  NormalizedBBox* crop_bbox, bool* do_mirror);

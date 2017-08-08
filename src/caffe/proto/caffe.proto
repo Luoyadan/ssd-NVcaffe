@@ -165,6 +165,10 @@ message AnnotatedDatum {
   optional AnnotationType type = 2;
   // Each group contains annotation for a particular class.
   repeated AnnotationGroup annotation_group = 3;
+  optional bool encoded = 4 [default = false];
+  // Unique record index assigned by Reader
+  optional uint32 record_id = 5 [default = 0];
+  //optional int32 label = 6;
 }
 
 message FillerParameter {
@@ -546,6 +550,8 @@ message LayerParameter {
   optional ConvolutionParameter convolution_param = 106;
   optional CropParameter crop_param = 144;
   optional DataParameter data_param = 107;
+  optional DetectionEvaluateParameter detection_evaluate_param = 205;
+  optional DetectionOutputParameter detection_output_param = 204;
   optional DropoutParameter dropout_param = 108;
   optional DummyDataParameter dummy_data_param = 109;
   optional EltwiseParameter eltwise_param = 110;
@@ -1106,6 +1112,87 @@ message DataParameter {
   optional bool cache = 13 [default = false];
   // Shuffle observations while reading for better accuracy. Ignored if 'cache' is false.
   optional bool shuffle = 14 [default = false];
+}
+
+message SaveOutputParameter {
+  // Output directory. If not empty, we will save the results.
+  optional string output_directory = 1;
+  // Output name prefix.
+  optional string output_name_prefix = 2;
+  // Output format.
+  //    VOC - PASCAL VOC output format.
+  //    COCO - MS COCO output format.
+  optional string output_format = 3;
+  // If you want to output results, must also provide the following two files.
+  // Otherwise, we will ignore saving results.
+  // label map file.
+  optional string label_map_file = 4;
+  // A file which contains a list of names and sizes with same order
+  // of the input DB. The file is in the following format:
+  //    name height width
+  //    ...
+  optional string name_size_file = 5;
+  // Number of test images. It can be less than the lines specified in
+  // name_size_file. For example, when we only want to evaluate on part
+  // of the test images.
+  optional uint32 num_test_image = 6;
+  // The resize parameter used in saving the data.
+  optional ResizeParameter resize_param = 7;
+}
+
+// Message that store parameters used by DetectionOutputLayer
+message DetectionOutputParameter {
+  // Number of classes to be predicted. Required!
+  optional uint32 num_classes = 1;
+  // If true, bounding box are shared among different classes.
+  optional bool share_location = 2 [default = true];
+  // Background label id. If there is no background class,
+  // set it as -1.
+  optional int32 background_label_id = 3 [default = 0];
+  // Parameters used for non maximum suppression.
+  optional NonMaximumSuppressionParameter nms_param = 4;
+  // Parameters used for saving detection results.
+  optional SaveOutputParameter save_output_param = 5;
+  // Type of coding method for bbox.
+  optional PriorBoxParameter.CodeType code_type = 6 [default = CORNER];
+  // If true, variance is encoded in target; otherwise we need to adjust the
+  // predicted offset accordingly.
+  optional bool variance_encoded_in_target = 8 [default = false];
+  // Number of total bboxes to be kept per image after nms step.
+  // -1 means keeping all bboxes after nms step.
+  optional int32 keep_top_k = 7 [default = -1];
+  // Only consider detections whose confidences are larger than a threshold.
+  // If not provided, consider all boxes.
+  optional float confidence_threshold = 9;
+  // If true, visualize the detection results.
+  optional bool visualize = 10 [default = false];
+  // The threshold used to visualize the detection results.
+  optional float visualize_threshold = 11;
+  // If provided, save outputs to video file.
+  optional string save_file = 12;
+}
+
+
+// Message that store parameters used by DetectionEvaluateLayer
+message DetectionEvaluateParameter {
+  // Number of classes that are actually predicted. Required!
+  optional uint32 num_classes = 1;
+  // Label id for background class. Needed for sanity check so that
+  // background class is neither in the ground truth nor the detections.
+  optional uint32 background_label_id = 2 [default = 0];
+  // Threshold for deciding true/false positive.
+  optional float overlap_threshold = 3 [default = 0.5];
+  // If true, also consider difficult ground truth for evaluation.
+  optional bool evaluate_difficult_gt = 4 [default = true];
+  // A file which contains a list of names and sizes with same order
+  // of the input DB. The file is in the following format:
+  //    name height width
+  //    ...
+  // If provided, we will scale the prediction and ground truth NormalizedBBox
+  // for evaluation.
+  optional string name_size_file = 5;
+  // The resize parameter used in converting NormalizedBBox to original image.
+  optional ResizeParameter resize_param = 6;
 }
 
 message DropoutParameter {
@@ -1846,6 +1933,7 @@ message V1LayerParameter {
   optional ContrastiveLossParameter contrastive_loss_param = 40;
   optional ConvolutionParameter convolution_param = 10;
   optional DataParameter data_param = 11;
+
   optional DropoutParameter dropout_param = 12;
   optional DummyDataParameter dummy_data_param = 26;
   optional EltwiseParameter eltwise_param = 24;

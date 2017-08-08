@@ -116,8 +116,8 @@ class BasePrefetchingDataLayer : public BaseDataLayer<Ftype, Btype>, public Inte
   }
 
  protected:
-  void InternalThreadEntry() override;
-  void InternalThreadEntryN(size_t thread_id) override;
+  virtual void InternalThreadEntry() override;
+  virtual void InternalThreadEntryN(size_t thread_id) override;
   void ResizeQueues();
 
   virtual void InitializePrefetch();

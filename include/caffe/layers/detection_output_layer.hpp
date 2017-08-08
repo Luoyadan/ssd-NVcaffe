@@ -59,16 +59,16 @@ class DetectionOutputLayer : public Layer<Ftype, Btype> {
    *      N is the number of detections after nms, and each row is:
    *      [image_id, label, confidence, xmin, ymin, xmax, ymax]
    */
-  virtual void Forward_cpu(const vector<Blob*>& bottom,
+   virtual void Forward_cpu(const vector<Blob*>& bottom,
       const vector<Blob*>& top);
-  virtual void Forward_gpu(const vector<Blob*>& bottom,
-      const vector<Blob*>& top);
+  // virtual void Forward_gpu(const vector<Blob*>& bottom,
+  //    const vector<Blob*>& top);
   /// @brief Not implemented
-  virtual void Backward_cpu(const vector<Blob*>& top,
+   virtual void Backward_cpu(const vector<Blob*>& top,
       const vector<bool>& propagate_down, const vector<Blob*>& bottom) {
     NOT_IMPLEMENTED;
   }
-  virtual void Backward_gpu(const vector<Blob*>& top,
+    virtual void Backward_gpu(const vector<Blob*>& top,
       const vector<bool>& propagate_down, const vector<Blob*>& bottom) {
     NOT_IMPLEMENTED;
   }
@@ -106,9 +106,9 @@ class DetectionOutputLayer : public Layer<Ftype, Btype> {
 
   bool visualize_;
   float visualize_threshold_;
-  shared_ptr<DataTransformer<Dtype> > data_transformer_;
+  shared_ptr<DataTransformer<Ftype> > data_transformer_;
   string save_file_;
-  TBlob bbox_preds_;
+  TBlob<Ftype> bbox_preds_;
   TBlob<Ftype> bbox_permute_;
   TBlob<Ftype> conf_permute_;
 };

@@ -513,7 +513,7 @@ template <typename Dtype>
 vector<cv::Scalar> GetColors(const int n);
 
 template <typename Dtype>
-void VisualizeBBox(const vector<cv::Mat>& images, const TBlob<Dtype>* detections,
+void VisualizeBBox(const vector<cv::Mat>& images, const Blob& detections,
                    const float threshold, const vector<cv::Scalar>& colors,
                    const map<int, string>& label_to_display_name,
                    const string& save_file);
