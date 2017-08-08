@@ -1778,6 +1778,9 @@ template void GetDetectionResults(const float* det_data, const int num_det,
 template void GetDetectionResults(const double* det_data, const int num_det,
       const int background_label_id,
       map<int, map<int, vector<NormalizedBBox> > >* all_detections);
+template void GetDetectionResults<float16>(const float16* det_data, const int num_det,
+      const int background_label_id,
+      map<int, map<int, vector<NormalizedBBox> > >* all_detections);
 
 void GetTopKScoreIndex(const vector<float>& scores, const vector<int>& indices,
       const int top_k, vector<pair<float, int> >* score_index_vec) {
