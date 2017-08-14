@@ -165,7 +165,7 @@ message AnnotatedDatum {
   optional AnnotationType type = 2;
   // Each group contains annotation for a particular class.
   repeated AnnotationGroup annotation_group = 3;
-  optional bool encoded = 4 [default = false];
+ // optional bool encoded = 4 [default = false];
   // Unique record index assigned by Reader
   optional uint32 record_id = 5 [default = 0];
   //optional int32 label = 6;
@@ -291,7 +291,16 @@ message SolverParameter {
   // Other defaults are set according to the NetState defaults.
   optional NetState train_state = 26;
   repeated NetState test_state = 27;
-
+   // Evaluation type.
+  optional string eval_type = 56 [default = "classification"];
+  // ap_version: different ways of computing Average Precision.
+  //    Check https://sanchom.wordpress.com/tag/average-precision/ for details.
+  //    11point: the 11-point interpolated average precision. Used in VOC2007.
+  //    MaxIntegral: maximally interpolated AP. Used in VOC2012/ILSVRC.
+  //    Integral: the natural integral of the precision-recall curve.
+  optional string ap_version = 57 [default = "Integral"];
+  // If true, display per class result.
+  optional bool show_per_class_result = 58 [default = false];
   // The number of iterations for each test net.
   repeated int32 test_iter = 3;
 

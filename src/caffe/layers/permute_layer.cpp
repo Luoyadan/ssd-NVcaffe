@@ -65,7 +65,7 @@ void PermuteLayer<Ftype, Btype>::LayerSetUp(const vector<Blob*>& bottom,
   old_steps_.Reshape(num_axes_, 1, 1, 1);
   new_steps_.Reshape(num_axes_, 1, 1, 1);
   for (int i = 0; i < num_axes_; ++i) {
-    permute_order_.mutable_cpu_data<Ftype>()[i] = orders[i];
+    permute_order_.mutable_cpu_data<int>()[i] = orders[i];
     top_shape[i] = bottom[0]->shape(orders[i]);
   }
   top[0]->Reshape(top_shape);

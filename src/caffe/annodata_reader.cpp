@@ -103,7 +103,7 @@ void AnnodataReader::InternalThreadEntryN(size_t thread_id) {
     while (!must_stop(thread_id)) {
       cm.next(datum);
       // See comment below
-      ranked_rec = (size_t) datum->record_id() / cm.full_cycle();
+      ranked_rec = (size_t) datum.get()->record_id() / cm.full_cycle();
       batch_on_solver = ranked_rec * parser_threads_num_ + thread_id;
       queue_id = batch_on_solver % queues_num_;
 
@@ -226,9 +226,9 @@ AnnodataReader::CursorManager::~CursorManager() {
   db_->Close();
 }
 
-void AnnodataReader::CursorManager::next(shared_ptr<AnnotatedDatum>& datum) {
+void AnnodataReader::CursorManager::next(shared_ptr<AnnotatedDatum>& anno_datum) {
   if (cached_all_) {
-    datum = reader_->next_cached();
+    anno_datum = reader_->next_cached();
   } else {
     while (cache_) {
       if (!reader_->check_memory()) {
@@ -236,13 +236,13 @@ void AnnodataReader::CursorManager::next(shared_ptr<AnnotatedDatum>& datum) {
         shuffle_ = false;
         break;
       }
-      datum = reader_->next_new();
+      anno_datum = reader_->next_new();
       break;
     }
-    fetch(datum.get());
+    fetch(anno_datum.get());
   }
 
-  datum->set_record_id(rec_id_);
+  anno_datum.get()->set_record_id(rec_id_);
   size_t old_id = rec_id_;
   ++rec_id_;
   if (rec_id_ == rec_end_) {

@@ -269,7 +269,7 @@ void TransformPtrEntry(const Datum& datum, Dtype* transformed_ptr,
    * @param datum
    *    Datum containing the data to be transformed.
    */
-  vector<int> InferBlobShape(const Datum& datum, bool use_gpu = false);
+  vector<int> InferBlobShape(const Datum& datum);
   
   /**
    * @brief Infers the shape of transformed_blob will have when
@@ -297,7 +297,7 @@ void TransformPtrEntry(const Datum& datum, Dtype* transformed_ptr,
    * @param cv_img
    *    cv::Mat containing the data to be transformed.
    */
-  vector<int> InferBlobShape(const cv::Mat& cv_img, bool use_gpu = false);
+  vector<int> InferBlobShape(const cv::Mat& cv_img);
   
   vector<int> InferBlobShape(const vector<cv::Mat> & mat_vector);
   /**

@@ -230,7 +230,9 @@ void AnnotatedDataLayer<Ftype, Btype>::DataLayerSetUp(
       this->prefetch_[i]->random_vec_.Reshape(random_vec_shape);
     }
   }
-  
+  LOG(INFO) << "output data size: " << top[0]->num() << ","
+      << top[0]->channels() << "," << top[0]->height() << ","
+      << top[0]->width();
  
   // label
   if (this->output_labels_) {
@@ -292,33 +294,37 @@ void AnnotatedDataLayer<Ftype, Btype>::load_batch(Batch<Ftype>* batch, int threa
   // use for recording shape 
   TBlob<Ftype> transformed_blob;
   transformed_blob.Reshape(1,1,1,8);
+  //LOG(INFO)<<"checkpoint:0";
   if (!sample_only && !reader_) {
     this->DataLayerSetUp(this->bottom_init_, this->top_init_);
   }
+  //LOG(INFO)<<"checkpoint:1";
   const bool use_gpu_transform = this->is_gpu_transform();
   // Reshape according to the first datum of each batch
   // on single input batches allows for inputs of varying dimension.
   const int batch_size = this->layer_param_.data_param().batch_size();
   const size_t qid = sample_only ? 0UL : queue_id;
   AnnodataReader* reader = sample_only ? sample_reader_.get() : reader_.get();
+ // LOG(INFO)<<"checkpoint:2";
   shared_ptr<AnnotatedDatum> anno_datum = reader->full_peek(qid);
   //CHECK(anno_datum);
   // transfer shared_ptr to normal pointer to get 'type' member
   AnnotatedDatum* temp_anno_datum = anno_datum.get();
   // Use data_transformer to infer the expected blob shape from datum.
-  vector<int> top_shape = this->data_transformers_[thread_id]->InferBlobShape(temp_anno_datum->datum(),
-      use_gpu_transform);
+  //LOG(INFO)<<"checkpoint:3";
+  
+  vector<int> top_shape = this->data_transformers_[thread_id]->InferBlobShape(temp_anno_datum->datum());
   // Reshape batch according to the batch_size.
   top_shape[0] = batch_size;
   transformed_blob.Reshape(top_shape);
   batch->data_.Reshape(top_shape);
   if (use_gpu_transform) {
-    top_shape = this->data_transformers_[thread_id]->InferBlobShape(temp_anno_datum->datum(), false);
+    top_shape = this->data_transformers_[thread_id]->InferBlobShape(temp_anno_datum->datum());
     top_shape[0] = batch_size;
     batch->gpu_transformed_data_->Reshape(top_shape);
   }
   size_t out_sizeof_element = 0;
-  const bool copy_to_cpu = temp_anno_datum->encoded() || !use_gpu_transform;
+  const bool copy_to_cpu = temp_anno_datum->datum().encoded() || !use_gpu_transform;
   Ftype* top_data = nullptr;
   if (copy_to_cpu) {
     top_data = batch->data_.mutable_cpu_data();
@@ -329,7 +335,7 @@ void AnnotatedDataLayer<Ftype, Btype>::load_batch(Batch<Ftype>* batch, int threa
     NO_GPU;
 #endif
   }
-  
+  //LOG(INFO)<<"checkpoint:4";
   Ftype* top_label = nullptr;
   if (this->output_labels_ && !has_anno_type_) {
     top_label = batch->label_.mutable_cpu_data();
@@ -341,7 +347,7 @@ void AnnotatedDataLayer<Ftype, Btype>::load_batch(Batch<Ftype>* batch, int threa
   // Store transformed annotation.
   map<int, vector<AnnotationGroup> > all_anno;
   int num_bboxes = 0;
-  
+  //vector<int> top_shape = this->data_transformers_[thread_id]->InferBlobShape(temp_anno_datum->datum());
   for (size_t entry = 0; entry < batch_size; ++entry) {
     anno_datum = reader->full_pop(qid, "Waiting for datum");
 	// transfer shared_ptr to normal pointer to get 'type' member
@@ -368,7 +374,7 @@ void AnnotatedDataLayer<Ftype, Btype>::load_batch(Batch<Ftype>* batch, int threa
         expand_datum = new AnnotatedDatum();
         this->data_transformers_[thread_id]->ExpandImage(*temp_anno_datum, expand_datum);
       } else {
-        expand_datum = &*temp_anno_datum;
+        expand_datum = temp_anno_datum;
       }
     }
     AnnotatedDatum* sampled_datum = NULL;
@@ -387,17 +393,22 @@ void AnnotatedDataLayer<Ftype, Btype>::load_batch(Batch<Ftype>* batch, int threa
         this->data_transformers_[thread_id]->CropImage(*expand_datum,
                                            sampled_bboxes[rand_idx],
                                            sampled_datum);
+		//LOG(INFO)<<"sampled!!!";
         has_sampled = true;
       } else {
         sampled_datum = expand_datum;
+		LOG(INFO)<<"expanded Type1 !!!";
       }
     } else {
       sampled_datum = expand_datum;
+	  LOG(INFO)<<"expanded Type2 !!!";
     }
     CHECK(sampled_datum != NULL);
-    
+	//LOG(INFO)<<"check sampled datum:"<< temp_anno_datum->datum().width();
+    //LOG(INFO)<<"check sampled datum:"<< sampled_datum->datum().width();
     vector<int> shape =
         this->data_transformers_[thread_id]->InferBlobShape(sampled_datum->datum());
+	
     if (transform_param.has_resize_param()) {
       if (transform_param.resize_param().resize_mode() ==
           ResizeParameter_Resize_mode_FIT_SMALL_SIZE) {
@@ -405,12 +416,13 @@ void AnnotatedDataLayer<Ftype, Btype>::load_batch(Batch<Ftype>* batch, int threa
         batch->data_.Reshape(shape);
         top_data = batch->data_.mutable_cpu_data();
       } else {
+		//LOG(INFO)<<"check_topshape:"<< *(top_shape.begin()+1) <<"then:"<< *(top_shape.begin()+2)<<"then:"<< *(top_shape.begin()+3)<<"final:"<<*(shape.begin()+1)<<"then:"<< *(shape.begin()+2)<<"then:"<< *(shape.begin()+3);
         CHECK(std::equal(top_shape.begin() + 1, top_shape.begin() + 4,
               shape.begin() + 1));
       }
     } else {
-      CHECK(std::equal(top_shape.begin() + 1, top_shape.begin() + 4,
-            shape.begin() + 1));
+     // CHECK(std::equal(top_shape.begin() + 1, top_shape.begin() + 4,
+      //      shape.begin() + 1));
     }
     // Apply data transformations (mirror, scale, crop...)
     // Get data offset for this datum to hand off to transform thread
@@ -488,7 +500,46 @@ void AnnotatedDataLayer<Ftype, Btype>::load_batch(Batch<Ftype>* batch, int threa
     reader->free_push(qid, anno_datum);
   } //end-loop
 
- 
+  if (this->output_labels_ && has_anno_type_) {
+    vector<int> label_shape(4);
+    if (anno_type_ == AnnotatedDatum_AnnotationType_BBOX) {
+      label_shape[0] = 1;
+      label_shape[1] = 1;
+      label_shape[3] = 8;
+      if (num_bboxes == 0) {
+        // Store all -1 in the label.
+        label_shape[2] = 1;
+        batch->label_.Reshape(label_shape);
+        caffe_set<Ftype>(8, -1, batch->label_.mutable_cpu_data());
+      } else {
+        // Reshape the label and store the annotation.
+        label_shape[2] = num_bboxes;
+        batch->label_.Reshape(label_shape);
+        top_label = batch->label_.mutable_cpu_data();
+        int idx = 0;
+        for (int item_id = 0; item_id < batch_size; ++item_id) {
+          const vector<AnnotationGroup>& anno_vec = all_anno[item_id];
+          for (int g = 0; g < anno_vec.size(); ++g) {
+            const AnnotationGroup& anno_group = anno_vec[g];
+            for (int a = 0; a < anno_group.annotation_size(); ++a) {
+              const Annotation& anno = anno_group.annotation(a);
+              const NormalizedBBox& bbox = anno.bbox();
+              top_label[idx++] = item_id;
+              top_label[idx++] = anno_group.group_label();
+              top_label[idx++] = anno.instance_id();
+              top_label[idx++] = bbox.xmin();
+              top_label[idx++] = bbox.ymin();
+              top_label[idx++] = bbox.xmax();
+              top_label[idx++] = bbox.ymax();
+              top_label[idx++] = bbox.difficult();
+            }
+          }
+        }
+      }
+    } else {
+      LOG(FATAL) << "Unknown annotation type.";
+    }
+  }
 
   batch->set_id(current_batch_id);
   sample_only_.store(false);

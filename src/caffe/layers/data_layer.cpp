@@ -233,13 +233,13 @@ void DataLayer<Ftype, Btype>::load_batch(Batch<Ftype>* batch, int thread_id, siz
   CHECK(datum);
 
   // Use data_transformer to infer the expected blob shape from datum.
-  vector<int> top_shape = this->data_transformers_[thread_id]->InferBlobShape(*datum,
-      use_gpu_transform);
+  vector<int> top_shape = this->data_transformers_[thread_id]->InferBlobShape(*datum
+      );
   // Reshape batch according to the batch_size.
   top_shape[0] = batch_size;
   batch->data_.Reshape(top_shape);
   if (use_gpu_transform) {
-    top_shape = this->data_transformers_[thread_id]->InferBlobShape(*datum, false);
+    top_shape = this->data_transformers_[thread_id]->InferBlobShape(*datum);
     top_shape[0] = batch_size;
     batch->gpu_transformed_data_->Reshape(top_shape);
   }

@@ -150,7 +150,7 @@ void DataTransformer<Dtype>::TransformGPU(const Datum& datum,
       reinterpret_cast<unsigned int *>(GPUMemory::thread_pinned_buffer(sizeof(unsigned int) * 3));
   std::memcpy(randoms, &rand.front(), sizeof(unsigned int) * 3);  // NOLINT(caffe/alt_fn)
 
-  vector<int> datum_shape = InferBlobShape(datum, 1);
+  vector<int> datum_shape = InferBlobShape(datum);
   TBlob<Dtype> original_data;
   original_data.Reshape(datum_shape);
 
@@ -820,6 +820,7 @@ void DataTransformer<Dtype>::CropImage(const Datum& datum,
   crop_datum->set_channels(datum_channels);
   crop_datum->set_height(height);
   crop_datum->set_width(width);
+  LOG(INFO) << "crop_datum width:" << width;
   crop_datum->set_label(datum.label());
   crop_datum->clear_data();
   crop_datum->clear_float_data();
@@ -1584,15 +1585,6 @@ void DataTransformer<Dtype>::TransformInv(const Blob& blob,
 }
 
 
-
-
-
-
-
-
-
-
-
 template<typename Dtype>
 void DataTransformer<Dtype>::TransformPtr(const cv::Mat& cv_img,
     Dtype *transformed_ptr, const std::array<unsigned int, 3>& rand) {
@@ -1684,7 +1676,9 @@ void DataTransformer<Dtype>::TransformPtr(const cv::Mat& cv_img,
 
 
 template<typename Dtype>
-vector<int> DataTransformer<Dtype>::InferBlobShape(const Datum& datum, bool use_gpu) {
+vector<int> DataTransformer<Dtype>::InferBlobShape(const Datum& datum) {
+  //LOG(INFO) << "checkpoint222222222";
+  
   if (datum.encoded()) {
 #ifdef USE_OPENCV
     CHECK(!(param_.force_color() && param_.force_gray()))
@@ -1697,57 +1691,70 @@ vector<int> DataTransformer<Dtype>::InferBlobShape(const Datum& datum, bool use_
       cv_img = DecodeDatumToCVMatNative(datum);
     }
     // InferBlobShape using the cv::image.
-    return InferBlobShape(cv_img, use_gpu);
+    return InferBlobShape(cv_img);
 #else
     LOG(FATAL) << "Encoded datum requires OpenCV; compile with USE_OPENCV.";
 #endif  // USE_OPENCV
   }
   const int crop_size = param_.crop_size();
+  int crop_h = param_.crop_h();
+  int crop_w = param_.crop_w();
+  if (crop_size) {
+    crop_h = crop_size;
+    crop_w = crop_size;
+  }
   const int datum_channels = datum.channels();
-  const int datum_height = datum.height();
-  const int datum_width = datum.width();
+  int datum_height = datum.height();
+  int datum_width = datum.width();
+  LOG(INFO)<< "!!!!InferBlob: " << datum_height << datum_width << crop_size;
+  
   // Check dimensions.
   CHECK_GT(datum_channels, 0);
-  CHECK_GE(datum_height, crop_size);
-  CHECK_GE(datum_width, crop_size);
+  if (param_.has_resize_param()) {
+    InferNewSize(param_.resize_param(), datum_width, datum_height,
+                 &datum_width, &datum_height);
+  }
+  CHECK_GE(datum_height, crop_h);
+  CHECK_GE(datum_width, crop_w);
+
   // Build BlobShape.
   vector<int> shape(4);
   shape[0] = 1;
   shape[1] = datum_channels;
-  // if using GPU transform, don't crop
-  if (use_gpu) {
-    shape[2] = datum_height;
-    shape[3] = datum_width;
-  } else {
-    shape[2] = (crop_size) ? crop_size : datum_height;
-    shape[3] = (crop_size) ? crop_size : datum_width;
-  }
+  shape[2] = (crop_h)? crop_h: datum_height;
+  shape[3] = (crop_w)? crop_w: datum_width;
   return shape;
 }
 
 #ifdef USE_OPENCV
 
 template<typename Dtype>
-vector<int> DataTransformer<Dtype>::InferBlobShape(const cv::Mat& cv_img, bool use_gpu) {
+vector<int> DataTransformer<Dtype>::InferBlobShape(const cv::Mat& cv_img) {
   const int crop_size = param_.crop_size();
+  int crop_h = param_.crop_h();
+  int crop_w = param_.crop_w();
+  if (crop_size) {
+    crop_h = crop_size;
+    crop_w = crop_size;
+  }
   const int img_channels = cv_img.channels();
-  const int img_height = cv_img.rows;
-  const int img_width = cv_img.cols;
+  int img_height = cv_img.rows;
+  int img_width = cv_img.cols;
   // Check dimensions.
   CHECK_GT(img_channels, 0);
-  CHECK_GE(img_height, crop_size);
-  CHECK_GE(img_width, crop_size);
+  if (param_.has_resize_param()) {
+    InferNewSize(param_.resize_param(), img_width, img_height,
+                 &img_width, &img_height);
+  }
+  CHECK_GE(img_height, crop_h);
+  CHECK_GE(img_width, crop_w);
+
   // Build BlobShape.
   vector<int> shape(4);
   shape[0] = 1;
   shape[1] = img_channels;
-  if (use_gpu) {
-    shape[2] = img_height;
-    shape[3] = img_width;
-  } else {
-    shape[2] = (crop_size) ? crop_size : img_height;
-    shape[3] = (crop_size) ? crop_size : img_width;
-  }
+  shape[2] = (crop_h)? crop_h: img_height;
+  shape[3] = (crop_w)? crop_w: img_width;
   return shape;
 }
 

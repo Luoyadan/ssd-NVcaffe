@@ -68,7 +68,7 @@ class DetectionOutputLayer : public Layer<Ftype, Btype> {
       const vector<bool>& propagate_down, const vector<Blob*>& bottom) {
     NOT_IMPLEMENTED;
   }
-    virtual void Backward_gpu(const vector<Blob*>& top,
+   virtual void Backward_gpu(const vector<Blob*>& top,
       const vector<bool>& propagate_down, const vector<Blob*>& bottom) {
     NOT_IMPLEMENTED;
   }

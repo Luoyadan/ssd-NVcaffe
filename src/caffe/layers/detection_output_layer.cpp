@@ -316,8 +316,9 @@ void DetectionOutputLayer<Ftype, Btype>::Forward_cpu(
           decode_bboxes.find(loc_label)->second;
       vector<int>& indices = it->second;
       if (need_save_) {
-        CHECK(label_to_name_.find(label) != label_to_name_.end())
-          << "Cannot find label: " << label << " in the label map.";
+		//LOG(INFO)<< "label" << label_to_name_[0] ;
+        //CHECK(label_to_name_.find(label) != label_to_name_.end())
+         // << "Cannot find label: " << label << " in the label map.";
         CHECK_LT(name_count_, names_.size());
       }
       for (int j = 0; j < indices.size(); ++j) {
