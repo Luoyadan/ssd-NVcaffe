@@ -1,8 +1,13 @@
-# Caffe
+This repo is still being tested.
+Yet the most of fuction has been complished in the branch of 'test', so please
 
-Caffe is a deep learning framework made with expression, speed, and modularity in mind.
-It is developed by the Berkeley Vision and Learning Center ([BVLC](http://bvlc.eecs.berkeley.edu))
-and community contributors.
+```
+git checkout test
+
+```
+and compile the whole thing.
+
+
 
 # NVCaffe
 
@@ -27,17 +32,4 @@ and workspace for convolutional layers.
 * **Extended set of optimized models** (including 16 bit floating point examples).
 
 
-## License and Citation
 
-Caffe is released under the [BSD 2-Clause license](https://github.com/BVLC/caffe/blob/master/LICENSE).
-The BVLC reference models are released for unrestricted use.
-
-Please cite Caffe in your publications if it helps your research:
-
-    @article{jia2014caffe,
-      Author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
-      Journal = {arXiv preprint arXiv:1408.5093},
-      Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
-      Year = {2014}
-    }
-# dgx-1_caffe
